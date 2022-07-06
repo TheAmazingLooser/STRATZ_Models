@@ -17,6 +17,7 @@ namespace STRATZ
         [EnumMember(Value = "MEMBER_COUNT")] MemberCount,
         [EnumMember(Value = "POINTS")] Points,
         [EnumMember(Value = "ID")] Id,
-        [EnumMember(Value = "PREVIOUS_WEEK_RANK")] PreviousWeekRank
+        [EnumMember(Value = "PREVIOUS_WEEK_RANK")] PreviousWeekRank,
+        [EnumMember(Value = "RANK")] Rank
     }
 }
