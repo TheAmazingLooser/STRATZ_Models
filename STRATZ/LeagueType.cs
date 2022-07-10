@@ -38,6 +38,7 @@ namespace STRATZ
         public IList<LeagueNodeGroupType> NodeGroups { get; set; }
         public IList<MatchLiveType> LiveMatches { get; set; }
         public IList<MatchType> Matches { get; set; }
+        public IList<MatchGroupByType> MatchesGroupBy { get; set; }
         public IList<SeriesType> Series { get; set; }
         public LeagueTableType Tables { get; set; }
         public LeagueBattlePassType BattlePass { get; set; }

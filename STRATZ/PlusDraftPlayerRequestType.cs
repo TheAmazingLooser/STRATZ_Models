@@ -16,10 +16,8 @@ namespace STRATZ
         private InputPropertyInfo _steamAccountId;
         private InputPropertyInfo _slot;
         private InputPropertyInfo _heroId;
-        private InputPropertyInfo _suggestHeroId;
         private InputPropertyInfo _rank;
         private InputPropertyInfo _position;
-        private InputPropertyInfo _order;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
@@ -49,15 +47,6 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<short?>))]
-        #endif
-        public QueryBuilderParameter<short?> SuggestHeroId
-        {
-            get { return (QueryBuilderParameter<short?>)_suggestHeroId.Value; }
-            set { _suggestHeroId = new InputPropertyInfo { Name = "suggestHeroId", Value = value }; }
-        }
-
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
         #endif
         public QueryBuilderParameter<byte?> Rank
@@ -75,24 +64,13 @@ namespace STRATZ
             set { _position = new InputPropertyInfo { Name = "position", Value = value }; }
         }
 
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
-        #endif
-        public QueryBuilderParameter<byte?> Order
-        {
-            get { return (QueryBuilderParameter<byte?>)_order.Value; }
-            set { _order = new InputPropertyInfo { Name = "order", Value = value }; }
-        }
-
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
         {
             if (_steamAccountId.Name != null) yield return _steamAccountId;
             if (_slot.Name != null) yield return _slot;
             if (_heroId.Name != null) yield return _heroId;
-            if (_suggestHeroId.Name != null) yield return _suggestHeroId;
             if (_rank.Name != null) yield return _rank;
             if (_position.Name != null) yield return _position;
-            if (_order.Name != null) yield return _order;
         }
     }
 }

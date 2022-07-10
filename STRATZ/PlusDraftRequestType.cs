@@ -15,7 +15,6 @@ namespace STRATZ
     {
         private InputPropertyInfo _matchId;
         private InputPropertyInfo _bans;
-        private InputPropertyInfo _isRadiantFirstPick;
         private InputPropertyInfo _gameMode;
         private InputPropertyInfo _players;
         private InputPropertyInfo _gameVersionId;
@@ -36,15 +35,6 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<IList<object>>)_bans.Value; }
             set { _bans = new InputPropertyInfo { Name = "bans", Value = value }; }
-        }
-
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
-        #endif
-        public QueryBuilderParameter<bool?> IsRadiantFirstPick
-        {
-            get { return (QueryBuilderParameter<bool?>)_isRadiantFirstPick.Value; }
-            set { _isRadiantFirstPick = new InputPropertyInfo { Name = "isRadiantFirstPick", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -78,7 +68,6 @@ namespace STRATZ
         {
             if (_matchId.Name != null) yield return _matchId;
             if (_bans.Name != null) yield return _bans;
-            if (_isRadiantFirstPick.Name != null) yield return _isRadiantFirstPick;
             if (_gameMode.Name != null) yield return _gameMode;
             if (_players.Name != null) yield return _players;
             if (_gameVersionId.Name != null) yield return _gameVersionId;

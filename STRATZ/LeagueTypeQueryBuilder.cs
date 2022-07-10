@@ -41,6 +41,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "nodeGroups", IsComplex = true, QueryBuilderType = typeof(LeagueNodeGroupTypeQueryBuilder) },
                 new FieldMetadata { Name = "liveMatches", IsComplex = true, QueryBuilderType = typeof(MatchLiveTypeQueryBuilder) },
                 new FieldMetadata { Name = "matches", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
+                new FieldMetadata { Name = "matchesGroupBy", IsComplex = true, QueryBuilderType = typeof(MatchGroupByTypeQueryBuilder) },
                 new FieldMetadata { Name = "series", IsComplex = true, QueryBuilderType = typeof(SeriesTypeQueryBuilder) },
                 new FieldMetadata { Name = "tables", IsComplex = true, QueryBuilderType = typeof(LeagueTableTypeQueryBuilder) },
                 new FieldMetadata { Name = "battlePass", IsComplex = true, QueryBuilderType = typeof(LeagueBattlePassTypeQueryBuilder) },
@@ -304,6 +305,18 @@ namespace STRATZ
         public LeagueTypeQueryBuilder ExceptMatches()
         {
             return ExceptField("matches");
+        }
+
+        public LeagueTypeQueryBuilder WithMatchesGroupBy(MatchGroupByTypeQueryBuilder matchGroupByTypeQueryBuilder, QueryBuilderParameter<PlayerMatchesGroupByRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
+            return WithObjectField("matchesGroupBy", alias, matchGroupByTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public LeagueTypeQueryBuilder ExceptMatchesGroupBy()
+        {
+            return ExceptField("matchesGroupBy");
         }
 
         public LeagueTypeQueryBuilder WithSeries(SeriesTypeQueryBuilder seriesTypeQueryBuilder, QueryBuilderParameter<IEnumerable<LeagueStage?>> leagueStageTypeIds = null, QueryBuilderParameter<int?> teamId = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
