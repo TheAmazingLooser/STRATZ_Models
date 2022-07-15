@@ -17,7 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "steamId", IsComplex = true },
-                new FieldMetadata { Name = "name" },
+                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "with", IsComplex = true, QueryBuilderType = typeof(PlayerPlayedWithProPlayerMatchTypeQueryBuilder) },
                 new FieldMetadata { Name = "vs", IsComplex = true, QueryBuilderType = typeof(PlayerPlayedWithProPlayerMatchTypeQueryBuilder) }
             };
@@ -36,14 +36,14 @@ namespace STRATZ
             return ExceptField("steamId");
         }
 
-        public PlayerPlayedWithProPlayerTypeQueryBuilder WithName(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerPlayedWithProPlayerTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("name", alias, new GraphQlDirective[] { include, skip });
+            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerPlayedWithProPlayerTypeQueryBuilder ExceptName()
+        public PlayerPlayedWithProPlayerTypeQueryBuilder ExceptSteamAccount()
         {
-            return ExceptField("name");
+            return ExceptField("steamAccount");
         }
 
         public PlayerPlayedWithProPlayerTypeQueryBuilder WithWith(PlayerPlayedWithProPlayerMatchTypeQueryBuilder playerPlayedWithProPlayerMatchTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

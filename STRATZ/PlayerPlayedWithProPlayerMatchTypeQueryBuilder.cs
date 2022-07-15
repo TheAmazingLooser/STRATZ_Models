@@ -17,8 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "matchId", IsComplex = true },
-                new FieldMetadata { Name = "date", IsComplex = true },
-                new FieldMetadata { Name = "isVictory" }
+                new FieldMetadata { Name = "match", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "PlayerPlayedWithProPlayerMatchType"; } } 
@@ -35,24 +34,14 @@ namespace STRATZ
             return ExceptField("matchId");
         }
 
-        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder WithDate(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder WithMatch(MatchTypeQueryBuilder matchTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("date", alias, new GraphQlDirective[] { include, skip });
+            return WithObjectField("match", alias, matchTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder ExceptDate()
+        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder ExceptMatch()
         {
-            return ExceptField("date");
-        }
-
-        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder WithIsVictory(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("isVictory", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerPlayedWithProPlayerMatchTypeQueryBuilder ExceptIsVictory()
-        {
-            return ExceptField("isVictory");
+            return ExceptField("match");
         }
     }
 }

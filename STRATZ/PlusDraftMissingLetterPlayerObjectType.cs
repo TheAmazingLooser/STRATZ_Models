@@ -17,7 +17,6 @@ namespace STRATZ
         private InputPropertyInfo _heroId;
         private InputPropertyInfo _rank;
         private InputPropertyInfo _position;
-        private InputPropertyInfo _order;
         private InputPropertyInfo _isPicking;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -57,15 +56,6 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
-        #endif
-        public QueryBuilderParameter<byte?> Order
-        {
-            get { return (QueryBuilderParameter<byte?>)_order.Value; }
-            set { _order = new InputPropertyInfo { Name = "order", Value = value }; }
-        }
-
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
         #endif
         public QueryBuilderParameter<bool?> IsPicking
@@ -80,7 +70,6 @@ namespace STRATZ
             if (_heroId.Name != null) yield return _heroId;
             if (_rank.Name != null) yield return _rank;
             if (_position.Name != null) yield return _position;
-            if (_order.Name != null) yield return _order;
             if (_isPicking.Name != null) yield return _isPicking;
         }
     }

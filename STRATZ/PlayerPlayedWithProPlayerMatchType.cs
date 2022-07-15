@@ -14,7 +14,6 @@ namespace STRATZ
     public partial class PlayerPlayedWithProPlayerMatchType
     {
         public long? MatchId { get; set; }
-        public long? Date { get; set; }
-        public bool? IsVictory { get; set; }
+        public MatchType Match { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class PlayerPlayedWithProPlayerType
     {
         public long? SteamId { get; set; }
-        public string Name { get; set; }
+        public SteamAccountType SteamAccount { get; set; }
         public PlayerPlayedWithProPlayerMatchType With { get; set; }
         public PlayerPlayedWithProPlayerMatchType Vs { get; set; }
     }

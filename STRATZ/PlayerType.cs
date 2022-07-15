@@ -36,7 +36,7 @@ namespace STRATZ
         public PlayerPerformanceType Performance { get; set; }
         public PlayerPerformanceType HeroPerformance { get; set; }
         public IList<PlayerHeroesPerformanceType> HeroesPerformance { get; set; }
-        public IList<PlayerPlayedWithProType> PlayedWithPro { get; set; }
+        public PlayerPlayedWithProType PlayedWithPro { get; set; }
         public IList<MatchType> Matches { get; set; }
         public IList<MatchGroupByType> MatchesGroupBy { get; set; }
         public IList<HeroDotaPlusLeaderboardRankType> DotaPlus { get; set; }
