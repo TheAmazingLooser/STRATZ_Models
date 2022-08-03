@@ -11,9 +11,12 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class HeroRoleType
+    public enum NeutralItemTierEnum
     {
-        public HeroRoleEnum? RoleId { get; set; }
-        public short? Level { get; set; }
+        [EnumMember(Value = "TIER_1")] Tier1,
+        [EnumMember(Value = "TIER_2")] Tier2,
+        [EnumMember(Value = "TIER_3")] Tier3,
+        [EnumMember(Value = "TIER_4")] Tier4,
+        [EnumMember(Value = "TIER_5")] Tier5
     }
 }

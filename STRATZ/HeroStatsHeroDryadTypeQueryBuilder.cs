@@ -20,13 +20,14 @@ namespace STRATZ
                 new FieldMetadata { Name = "heroId2", IsComplex = true },
                 new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "bracketBasic" },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
                 new FieldMetadata { Name = "count", IsComplex = true },
                 new FieldMetadata { Name = "kills", IsComplex = true },
                 new FieldMetadata { Name = "deaths", IsComplex = true },
                 new FieldMetadata { Name = "assists", IsComplex = true },
                 new FieldMetadata { Name = "networth", IsComplex = true },
                 new FieldMetadata { Name = "duration", IsComplex = true },
-                new FieldMetadata { Name = "wins", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
                 new FieldMetadata { Name = "firstBloodTime", IsComplex = true },
                 new FieldMetadata { Name = "cs", IsComplex = true },
                 new FieldMetadata { Name = "dn", IsComplex = true },
@@ -84,6 +85,16 @@ namespace STRATZ
         public HeroStatsHeroDryadTypeQueryBuilder ExceptBracketBasic()
         {
             return ExceptField("bracketBasic");
+        }
+
+        public HeroStatsHeroDryadTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroStatsHeroDryadTypeQueryBuilder ExceptMatchCount()
+        {
+            return ExceptField("matchCount");
         }
 
         public HeroStatsHeroDryadTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -146,14 +157,14 @@ namespace STRATZ
             return ExceptField("duration");
         }
 
-        public HeroStatsHeroDryadTypeQueryBuilder WithWins(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroStatsHeroDryadTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("wins", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroStatsHeroDryadTypeQueryBuilder ExceptWins()
+        public HeroStatsHeroDryadTypeQueryBuilder ExceptWinCount()
         {
-            return ExceptField("wins");
+            return ExceptField("winCount");
         }
 
         public HeroStatsHeroDryadTypeQueryBuilder WithFirstBloodTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

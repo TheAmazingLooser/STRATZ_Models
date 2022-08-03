@@ -16,7 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "roleId", IsComplex = true },
+                new FieldMetadata { Name = "roleId" },
                 new FieldMetadata { Name = "level", IsComplex = true }
             };
 

@@ -11,17 +11,16 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class HeroAbilityTalentType
+    public partial class HeroNeutralItemType
     {
         public int? HeroId { get; set; }
         public int? Week { get; set; }
         public RankBracketHeroTimeDetail? BracketBasic { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
-        public int? AbilityId { get; set; }
+        public int? ItemId { get; set; }
         public long? MatchCount { get; set; }
         public long? WinCount { get; set; }
-        public long? Time { get; set; }
-        public decimal? WinsAverage { get; set; }
-        public decimal? TimeAverage { get; set; }
+        public long? EquippedMatchCount { get; set; }
+        public long? EquippedMatchWinCount { get; set; }
     }
 }

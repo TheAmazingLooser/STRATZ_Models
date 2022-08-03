@@ -18,8 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "time" },
                 new FieldMetadata { Name = "matchCount", IsComplex = true },
-                new FieldMetadata { Name = "remainingMatchCount" },
-                new FieldMetadata { Name = "wins", IsComplex = true },
+                new FieldMetadata { Name = "remainingMatchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
                 new FieldMetadata { Name = "mvp", IsComplex = true },
                 new FieldMetadata { Name = "topCore", IsComplex = true },
                 new FieldMetadata { Name = "topSupport", IsComplex = true },
@@ -120,14 +120,14 @@ namespace STRATZ
             return ExceptField("remainingMatchCount");
         }
 
-        public HeroPositionTimeDetailAverageObjectTypeQueryBuilder WithWins(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroPositionTimeDetailAverageObjectTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("wins", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroPositionTimeDetailAverageObjectTypeQueryBuilder ExceptWins()
+        public HeroPositionTimeDetailAverageObjectTypeQueryBuilder ExceptWinCount()
         {
-            return ExceptField("wins");
+            return ExceptField("winCount");
         }
 
         public HeroPositionTimeDetailAverageObjectTypeQueryBuilder WithMvp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

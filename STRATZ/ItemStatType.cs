@@ -50,5 +50,7 @@ namespace STRATZ
         public short? UpgradeItem { get; set; }
         public short? UpgradeRecipe { get; set; }
         public short? ItemResult { get; set; }
+        public short? NeutralItemDropTime { get; set; }
+        public NeutralItemTierEnum? NeutralItemTier { get; set; }
     }
 }

@@ -21,8 +21,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "bracketBasic" },
                 new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "abilityId" },
-                new FieldMetadata { Name = "count", IsComplex = true },
-                new FieldMetadata { Name = "wins", IsComplex = true },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
                 new FieldMetadata { Name = "time", IsComplex = true },
                 new FieldMetadata { Name = "winsAverage", IsComplex = true },
                 new FieldMetadata { Name = "timeAverage", IsComplex = true }
@@ -82,24 +82,24 @@ namespace STRATZ
             return ExceptField("abilityId");
         }
 
-        public HeroAbilityTalentTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroAbilityTalentTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("count", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroAbilityTalentTypeQueryBuilder ExceptCount()
+        public HeroAbilityTalentTypeQueryBuilder ExceptMatchCount()
         {
-            return ExceptField("count");
+            return ExceptField("matchCount");
         }
 
-        public HeroAbilityTalentTypeQueryBuilder WithWins(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroAbilityTalentTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("wins", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroAbilityTalentTypeQueryBuilder ExceptWins()
+        public HeroAbilityTalentTypeQueryBuilder ExceptWinCount()
         {
-            return ExceptField("wins");
+            return ExceptField("winCount");
         }
 
         public HeroAbilityTalentTypeQueryBuilder WithTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

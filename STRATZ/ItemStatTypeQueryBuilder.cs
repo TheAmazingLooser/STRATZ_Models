@@ -52,7 +52,9 @@ namespace STRATZ
                 new FieldMetadata { Name = "needsComponents" },
                 new FieldMetadata { Name = "upgradeItem", IsComplex = true },
                 new FieldMetadata { Name = "upgradeRecipe", IsComplex = true },
-                new FieldMetadata { Name = "itemResult", IsComplex = true }
+                new FieldMetadata { Name = "itemResult", IsComplex = true },
+                new FieldMetadata { Name = "neutralItemDropTime", IsComplex = true },
+                new FieldMetadata { Name = "neutralItemTier" }
             };
 
         protected override string TypeName { get { return "ItemStatType"; } } 
@@ -427,6 +429,26 @@ namespace STRATZ
         public ItemStatTypeQueryBuilder ExceptItemResult()
         {
             return ExceptField("itemResult");
+        }
+
+        public ItemStatTypeQueryBuilder WithNeutralItemDropTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("neutralItemDropTime", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public ItemStatTypeQueryBuilder ExceptNeutralItemDropTime()
+        {
+            return ExceptField("neutralItemDropTime");
+        }
+
+        public ItemStatTypeQueryBuilder WithNeutralItemTier(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("neutralItemTier", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public ItemStatTypeQueryBuilder ExceptNeutralItemTier()
+        {
+            return ExceptField("neutralItemTier");
         }
     }
 }

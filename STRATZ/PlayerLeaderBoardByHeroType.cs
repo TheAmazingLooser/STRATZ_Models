@@ -18,8 +18,7 @@ namespace STRATZ
         public long? SteamAccountId { get; set; }
         public SteamAccountType SteamAccount { get; set; }
         public byte? ImpAverage { get; set; }
-        public MatchPlayerRoleType? Role { get; set; }
-        public MatchLaneType? Lane { get; set; }
+        public MatchPlayerPositionType? Position { get; set; }
         public byte? Wins { get; set; }
         public byte? Losses { get; set; }
         public byte? WinStreak { get; set; }

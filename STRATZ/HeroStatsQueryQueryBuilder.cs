@@ -23,7 +23,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "itemFullPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemPurchaseTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemStartingPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemStartingPurchaseTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemBootPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemBootPurchaseTypeQueryBuilder) },
-                new FieldMetadata { Name = "highPerformance", IsComplex = true, QueryBuilderType = typeof(HeroHighPerformanceTypeQueryBuilder) },
+                new FieldMetadata { Name = "itemNeutral", IsComplex = true, QueryBuilderType = typeof(HeroNeutralItemTypeQueryBuilder) },
+                new FieldMetadata { Name = "laneOutcome", IsComplex = true, QueryBuilderType = typeof(HeroLaneOutcomeTypeQueryBuilder) },
                 new FieldMetadata { Name = "heroVsHeroMatchup", IsComplex = true, QueryBuilderType = typeof(HeroMatchupTypeQueryBuilder) },
                 new FieldMetadata { Name = "talent", IsComplex = true, QueryBuilderType = typeof(HeroAbilityTalentTypeQueryBuilder) },
                 new FieldMetadata { Name = "ratings", IsComplex = true, QueryBuilderType = typeof(HeroRatingTypeQueryBuilder) },
@@ -33,7 +34,10 @@ namespace STRATZ
                 new FieldMetadata { Name = "winWeek", IsComplex = true, QueryBuilderType = typeof(HeroWinWeekTypeQueryBuilder) },
                 new FieldMetadata { Name = "winMonth", IsComplex = true, QueryBuilderType = typeof(HeroWinMonthTypeQueryBuilder) },
                 new FieldMetadata { Name = "winGameVersion", IsComplex = true, QueryBuilderType = typeof(HeroWinGameVersionTypeQueryBuilder) },
-                new FieldMetadata { Name = "guide", IsComplex = true, QueryBuilderType = typeof(HeroGuideListTypeQueryBuilder) }
+                new FieldMetadata { Name = "guide", IsComplex = true, QueryBuilderType = typeof(HeroGuideListTypeQueryBuilder) },
+                new FieldMetadata { Name = "rampages", IsComplex = true, QueryBuilderType = typeof(HeroRampageObjectTypeQueryBuilder) },
+                new FieldMetadata { Name = "abilityMinLevel", IsComplex = true, QueryBuilderType = typeof(HeroAbilityMinTypeQueryBuilder) },
+                new FieldMetadata { Name = "abilityMaxLevel", IsComplex = true, QueryBuilderType = typeof(HeroAbilityMaxTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "HeroStatsQuery"; } } 
@@ -228,7 +232,7 @@ namespace STRATZ
             return ExceptField("itemBootPurchase");
         }
 
-        public HeroStatsQueryQueryBuilder WithHighPerformance(HeroHighPerformanceTypeQueryBuilder heroHighPerformanceTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public HeroStatsQueryQueryBuilder WithItemNeutral(HeroNeutralItemTypeQueryBuilder heroNeutralItemTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
@@ -241,18 +245,33 @@ namespace STRATZ
             if (positionIds != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
 
-            if (skip != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
-
-            if (take != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
-
-            return WithObjectField("highPerformance", alias, heroHighPerformanceTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("itemNeutral", alias, heroNeutralItemTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
-        public HeroStatsQueryQueryBuilder ExceptHighPerformance()
+        public HeroStatsQueryQueryBuilder ExceptItemNeutral()
         {
-            return ExceptField("highPerformance");
+            return ExceptField("itemNeutral");
+        }
+
+        public HeroStatsQueryQueryBuilder WithLaneOutcome(HeroLaneOutcomeTypeQueryBuilder heroLaneOutcomeTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            if (week != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
+
+            if (bracketBasicIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
+
+            if (positionIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
+
+            return WithObjectField("laneOutcome", alias, heroLaneOutcomeTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public HeroStatsQueryQueryBuilder ExceptLaneOutcome()
+        {
+            return ExceptField("laneOutcome");
         }
 
         public HeroStatsQueryQueryBuilder WithHeroVsHeroMatchup(HeroMatchupTypeQueryBuilder heroMatchupTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<int?> matchLimit = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
@@ -534,6 +553,63 @@ namespace STRATZ
         public HeroStatsQueryQueryBuilder ExceptGuide()
         {
             return ExceptField("guide");
+        }
+
+        public HeroStatsQueryQueryBuilder WithRampages(HeroRampageObjectTypeQueryBuilder heroRampageObjectTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<int?> week = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (week != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
+
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            return WithObjectField("rampages", alias, heroRampageObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public HeroStatsQueryQueryBuilder ExceptRampages()
+        {
+            return ExceptField("rampages");
+        }
+
+        public HeroStatsQueryQueryBuilder WithAbilityMinLevel(HeroAbilityMinTypeQueryBuilder heroAbilityMinTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            if (week != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
+
+            if (bracketBasicIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
+
+            if (positionIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
+
+            return WithObjectField("abilityMinLevel", alias, heroAbilityMinTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public HeroStatsQueryQueryBuilder ExceptAbilityMinLevel()
+        {
+            return ExceptField("abilityMinLevel");
+        }
+
+        public HeroStatsQueryQueryBuilder WithAbilityMaxLevel(HeroAbilityMaxTypeQueryBuilder heroAbilityMaxTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketHeroTimeDetail?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            if (week != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
+
+            if (bracketBasicIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
+
+            if (positionIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
+
+            return WithObjectField("abilityMaxLevel", alias, heroAbilityMaxTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public HeroStatsQueryQueryBuilder ExceptAbilityMaxLevel()
+        {
+            return ExceptField("abilityMaxLevel");
         }
     }
 }

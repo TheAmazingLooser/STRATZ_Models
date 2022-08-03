@@ -20,7 +20,8 @@ namespace STRATZ
         public HeroItemPurchaseType ItemFullPurchase { get; set; }
         public HeroItemStartingPurchaseType ItemStartingPurchase { get; set; }
         public HeroItemBootPurchaseType ItemBootPurchase { get; set; }
-        public HeroHighPerformanceType HighPerformance { get; set; }
+        public IList<HeroNeutralItemType> ItemNeutral { get; set; }
+        public IList<HeroLaneOutcomeType> LaneOutcome { get; set; }
         public HeroMatchupType HeroVsHeroMatchup { get; set; }
         public IList<HeroAbilityTalentType> Talent { get; set; }
         public HeroRatingType Ratings { get; set; }
@@ -31,5 +32,8 @@ namespace STRATZ
         public IList<HeroWinMonthType> WinMonth { get; set; }
         public IList<HeroWinGameVersionType> WinGameVersion { get; set; }
         public IList<HeroGuideListType> Guide { get; set; }
+        public IList<HeroRampageObjectType> Rampages { get; set; }
+        public IList<HeroAbilityMinType> AbilityMinLevel { get; set; }
+        public IList<HeroAbilityMaxType> AbilityMaxLevel { get; set; }
     }
 }

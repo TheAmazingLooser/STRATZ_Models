@@ -15,8 +15,8 @@ namespace STRATZ
     {
         public int? Time { get; set; }
         public long? MatchCount { get; set; }
-        public int? RemainingMatchCount { get; set; }
-        public decimal? Wins { get; set; }
+        public long? RemainingMatchCount { get; set; }
+        public long? WinCount { get; set; }
         public decimal? Mvp { get; set; }
         public decimal? TopCore { get; set; }
         public decimal? TopSupport { get; set; }

@@ -17,13 +17,14 @@ namespace STRATZ
         public short? HeroId2 { get; set; }
         public int? Week { get; set; }
         public RankBracketHeroTimeDetail? BracketBasic { get; set; }
+        public long? MatchCount { get; set; }
         public long? Count { get; set; }
         public long? Kills { get; set; }
         public long? Deaths { get; set; }
         public long? Assists { get; set; }
         public long? Networth { get; set; }
         public long? Duration { get; set; }
-        public long? Wins { get; set; }
+        public long? WinCount { get; set; }
         public long? FirstBloodTime { get; set; }
         public long? Cs { get; set; }
         public long? Dn { get; set; }

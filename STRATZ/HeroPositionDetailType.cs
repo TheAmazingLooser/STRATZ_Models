@@ -14,8 +14,8 @@ namespace STRATZ
     public partial class HeroPositionDetailType
     {
         public MatchPlayerPositionType? Position { get; set; }
-        public long? Count { get; set; }
-        public decimal? Wins { get; set; }
+        public long? MatchCount { get; set; }
+        public long? WinCount { get; set; }
         public decimal? Kills { get; set; }
         public decimal? Deaths { get; set; }
         public decimal? Assists { get; set; }

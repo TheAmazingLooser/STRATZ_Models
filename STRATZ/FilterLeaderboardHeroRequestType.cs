@@ -28,11 +28,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<RankBracket>>))]
         #endif
-        public QueryBuilderParameter<IList<object>> BracketIds
+        public QueryBuilderParameter<IList<RankBracket>> BracketIds
         {
-            get { return (QueryBuilderParameter<IList<object>>)_bracketIds.Value; }
+            get { return (QueryBuilderParameter<IList<RankBracket>>)_bracketIds.Value; }
             set { _bracketIds = new InputPropertyInfo { Name = "bracketIds", Value = value }; }
         }
 

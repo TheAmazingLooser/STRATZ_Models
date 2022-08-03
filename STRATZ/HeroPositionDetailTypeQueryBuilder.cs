@@ -17,8 +17,8 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "position" },
-                new FieldMetadata { Name = "count", IsComplex = true },
-                new FieldMetadata { Name = "wins", IsComplex = true },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
                 new FieldMetadata { Name = "kills", IsComplex = true },
                 new FieldMetadata { Name = "deaths", IsComplex = true },
                 new FieldMetadata { Name = "assists", IsComplex = true },
@@ -42,24 +42,24 @@ namespace STRATZ
             return ExceptField("position");
         }
 
-        public HeroPositionDetailTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroPositionDetailTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("count", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroPositionDetailTypeQueryBuilder ExceptCount()
+        public HeroPositionDetailTypeQueryBuilder ExceptMatchCount()
         {
-            return ExceptField("count");
+            return ExceptField("matchCount");
         }
 
-        public HeroPositionDetailTypeQueryBuilder WithWins(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroPositionDetailTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("wins", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroPositionDetailTypeQueryBuilder ExceptWins()
+        public HeroPositionDetailTypeQueryBuilder ExceptWinCount()
         {
-            return ExceptField("wins");
+            return ExceptField("winCount");
         }
 
         public HeroPositionDetailTypeQueryBuilder WithKills(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -11,17 +11,19 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class HeroAbilityTalentType
+    public partial class HeroLaneOutcomeType
     {
         public int? HeroId { get; set; }
         public int? Week { get; set; }
         public RankBracketHeroTimeDetail? BracketBasic { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
-        public int? AbilityId { get; set; }
         public long? MatchCount { get; set; }
+        public long? DrawCount { get; set; }
         public long? WinCount { get; set; }
-        public long? Time { get; set; }
-        public decimal? WinsAverage { get; set; }
-        public decimal? TimeAverage { get; set; }
+        public long? LossCount { get; set; }
+        public long? StompWinCount { get; set; }
+        public long? StompLossCount { get; set; }
+        public IList<HeroLaneOutcomeHeroObjectType> Partners { get; set; }
+        public IList<HeroLaneOutcomeHeroObjectType> Against { get; set; }
     }
 }

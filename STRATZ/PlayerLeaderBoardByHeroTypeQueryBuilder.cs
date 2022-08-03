@@ -21,8 +21,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "impAverage", IsComplex = true },
-                new FieldMetadata { Name = "role" },
-                new FieldMetadata { Name = "lane" },
+                new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "wins", IsComplex = true },
                 new FieldMetadata { Name = "losses", IsComplex = true },
                 new FieldMetadata { Name = "winStreak", IsComplex = true },
@@ -85,24 +84,14 @@ namespace STRATZ
             return ExceptField("impAverage");
         }
 
-        public PlayerLeaderBoardByHeroTypeQueryBuilder WithRole(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerLeaderBoardByHeroTypeQueryBuilder WithPosition(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("role", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("position", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerLeaderBoardByHeroTypeQueryBuilder ExceptRole()
+        public PlayerLeaderBoardByHeroTypeQueryBuilder ExceptPosition()
         {
-            return ExceptField("role");
-        }
-
-        public PlayerLeaderBoardByHeroTypeQueryBuilder WithLane(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("lane", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerLeaderBoardByHeroTypeQueryBuilder ExceptLane()
-        {
-            return ExceptField("lane");
+            return ExceptField("position");
         }
 
         public PlayerLeaderBoardByHeroTypeQueryBuilder WithWins(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

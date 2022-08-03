@@ -13,6 +13,7 @@ namespace STRATZ
 {
     public enum Damage
     {
+        [EnumMember(Value = "UNKNOWN")] Unknown,
         [EnumMember(Value = "PHYSICAL")] Physical,
         [EnumMember(Value = "MAGICAL")] Magical,
         [EnumMember(Value = "PURE")] Pure
