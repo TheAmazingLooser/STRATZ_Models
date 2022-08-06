@@ -1,19 +1,20 @@
 # STRATZ Models
-This repository provides parsed C# models for the STRATZ.com GraphQL-API. They can be used for deserializing responsed for the API.
+This repository provides parsed C# models for the STRATZ.com GraphQL-API. They can be used for deserializing responses from the STRATZ-API.
 All models are generated with nullable types in oder to support the nature of GraphQL and its possiblilty to select only a handfull of fields.
 
 # Updating Models
 The models are being updated daily by a program.
 It is advisable to poll this repository daily in order to keep in sync with the schema and not getting unexpected API-responses.
+I might add a CI to automatically release and push a NuGet-Packet once new models are available.
 
 # QueryBuilder
-The model-generator not only generated useable models but also generated so called `GraphQlQueryBuilder`.
+The model-generator not only generates useable models but also generates so called `GraphQlQueryBuilder`.
 
 **I highly recommend using those instead of fixed query-strings!**
 
 The benefits of using the `GraphQlQueryBuilder` are:
 * IDEs can provide you with IntelliSense (auto-completion).
-* Once the models are Updated, the current code of your `GraphQlQueryBuilder` will produce errors (*only incase of breaking changes*).
+* Once the models get updated, the current code of your `GraphQlQueryBuilder` will produce errors (*only incase of breaking changes*).
 * It will generate correct GraphQL-Query-Strings. Every time!
 * It works with necesarry and optional Query-Parameter out of the box.
 
@@ -23,6 +24,9 @@ Include the models in your source-code by cloning them into it.
 I would recommend doing this as a submodule[^submod] via:
 ```sh
 git submodule add https://github.com/TheAmazingLooser/STRATZ_Models
+```
+To update your submodules simply use
+```sh
 git submodule update
 ```
 
