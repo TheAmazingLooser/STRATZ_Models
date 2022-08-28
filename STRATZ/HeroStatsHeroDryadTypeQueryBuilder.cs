@@ -19,7 +19,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "heroId1", IsComplex = true },
                 new FieldMetadata { Name = "heroId2", IsComplex = true },
                 new FieldMetadata { Name = "week" },
-                new FieldMetadata { Name = "bracketBasic" },
+                new FieldMetadata { Name = "bracketBasicIds" },
                 new FieldMetadata { Name = "matchCount", IsComplex = true },
                 new FieldMetadata { Name = "count", IsComplex = true },
                 new FieldMetadata { Name = "kills", IsComplex = true },
@@ -77,14 +77,14 @@ namespace STRATZ
             return ExceptField("week");
         }
 
-        public HeroStatsHeroDryadTypeQueryBuilder WithBracketBasic(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroStatsHeroDryadTypeQueryBuilder WithBracketBasicIds(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("bracketBasic", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("bracketBasicIds", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroStatsHeroDryadTypeQueryBuilder ExceptBracketBasic()
+        public HeroStatsHeroDryadTypeQueryBuilder ExceptBracketBasicIds()
         {
-            return ExceptField("bracketBasic");
+            return ExceptField("bracketBasicIds");
         }
 
         public HeroStatsHeroDryadTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

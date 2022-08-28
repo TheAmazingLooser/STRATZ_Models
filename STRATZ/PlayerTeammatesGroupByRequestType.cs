@@ -20,6 +20,7 @@ namespace STRATZ
         private InputPropertyInfo _leagueId;
         private InputPropertyInfo _seriesId;
         private InputPropertyInfo _teamId;
+        private InputPropertyInfo _teamIdSteamAccount;
         private InputPropertyInfo _isParsed;
         private InputPropertyInfo _startDateTime;
         private InputPropertyInfo _endDateTime;
@@ -109,6 +110,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<int?>)_teamId.Value; }
             set { _teamId = new InputPropertyInfo { Name = "teamId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> TeamIdSteamAccount
+        {
+            get { return (QueryBuilderParameter<int?>)_teamIdSteamAccount.Value; }
+            set { _teamIdSteamAccount = new InputPropertyInfo { Name = "teamIdSteamAccount", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -363,6 +373,7 @@ namespace STRATZ
             if (_leagueId.Name != null) yield return _leagueId;
             if (_seriesId.Name != null) yield return _seriesId;
             if (_teamId.Name != null) yield return _teamId;
+            if (_teamIdSteamAccount.Name != null) yield return _teamIdSteamAccount;
             if (_isParsed.Name != null) yield return _isParsed;
             if (_startDateTime.Name != null) yield return _startDateTime;
             if (_endDateTime.Name != null) yield return _endDateTime;

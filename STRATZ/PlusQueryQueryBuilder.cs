@@ -64,7 +64,7 @@ namespace STRATZ
             return ExceptField("playerHeroHighlight");
         }
 
-        public PlusQueryQueryBuilder WithTeamHeroStatus(PlusHeroTeamStatusDetailTypeQueryBuilder plusHeroTeamStatusDetailTypeQueryBuilder, QueryBuilderParameter<RankBracketHeroTimeDetail> rankBracket, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlusQueryQueryBuilder WithTeamHeroStatus(PlusHeroTeamStatusDetailTypeQueryBuilder plusHeroTeamStatusDetailTypeQueryBuilder, QueryBuilderParameter<RankBracketBasicEnum> rankBracket, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "rankBracket", ArgumentValue = rankBracket} );

@@ -15,7 +15,7 @@ namespace STRATZ
     {
         public long? MatchId { get; set; }
         public MatchType Match { get; set; }
-        public int? Time { get; set; }
+        public short? Time { get; set; }
         public long? SteamAccountId { get; set; }
         public IList<object> HeroIds { get; set; }
         public SteamAccountType SteamAccount { get; set; }

@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class PlusHeroTeamStatusDetailType
     {
         public int? HeroId { get; set; }
-        public RankBracketHeroTimeDetail? BasicBracket { get; set; }
+        public RankBracketBasicEnum? BasicBracket { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
         public PlusHeroTeamStatusAveragesType Averages { get; set; }
     }

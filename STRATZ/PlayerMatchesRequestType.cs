@@ -36,6 +36,7 @@ namespace STRATZ
         private InputPropertyInfo _isParty;
         private InputPropertyInfo _hasAward;
         private InputPropertyInfo _withFriendSteamAccountIds;
+        private InputPropertyInfo _withEnemySteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
         private InputPropertyInfo _minGameVersionId;
         private InputPropertyInfo _maxGameVersionId;
@@ -254,6 +255,15 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
+        #endif
+        public QueryBuilderParameter<IList<object>> WithEnemySteamAccountIds
+        {
+            get { return (QueryBuilderParameter<IList<object>>)_withEnemySteamAccountIds.Value; }
+            set { _withEnemySteamAccountIds = new InputPropertyInfo { Name = "withEnemySteamAccountIds", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
         #endif
         public QueryBuilderParameter<IList<int>> WithFriendHeroIds
@@ -359,6 +369,7 @@ namespace STRATZ
             if (_isParty.Name != null) yield return _isParty;
             if (_hasAward.Name != null) yield return _hasAward;
             if (_withFriendSteamAccountIds.Name != null) yield return _withFriendSteamAccountIds;
+            if (_withEnemySteamAccountIds.Name != null) yield return _withEnemySteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
             if (_minGameVersionId.Name != null) yield return _minGameVersionId;
             if (_maxGameVersionId.Name != null) yield return _maxGameVersionId;

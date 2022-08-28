@@ -18,7 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "matchId", IsComplex = true },
                 new FieldMetadata { Name = "match", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
-                new FieldMetadata { Name = "time" },
+                new FieldMetadata { Name = "time", IsComplex = true },
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "heroIds", IsComplex = true },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }

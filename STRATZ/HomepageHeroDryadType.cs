@@ -15,7 +15,7 @@ namespace STRATZ
     {
         public short? MainHeroId { get; set; }
         public short? ComparisonHeroId { get; set; }
-        public RankBracketHeroTimeDetail? BracketBasic { get; set; }
+        public RankBracketBasicEnum? BracketBasicIds { get; set; }
         public long? MatchCount { get; set; }
         public long? WinCount { get; set; }
         public decimal? Synergy { get; set; }

@@ -70,7 +70,7 @@ namespace STRATZ
         public const string PlayerBehaviorActivity = "PlayerBehaviorActivity";
         public const string PlusLetterType = "PlusLetterType";
         public const string RankBracket = "RankBracket";
-        public const string RankBracketHeroTimeDetail = "RankBracketHeroTimeDetail";
+        public const string RankBracketBasicEnum = "RankBracketBasicEnum";
         public const string RuneAction = "RuneAction";
         public const string RuneEnums = "RuneEnums";
         public const string Search = "Search";
@@ -440,6 +440,7 @@ namespace STRATZ
         public const string CaptainJackIdentityProfileUpdateRequestType = "CaptainJackIdentityProfileUpdateRequestType";
         public const string DeleteProSteamAccountRequestType = "DeleteProSteamAccountRequestType";
         public const string FilterDireTide2020CustomMatchRequestType = "FilterDireTide2020CustomMatchRequestType";
+        public const string FilterHeroRampageType = "FilterHeroRampageType";
         public const string FilterLeaderboardGuildRequestType = "FilterLeaderboardGuildRequestType";
         public const string FilterLeaderboardHeroRequestType = "FilterLeaderboardHeroRequestType";
         public const string FilterMatchReplayUploadRequestType = "FilterMatchReplayUploadRequestType";
@@ -490,6 +491,7 @@ namespace STRATZ
                 { typeof(CaptainJackIdentityProfileUpdateRequestType), "CaptainJackIdentityProfileUpdateRequestType" },
                 { typeof(DeleteProSteamAccountRequestType), "DeleteProSteamAccountRequestType" },
                 { typeof(FilterDireTide2020CustomMatchRequestType), "FilterDireTide2020CustomMatchRequestType" },
+                { typeof(FilterHeroRampageType), "FilterHeroRampageType" },
                 { typeof(FilterLeaderboardGuildRequestType), "FilterLeaderboardGuildRequestType" },
                 { typeof(FilterLeaderboardHeroRequestType), "FilterLeaderboardHeroRequestType" },
                 { typeof(FilterMatchReplayUploadRequestType), "FilterMatchReplayUploadRequestType" },
