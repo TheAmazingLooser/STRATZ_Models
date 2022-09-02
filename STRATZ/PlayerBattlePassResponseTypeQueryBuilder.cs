@@ -18,14 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "players", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassTypeQueryBuilder) },
                 new FieldMetadata { Name = "playerCount" },
-                new FieldMetadata { Name = "accountsAbove2000Count" },
-                new FieldMetadata { Name = "accountsAbove1000Count" },
-                new FieldMetadata { Name = "accountsAbove500Count" },
-                new FieldMetadata { Name = "accountsAbove330Count" },
-                new FieldMetadata { Name = "accountsAbove275Count" },
-                new FieldMetadata { Name = "accountsAbove225Count" },
-                new FieldMetadata { Name = "accountsAbove195Count" },
-                new FieldMetadata { Name = "accountsAbove75Count" }
+                new FieldMetadata { Name = "levels", IsComplex = true }
             };
 
         protected override string TypeName { get { return "PlayerBattlePassResponseType"; } } 
@@ -52,84 +45,14 @@ namespace STRATZ
             return ExceptField("playerCount");
         }
 
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove2000Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerBattlePassResponseTypeQueryBuilder WithLevels(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("accountsAbove2000Count", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("levels", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove2000Count()
+        public PlayerBattlePassResponseTypeQueryBuilder ExceptLevels()
         {
-            return ExceptField("accountsAbove2000Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove1000Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove1000Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove1000Count()
-        {
-            return ExceptField("accountsAbove1000Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove500Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove500Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove500Count()
-        {
-            return ExceptField("accountsAbove500Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove330Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove330Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove330Count()
-        {
-            return ExceptField("accountsAbove330Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove275Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove275Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove275Count()
-        {
-            return ExceptField("accountsAbove275Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove225Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove225Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove225Count()
-        {
-            return ExceptField("accountsAbove225Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove195Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove195Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove195Count()
-        {
-            return ExceptField("accountsAbove195Count");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithAccountsAbove75Count(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove75Count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptAccountsAbove75Count()
-        {
-            return ExceptField("accountsAbove75Count");
+            return ExceptField("levels");
         }
     }
 }

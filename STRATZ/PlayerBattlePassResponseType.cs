@@ -15,13 +15,6 @@ namespace STRATZ
     {
         public IList<PlayerBattlePassType> Players { get; set; }
         public int? PlayerCount { get; set; }
-        public int? AccountsAbove2000Count { get; set; }
-        public int? AccountsAbove1000Count { get; set; }
-        public int? AccountsAbove500Count { get; set; }
-        public int? AccountsAbove330Count { get; set; }
-        public int? AccountsAbove275Count { get; set; }
-        public int? AccountsAbove225Count { get; set; }
-        public int? AccountsAbove195Count { get; set; }
-        public int? AccountsAbove75Count { get; set; }
+        public IList<int> Levels { get; set; }
     }
 }
