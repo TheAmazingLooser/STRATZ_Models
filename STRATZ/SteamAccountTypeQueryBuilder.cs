@@ -30,6 +30,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "primaryClanId", IsComplex = true },
                 new FieldMetadata { Name = "isDotaPlusSubscriber" },
                 new FieldMetadata { Name = "dotaAccountLevel", IsComplex = true },
+                new FieldMetadata { Name = "rankShift", IsComplex = true },
                 new FieldMetadata { Name = "isAnonymous" },
                 new FieldMetadata { Name = "isStratzAnonymous" },
                 new FieldMetadata { Name = "seasonRank", IsComplex = true },
@@ -184,6 +185,16 @@ namespace STRATZ
         public SteamAccountTypeQueryBuilder ExceptDotaAccountLevel()
         {
             return ExceptField("dotaAccountLevel");
+        }
+
+        public SteamAccountTypeQueryBuilder WithRankShift(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("rankShift", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public SteamAccountTypeQueryBuilder ExceptRankShift()
+        {
+            return ExceptField("rankShift");
         }
 
         public SteamAccountTypeQueryBuilder WithIsAnonymous(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

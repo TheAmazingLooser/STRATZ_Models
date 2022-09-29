@@ -27,6 +27,7 @@ namespace STRATZ
         public long? PrimaryClanId { get; set; }
         public bool? IsDotaPlusSubscriber { get; set; }
         public short? DotaAccountLevel { get; set; }
+        public short? RankShift { get; set; }
         public bool? IsAnonymous { get; set; }
         public bool? IsStratzAnonymous { get; set; }
         public byte? SeasonRank { get; set; }
