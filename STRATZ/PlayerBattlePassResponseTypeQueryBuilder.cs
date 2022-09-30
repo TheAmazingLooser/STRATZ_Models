@@ -25,9 +25,16 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public PlayerBattlePassResponseTypeQueryBuilder WithPlayers(PlayerBattlePassTypeQueryBuilder playerBattlePassTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerBattlePassResponseTypeQueryBuilder WithPlayers(PlayerBattlePassTypeQueryBuilder playerBattlePassTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
-            return WithObjectField("players", alias, playerBattlePassTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (take != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
+
+            if (skip != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
+
+            return WithObjectField("players", alias, playerBattlePassTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public PlayerBattlePassResponseTypeQueryBuilder ExceptPlayers()

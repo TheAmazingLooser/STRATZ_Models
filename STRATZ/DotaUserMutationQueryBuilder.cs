@@ -19,7 +19,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "readAllFeed" },
                 new FieldMetadata { Name = "validateEmail" },
                 new FieldMetadata { Name = "updateTutorial", IsComplex = true },
-                new FieldMetadata { Name = "emailUnsubscribe", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
+                new FieldMetadata { Name = "emailUnsubscribe" },
                 new FieldMetadata { Name = "updateProfile" },
                 new FieldMetadata { Name = "followPlayer" },
                 new FieldMetadata { Name = "unfollowPlayer" },
@@ -70,9 +70,9 @@ namespace STRATZ
             return ExceptField("updateTutorial");
         }
 
-        public DotaUserMutationQueryBuilder WithEmailUnsubscribe(UserHomepageTypeQueryBuilder userHomepageTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public DotaUserMutationQueryBuilder WithEmailUnsubscribe(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("emailUnsubscribe", alias, userHomepageTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("emailUnsubscribe", alias, new GraphQlDirective[] { include, skip });
         }
 
         public DotaUserMutationQueryBuilder ExceptEmailUnsubscribe()

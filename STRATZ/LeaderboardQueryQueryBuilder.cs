@@ -90,19 +90,13 @@ namespace STRATZ
             return ExceptField("dotaPlusWeek");
         }
 
-        public LeaderboardQueryQueryBuilder WithBattlePass(PlayerBattlePassResponseTypeQueryBuilder playerBattlePassResponseTypeQueryBuilder, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public LeaderboardQueryQueryBuilder WithBattlePass(PlayerBattlePassResponseTypeQueryBuilder playerBattlePassResponseTypeQueryBuilder, QueryBuilderParameter<object> eventId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (eventId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "eventId", ArgumentValue = eventId} );
 
-            if (skip != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
-
-            if (take != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
-
-            return WithObjectField("battlePass", alias, playerBattlePassResponseTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("battlePass", alias, playerBattlePassResponseTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public LeaderboardQueryQueryBuilder ExceptBattlePass()
