@@ -17,7 +17,6 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "players", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassTypeQueryBuilder) },
-                new FieldMetadata { Name = "playerCount" },
                 new FieldMetadata { Name = "levels", IsComplex = true }
             };
 
@@ -40,16 +39,6 @@ namespace STRATZ
         public PlayerBattlePassResponseTypeQueryBuilder ExceptPlayers()
         {
             return ExceptField("players");
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder WithPlayerCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("playerCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassResponseTypeQueryBuilder ExceptPlayerCount()
-        {
-            return ExceptField("playerCount");
         }
 
         public PlayerBattlePassResponseTypeQueryBuilder WithLevels(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

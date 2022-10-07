@@ -16,8 +16,8 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "activity", IsComplex = true },
                 new FieldMetadata { Name = "rating" },
                 new FieldMetadata { Name = "matchCount" },
                 new FieldMetadata { Name = "winCount" },
@@ -29,6 +29,16 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
+        public PlayerCoachingLeaderboardTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public PlayerCoachingLeaderboardTypeQueryBuilder ExceptSteamAccountId()
+        {
+            return ExceptField("steamAccountId");
+        }
+
         public PlayerCoachingLeaderboardTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
@@ -37,16 +47,6 @@ namespace STRATZ
         public PlayerCoachingLeaderboardTypeQueryBuilder ExceptSteamAccount()
         {
             return ExceptField("steamAccount");
-        }
-
-        public PlayerCoachingLeaderboardTypeQueryBuilder WithActivity(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("activity", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerCoachingLeaderboardTypeQueryBuilder ExceptActivity()
-        {
-            return ExceptField("activity");
         }
 
         public PlayerCoachingLeaderboardTypeQueryBuilder WithRating(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

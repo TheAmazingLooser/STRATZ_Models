@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class SteamAccountBattlePassType
     {
-        public long? SteamId { get; set; }
+        public long? SteamAccountId { get; set; }
         public byte? EventId { get; set; }
         public int? Level { get; set; }
     }

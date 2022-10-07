@@ -17,18 +17,23 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "players", IsComplex = true, QueryBuilderType = typeof(PlayerCoachingLeaderboardTypeQueryBuilder) },
-                new FieldMetadata { Name = "accounts" },
-                new FieldMetadata { Name = "accountsAbove500" },
-                new FieldMetadata { Name = "accountsAbove2500" }
+                new FieldMetadata { Name = "levels", IsComplex = true }
             };
 
         protected override string TypeName { get { return "PlayerCoachingLeaderboardResponseType"; } } 
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithPlayers(PlayerCoachingLeaderboardTypeQueryBuilder playerCoachingLeaderboardTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithPlayers(PlayerCoachingLeaderboardTypeQueryBuilder playerCoachingLeaderboardTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
-            return WithObjectField("players", alias, playerCoachingLeaderboardTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (take != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
+
+            if (skip != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
+
+            return WithObjectField("players", alias, playerCoachingLeaderboardTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public PlayerCoachingLeaderboardResponseTypeQueryBuilder ExceptPlayers()
@@ -36,34 +41,14 @@ namespace STRATZ
             return ExceptField("players");
         }
 
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithAccounts(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithLevels(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("accounts", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("levels", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder ExceptAccounts()
+        public PlayerCoachingLeaderboardResponseTypeQueryBuilder ExceptLevels()
         {
-            return ExceptField("accounts");
-        }
-
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithAccountsAbove500(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove500", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder ExceptAccountsAbove500()
-        {
-            return ExceptField("accountsAbove500");
-        }
-
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder WithAccountsAbove2500(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("accountsAbove2500", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerCoachingLeaderboardResponseTypeQueryBuilder ExceptAccountsAbove2500()
-        {
-            return ExceptField("accountsAbove2500");
+            return ExceptField("levels");
         }
     }
 }

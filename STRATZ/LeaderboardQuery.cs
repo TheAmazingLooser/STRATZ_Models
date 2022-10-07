@@ -18,6 +18,7 @@ namespace STRATZ
         public IList<HeroDotaPlusLeaderboardRankType> DotaPlusTopLevels { get; set; }
         public IList<DotaPlusWeekType> DotaPlusWeek { get; set; }
         public PlayerBattlePassResponseType BattlePass { get; set; }
+        public IList<PlayerBattlePassGroupByType> BattlePassGroupBy { get; set; }
         public PlayerCoachingLeaderboardResponseType Coaching { get; set; }
         public IList<GuildType> Guild { get; set; }
         public IList<PlayerLeaderBoardByHeroType> Hero { get; set; }

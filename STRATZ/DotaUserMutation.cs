@@ -16,7 +16,7 @@ namespace STRATZ
         public bool? ReadAllFeed { get; set; }
         public bool? ValidateEmail { get; set; }
         public IList<object> UpdateTutorial { get; set; }
-        public bool? EmailUnsubscribe { get; set; }
+        public bool? UnsubscribeEmail { get; set; }
         public bool? UpdateProfile { get; set; }
         public bool? FollowPlayer { get; set; }
         public bool? UnfollowPlayer { get; set; }

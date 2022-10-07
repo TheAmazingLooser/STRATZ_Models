@@ -34,6 +34,7 @@ namespace STRATZ
         public short? SeasonLeaderboardRank { get; set; }
         public byte? SeasonLeaderboardDivisionId { get; set; }
         public ProSteamAccountType ProSteamAccount { get; set; }
+        public ProSteamAccountType Activity { get; set; }
         public byte? SmurfFlag { get; set; }
         public long? LastMatchDateTime { get; set; }
         public byte? LastMatchRegionId { get; set; }

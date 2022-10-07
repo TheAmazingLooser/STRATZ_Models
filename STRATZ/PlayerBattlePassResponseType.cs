@@ -14,7 +14,6 @@ namespace STRATZ
     public partial class PlayerBattlePassResponseType
     {
         public IList<PlayerBattlePassType> Players { get; set; }
-        public int? PlayerCount { get; set; }
         public IList<int> Levels { get; set; }
     }
 }

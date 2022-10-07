@@ -16,14 +16,24 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "activity", IsComplex = true },
                 new FieldMetadata { Name = "level" }
             };
 
         protected override string TypeName { get { return "PlayerBattlePassType"; } } 
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
+
+        public PlayerBattlePassTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public PlayerBattlePassTypeQueryBuilder ExceptSteamAccountId()
+        {
+            return ExceptField("steamAccountId");
+        }
 
         public PlayerBattlePassTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
@@ -33,16 +43,6 @@ namespace STRATZ
         public PlayerBattlePassTypeQueryBuilder ExceptSteamAccount()
         {
             return ExceptField("steamAccount");
-        }
-
-        public PlayerBattlePassTypeQueryBuilder WithActivity(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("activity", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerBattlePassTypeQueryBuilder ExceptActivity()
-        {
-            return ExceptField("activity");
         }
 
         public PlayerBattlePassTypeQueryBuilder WithLevel(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

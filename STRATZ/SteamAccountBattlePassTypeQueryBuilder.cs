@@ -16,7 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "steamId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "eventId", IsComplex = true },
                 new FieldMetadata { Name = "level" }
             };
@@ -25,14 +25,14 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public SteamAccountBattlePassTypeQueryBuilder WithSteamId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public SteamAccountBattlePassTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("steamId", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public SteamAccountBattlePassTypeQueryBuilder ExceptSteamId()
+        public SteamAccountBattlePassTypeQueryBuilder ExceptSteamAccountId()
         {
-            return ExceptField("steamId");
+            return ExceptField("steamAccountId");
         }
 
         public SteamAccountBattlePassTypeQueryBuilder WithEventId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

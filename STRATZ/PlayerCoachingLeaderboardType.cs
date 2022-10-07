@@ -13,8 +13,8 @@ namespace STRATZ
 {
     public partial class PlayerCoachingLeaderboardType
     {
+        public long? SteamAccountId { get; set; }
         public SteamAccountType SteamAccount { get; set; }
-        public byte? Activity { get; set; }
         public int? Rating { get; set; }
         public int? MatchCount { get; set; }
         public int? WinCount { get; set; }

@@ -37,6 +37,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "seasonLeaderboardRank", IsComplex = true },
                 new FieldMetadata { Name = "seasonLeaderboardDivisionId", IsComplex = true },
                 new FieldMetadata { Name = "proSteamAccount", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) },
+                new FieldMetadata { Name = "activity", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "smurfFlag", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchRegionId", IsComplex = true },
@@ -255,6 +256,16 @@ namespace STRATZ
         public SteamAccountTypeQueryBuilder ExceptProSteamAccount()
         {
             return ExceptField("proSteamAccount");
+        }
+
+        public SteamAccountTypeQueryBuilder WithActivity(ProSteamAccountTypeQueryBuilder proSteamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("activity", alias, proSteamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public SteamAccountTypeQueryBuilder ExceptActivity()
+        {
+            return ExceptField("activity");
         }
 
         public SteamAccountTypeQueryBuilder WithSmurfFlag(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -67,6 +67,7 @@ namespace STRATZ
         public const string MatchPlayerTeamPickOrderType = "MatchPlayerTeamPickOrderType";
         public const string NeutralItemTierEnum = "NeutralItemTierEnum";
         public const string PatchNoteType = "PatchNoteType";
+        public const string PlayerBattlePassGroupByEnum = "PlayerBattlePassGroupByEnum";
         public const string PlayerBehaviorActivity = "PlayerBehaviorActivity";
         public const string PlusLetterType = "PlusLetterType";
         public const string RankBracket = "RankBracket";
@@ -341,6 +342,7 @@ namespace STRATZ
         public const string PlayerActivitySummaryHeroType = "PlayerActivitySummaryHeroType";
         public const string PlayerActivitySummaryType = "PlayerActivitySummaryType";
         public const string PlayerBadgeType = "PlayerBadgeType";
+        public const string PlayerBattlePassGroupByType = "PlayerBattlePassGroupByType";
         public const string PlayerBattlePassResponseType = "PlayerBattlePassResponseType";
         public const string PlayerBattlePassType = "PlayerBattlePassType";
         public const string PlayerBreakdownObjectType = "PlayerBreakdownObjectType";

@@ -11,10 +11,11 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class PlayerBattlePassType
+    public partial class PlayerBattlePassGroupByType
     {
-        public long? SteamAccountId { get; set; }
-        public SteamAccountType SteamAccount { get; set; }
-        public int? Level { get; set; }
+        public string Id { get; set; }
+        public long? PlayerCount { get; set; }
+        public long? SumLevels { get; set; }
+        public long? PlayerCountAt1000 { get; set; }
     }
 }

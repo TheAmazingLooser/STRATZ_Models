@@ -11,10 +11,9 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class PlayerBattlePassType
+    public enum PlayerBattlePassGroupByEnum
     {
-        public long? SteamAccountId { get; set; }
-        public SteamAccountType SteamAccount { get; set; }
-        public int? Level { get; set; }
+        [EnumMember(Value = "COUNTRY_CODE")] CountryCode,
+        [EnumMember(Value = "BRACKET")] Bracket
     }
 }

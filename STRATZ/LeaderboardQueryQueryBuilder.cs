@@ -21,6 +21,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "dotaPlusTopLevels", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlusWeek", IsComplex = true, QueryBuilderType = typeof(DotaPlusWeekTypeQueryBuilder) },
                 new FieldMetadata { Name = "battlePass", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassResponseTypeQueryBuilder) },
+                new FieldMetadata { Name = "battlePassGroupBy", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassGroupByTypeQueryBuilder) },
                 new FieldMetadata { Name = "coaching", IsComplex = true, QueryBuilderType = typeof(PlayerCoachingLeaderboardResponseTypeQueryBuilder) },
                 new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildTypeQueryBuilder) },
                 new FieldMetadata { Name = "hero", IsComplex = true, QueryBuilderType = typeof(PlayerLeaderBoardByHeroTypeQueryBuilder) }
@@ -90,11 +91,17 @@ namespace STRATZ
             return ExceptField("dotaPlusWeek");
         }
 
-        public LeaderboardQueryQueryBuilder WithBattlePass(PlayerBattlePassResponseTypeQueryBuilder playerBattlePassResponseTypeQueryBuilder, QueryBuilderParameter<object> eventId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public LeaderboardQueryQueryBuilder WithBattlePass(PlayerBattlePassResponseTypeQueryBuilder playerBattlePassResponseTypeQueryBuilder, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<string> countryCode = null, QueryBuilderParameter<IEnumerable<int?>> levels = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (eventId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "eventId", ArgumentValue = eventId} );
+
+            if (countryCode != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "countryCode", ArgumentValue = countryCode} );
+
+            if (levels != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "levels", ArgumentValue = levels} );
 
             return WithObjectField("battlePass", alias, playerBattlePassResponseTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
@@ -104,16 +111,31 @@ namespace STRATZ
             return ExceptField("battlePass");
         }
 
-        public LeaderboardQueryQueryBuilder WithCoaching(PlayerCoachingLeaderboardResponseTypeQueryBuilder playerCoachingLeaderboardResponseTypeQueryBuilder, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public LeaderboardQueryQueryBuilder WithBattlePassGroupBy(PlayerBattlePassGroupByTypeQueryBuilder playerBattlePassGroupByTypeQueryBuilder, QueryBuilderParameter<PlayerBattlePassGroupByEnum> groupBy, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<string> countryCode = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
-            if (skip != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "groupBy", ArgumentValue = groupBy} );
+            if (eventId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "eventId", ArgumentValue = eventId} );
 
-            if (take != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
+            if (countryCode != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "countryCode", ArgumentValue = countryCode} );
 
-            return WithObjectField("coaching", alias, playerCoachingLeaderboardResponseTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("battlePassGroupBy", alias, playerBattlePassGroupByTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public LeaderboardQueryQueryBuilder ExceptBattlePassGroupBy()
+        {
+            return ExceptField("battlePassGroupBy");
+        }
+
+        public LeaderboardQueryQueryBuilder WithCoaching(PlayerCoachingLeaderboardResponseTypeQueryBuilder playerCoachingLeaderboardResponseTypeQueryBuilder, QueryBuilderParameter<IEnumerable<int?>> levels = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (levels != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "levels", ArgumentValue = levels} );
+
+            return WithObjectField("coaching", alias, playerCoachingLeaderboardResponseTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public LeaderboardQueryQueryBuilder ExceptCoaching()

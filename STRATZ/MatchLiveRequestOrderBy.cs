@@ -15,6 +15,7 @@ namespace STRATZ
     {
         [EnumMember(Value = "GAME_TIME")] GameTime,
         [EnumMember(Value = "MATCH_ID")] MatchId,
-        [EnumMember(Value = "SPECTATOR_COUNT")] SpectatorCount
+        [EnumMember(Value = "SPECTATOR_COUNT")] SpectatorCount,
+        [EnumMember(Value = "AVERAGE_RANK")] AverageRank
     }
 }

@@ -13,9 +13,7 @@ namespace STRATZ
 {
     public partial class PlayerCoachingLeaderboardResponseType
     {
-        public PlayerCoachingLeaderboardType Players { get; set; }
-        public int? Accounts { get; set; }
-        public int? AccountsAbove500 { get; set; }
-        public int? AccountsAbove2500 { get; set; }
+        public IList<PlayerCoachingLeaderboardType> Players { get; set; }
+        public IList<int> Levels { get; set; }
     }
 }
