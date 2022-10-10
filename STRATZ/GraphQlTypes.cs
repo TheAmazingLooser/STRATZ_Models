@@ -98,6 +98,9 @@ namespace STRATZ
         public const string AdminMutation = "AdminMutation";
         public const string AdminQuery = "AdminQuery";
         public const string AssistDetailType = "AssistDetailType";
+        public const string BattlepassPredictionHeroType = "BattlepassPredictionHeroType";
+        public const string BattlepassPredictionPlayerType = "BattlepassPredictionPlayerType";
+        public const string BattlepassPredictionTeamType = "BattlepassPredictionTeamType";
         public const string BlogMetaTagInfoType = "BlogMetaTagInfoType";
         public const string BlogMetaTagType = "BlogMetaTagType";
         public const string BlogType = "BlogType";
@@ -331,6 +334,7 @@ namespace STRATZ
         public const string NpcStatType = "NpcStatType";
         public const string NpcType = "NpcType";
         public const string PageAghanimQuery = "PageAghanimQuery";
+        public const string PageBattlepassQuery = "PageBattlepassQuery";
         public const string PageDireTide2020Query = "PageDireTide2020Query";
         public const string PageLeaguesQuery = "PageLeaguesQuery";
         public const string PageMatchesQuery = "PageMatchesQuery";

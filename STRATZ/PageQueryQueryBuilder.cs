@@ -22,7 +22,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "leagues", IsComplex = true, QueryBuilderType = typeof(PageLeaguesQueryQueryBuilder) },
                 new FieldMetadata { Name = "aghanim", IsComplex = true, QueryBuilderType = typeof(PageAghanimQueryQueryBuilder) },
                 new FieldMetadata { Name = "imp", IsComplex = true, QueryBuilderType = typeof(ImpQueryQueryBuilder) },
-                new FieldMetadata { Name = "direTide2020", IsComplex = true, QueryBuilderType = typeof(PageDireTide2020QueryQueryBuilder) }
+                new FieldMetadata { Name = "direTide2020", IsComplex = true, QueryBuilderType = typeof(PageDireTide2020QueryQueryBuilder) },
+                new FieldMetadata { Name = "battlePass", IsComplex = true, QueryBuilderType = typeof(PageBattlepassQueryQueryBuilder) }
             };
 
         protected override string TypeName { get { return "PageQuery"; } } 
@@ -99,6 +100,16 @@ namespace STRATZ
         public PageQueryQueryBuilder ExceptDireTide2020()
         {
             return ExceptField("direTide2020");
+        }
+
+        public PageQueryQueryBuilder WithBattlePass(PageBattlepassQueryQueryBuilder pageBattlepassQueryQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("battlePass", alias, pageBattlepassQueryQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public PageQueryQueryBuilder ExceptBattlePass()
+        {
+            return ExceptField("battlePass");
         }
     }
 }
