@@ -16,5 +16,6 @@ namespace STRATZ
         public IList<BattlepassPredictionHeroType> PredictionsHero { get; set; }
         public IList<BattlepassPredictionTeamType> PredictionsTeams { get; set; }
         public IList<BattlepassPredictionPlayerType> PredictionsPlayers { get; set; }
+        public BattlepassPredictionTournamentType PredictionsTournament { get; set; }
     }
 }

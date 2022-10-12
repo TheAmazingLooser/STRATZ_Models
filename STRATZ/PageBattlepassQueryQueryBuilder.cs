@@ -18,7 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "predictionsHero", IsComplex = true, QueryBuilderType = typeof(BattlepassPredictionHeroTypeQueryBuilder) },
                 new FieldMetadata { Name = "predictionsTeams", IsComplex = true, QueryBuilderType = typeof(BattlepassPredictionTeamTypeQueryBuilder) },
-                new FieldMetadata { Name = "predictionsPlayers", IsComplex = true, QueryBuilderType = typeof(BattlepassPredictionPlayerTypeQueryBuilder) }
+                new FieldMetadata { Name = "predictionsPlayers", IsComplex = true, QueryBuilderType = typeof(BattlepassPredictionPlayerTypeQueryBuilder) },
+                new FieldMetadata { Name = "predictionsTournament", IsComplex = true, QueryBuilderType = typeof(BattlepassPredictionTournamentTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "PageBattlepassQuery"; } } 
@@ -61,6 +62,19 @@ namespace STRATZ
         public PageBattlepassQueryQueryBuilder ExceptPredictionsPlayers()
         {
             return ExceptField("predictionsPlayers");
+        }
+
+        public PageBattlepassQueryQueryBuilder WithPredictionsTournament(BattlepassPredictionTournamentTypeQueryBuilder battlepassPredictionTournamentTypeQueryBuilder, QueryBuilderParameter<IEnumerable<int?>> teamIds, QueryBuilderParameter<IEnumerable<int?>> leagueIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "teamIds", ArgumentValue = teamIds} );
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "leagueIds", ArgumentValue = leagueIds} );
+            return WithObjectField("predictionsTournament", alias, battlepassPredictionTournamentTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public PageBattlepassQueryQueryBuilder ExceptPredictionsTournament()
+        {
+            return ExceptField("predictionsTournament");
         }
     }
 }

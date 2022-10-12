@@ -45,6 +45,8 @@ namespace STRATZ
         [EnumMember(Value = "STEAM_ACCOUNT_ID_AGAINST_TEAM")] SteamAccountIdAgainstTeam,
         [EnumMember(Value = "LEAGUE_ID")] LeagueId,
         [EnumMember(Value = "POSITION")] Position,
-        [EnumMember(Value = "DATE_DAY")] DateDay
+        [EnumMember(Value = "DATE_DAY")] DateDay,
+        [EnumMember(Value = "TOTAL_KILLS")] TotalKills,
+        [EnumMember(Value = "GOLD_PER_MINUTE")] GoldPerMinute
     }
 }

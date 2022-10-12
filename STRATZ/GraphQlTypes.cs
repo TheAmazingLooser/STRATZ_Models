@@ -99,8 +99,10 @@ namespace STRATZ
         public const string AdminQuery = "AdminQuery";
         public const string AssistDetailType = "AssistDetailType";
         public const string BattlepassPredictionHeroType = "BattlepassPredictionHeroType";
+        public const string BattlepassPredictionIdValueType = "BattlepassPredictionIdValueType";
         public const string BattlepassPredictionPlayerType = "BattlepassPredictionPlayerType";
         public const string BattlepassPredictionTeamType = "BattlepassPredictionTeamType";
+        public const string BattlepassPredictionTournamentType = "BattlepassPredictionTournamentType";
         public const string BlogMetaTagInfoType = "BlogMetaTagInfoType";
         public const string BlogMetaTagType = "BlogMetaTagType";
         public const string BlogType = "BlogType";
