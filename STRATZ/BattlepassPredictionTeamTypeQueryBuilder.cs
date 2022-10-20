@@ -21,7 +21,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "matchCount" },
                 new FieldMetadata { Name = "mostKills" },
                 new FieldMetadata { Name = "killAvg" },
-                new FieldMetadata { Name = "deathAvg" },
+                new FieldMetadata { Name = "leastDeaths" },
                 new FieldMetadata { Name = "mostAssists" },
                 new FieldMetadata { Name = "longestGameSeconds" },
                 new FieldMetadata { Name = "shortestGameSeconds" },
@@ -83,14 +83,14 @@ namespace STRATZ
             return ExceptField("killAvg");
         }
 
-        public BattlepassPredictionTeamTypeQueryBuilder WithDeathAvg(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public BattlepassPredictionTeamTypeQueryBuilder WithLeastDeaths(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("deathAvg", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("leastDeaths", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public BattlepassPredictionTeamTypeQueryBuilder ExceptDeathAvg()
+        public BattlepassPredictionTeamTypeQueryBuilder ExceptLeastDeaths()
         {
-            return ExceptField("deathAvg");
+            return ExceptField("leastDeaths");
         }
 
         public BattlepassPredictionTeamTypeQueryBuilder WithMostAssists(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

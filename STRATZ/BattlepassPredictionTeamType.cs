@@ -16,10 +16,10 @@ namespace STRATZ
         public int? TeamId { get; set; }
         public TeamType Team { get; set; }
         public int? MatchCount { get; set; }
-        public int? MostKills { get; set; }
+        public decimal? MostKills { get; set; }
         public decimal? KillAvg { get; set; }
-        public decimal? DeathAvg { get; set; }
-        public int? MostAssists { get; set; }
+        public decimal? LeastDeaths { get; set; }
+        public decimal? MostAssists { get; set; }
         public int? LongestGameSeconds { get; set; }
         public int? ShortestGameSeconds { get; set; }
         public decimal? GameSecondsAvg { get; set; }

@@ -38,11 +38,14 @@ namespace STRATZ
             return ExceptField("predictionsHero");
         }
 
-        public PageBattlepassQueryQueryBuilder WithPredictionsTeams(BattlepassPredictionTeamTypeQueryBuilder battlepassPredictionTeamTypeQueryBuilder, QueryBuilderParameter<IEnumerable<int?>> teamIds, QueryBuilderParameter<IEnumerable<int?>> leagueIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageBattlepassQueryQueryBuilder WithPredictionsTeams(BattlepassPredictionTeamTypeQueryBuilder battlepassPredictionTeamTypeQueryBuilder, QueryBuilderParameter<IEnumerable<int?>> teamIds, QueryBuilderParameter<IEnumerable<int?>> leagueIds, QueryBuilderParameter<bool?> averaged = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "teamIds", ArgumentValue = teamIds} );
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "leagueIds", ArgumentValue = leagueIds} );
+            if (averaged != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "averaged", ArgumentValue = averaged} );
+
             return WithObjectField("predictionsTeams", alias, battlepassPredictionTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
