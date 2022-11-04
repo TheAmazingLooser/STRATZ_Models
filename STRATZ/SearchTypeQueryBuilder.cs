@@ -23,7 +23,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "proPlayers", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "casters", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildTypeQueryBuilder) },
-                new FieldMetadata { Name = "direTideMatches", IsComplex = true, QueryBuilderType = typeof(DireTide2020CustomGameMatchTypeQueryBuilder) }
+                new FieldMetadata { Name = "direTideMatches", IsComplex = true, QueryBuilderType = typeof(DireTideCustomGameMatchTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "SearchType"; } } 
@@ -100,9 +100,9 @@ namespace STRATZ
             return ExceptField("guild");
         }
 
-        public SearchTypeQueryBuilder WithDireTideMatches(DireTide2020CustomGameMatchTypeQueryBuilder direTide2020CustomGameMatchTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public SearchTypeQueryBuilder WithDireTideMatches(DireTideCustomGameMatchTypeQueryBuilder direTideCustomGameMatchTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("direTideMatches", alias, direTide2020CustomGameMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithObjectField("direTideMatches", alias, direTideCustomGameMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
         public SearchTypeQueryBuilder ExceptDireTideMatches()

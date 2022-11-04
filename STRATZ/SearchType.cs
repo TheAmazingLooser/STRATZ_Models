@@ -20,6 +20,6 @@ namespace STRATZ
         public IList<SteamAccountType> ProPlayers { get; set; }
         public IList<SteamAccountType> Casters { get; set; }
         public GuildType Guild { get; set; }
-        public IList<DireTide2020CustomGameMatchType> DireTideMatches { get; set; }
+        public IList<DireTideCustomGameMatchType> DireTideMatches { get; set; }
     }
 }

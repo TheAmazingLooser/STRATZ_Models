@@ -23,6 +23,7 @@ namespace STRATZ
         [EnumMember(Value = "RANKED")] Ranked,
         [EnumMember(Value = "SOLO_MID")] SoloMid,
         [EnumMember(Value = "BATTLE_CUP")] BattleCup,
-        [EnumMember(Value = "EVENT")] Event
+        [EnumMember(Value = "EVENT")] Event,
+        [EnumMember(Value = "DIRE_TIDE")] DireTide
     }
 }

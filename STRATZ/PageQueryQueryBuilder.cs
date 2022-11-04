@@ -22,7 +22,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "leagues", IsComplex = true, QueryBuilderType = typeof(PageLeaguesQueryQueryBuilder) },
                 new FieldMetadata { Name = "aghanim", IsComplex = true, QueryBuilderType = typeof(PageAghanimQueryQueryBuilder) },
                 new FieldMetadata { Name = "imp", IsComplex = true, QueryBuilderType = typeof(ImpQueryQueryBuilder) },
-                new FieldMetadata { Name = "direTide2020", IsComplex = true, QueryBuilderType = typeof(PageDireTide2020QueryQueryBuilder) },
+                new FieldMetadata { Name = "direTide", IsComplex = true, QueryBuilderType = typeof(PageDireTideQueryQueryBuilder) },
                 new FieldMetadata { Name = "battlePass", IsComplex = true, QueryBuilderType = typeof(PageBattlepassQueryQueryBuilder) }
             };
 
@@ -92,14 +92,14 @@ namespace STRATZ
             return ExceptField("imp");
         }
 
-        public PageQueryQueryBuilder WithDireTide2020(PageDireTide2020QueryQueryBuilder pageDireTide2020QueryQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageQueryQueryBuilder WithDireTide(PageDireTideQueryQueryBuilder pageDireTideQueryQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("direTide2020", alias, pageDireTide2020QueryQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithObjectField("direTide", alias, pageDireTideQueryQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public PageQueryQueryBuilder ExceptDireTide2020()
+        public PageQueryQueryBuilder ExceptDireTide()
         {
-            return ExceptField("direTide2020");
+            return ExceptField("direTide");
         }
 
         public PageQueryQueryBuilder WithBattlePass(PageBattlepassQueryQueryBuilder pageBattlepassQueryQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

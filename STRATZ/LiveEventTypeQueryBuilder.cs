@@ -99,14 +99,14 @@ namespace STRATZ
             return WithFragment(liveEventPlayerHeroDewardTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public LiveEventTypeQueryBuilder WithLiveEventMatchDireTide2020StompTypeFragment(LiveEventMatchDireTide2020StompTypeQueryBuilder liveEventMatchDireTide2020StompTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        public LiveEventTypeQueryBuilder WithLiveEventMatchDireTideStompTypeFragment(LiveEventMatchDireTideStompTypeQueryBuilder liveEventMatchDireTideStompTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithFragment(liveEventMatchDireTide2020StompTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithFragment(liveEventMatchDireTideStompTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public LiveEventTypeQueryBuilder WithLiveEventPlayerDireTide2020CandyScoredTypeFragment(LiveEventPlayerDireTide2020CandyScoredTypeQueryBuilder liveEventPlayerDireTide2020CandyScoredTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        public LiveEventTypeQueryBuilder WithLiveEventPlayerDireTideCandyScoredTypeFragment(LiveEventPlayerDireTideCandyScoredTypeQueryBuilder liveEventPlayerDireTideCandyScoredTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithFragment(liveEventPlayerDireTide2020CandyScoredTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithFragment(liveEventPlayerDireTideCandyScoredTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
     }
 }

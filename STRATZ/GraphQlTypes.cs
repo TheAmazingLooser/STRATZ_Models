@@ -114,9 +114,9 @@ namespace STRATZ
         public const string ClusterType = "ClusterType";
         public const string ConstantQuery = "ConstantQuery";
         public const string DeathDetailType = "DeathDetailType";
-        public const string DireTide2020CustomGameHeroWinDayType = "DireTide2020CustomGameHeroWinDayType";
-        public const string DireTide2020CustomGameMatchType = "DireTide2020CustomGameMatchType";
-        public const string DireTide2020CustomGamePlayerType = "DireTide2020CustomGamePlayerType";
+        public const string DireTideCustomGameHeroWinDayType = "DireTideCustomGameHeroWinDayType";
+        public const string DireTideCustomGameMatchType = "DireTideCustomGameMatchType";
+        public const string DireTideCustomGamePlayerType = "DireTideCustomGamePlayerType";
         public const string DotaMutation = "DotaMutation";
         public const string DotaNextQuery = "DotaNextQuery";
         public const string DotaNextWithAllyType = "DotaNextWithAllyType";
@@ -219,8 +219,8 @@ namespace STRATZ
         public const string LeagueTableTeamType = "LeagueTableTeamType";
         public const string LeagueTableType = "LeagueTableType";
         public const string LeagueType = "LeagueType";
-        public const string LiveEventMatchDireTide2020StompType = "LiveEventMatchDireTide2020StompType";
-        public const string LiveEventPlayerDireTide2020CandyScoredType = "LiveEventPlayerDireTide2020CandyScoredType";
+        public const string LiveEventMatchDireTideStompType = "LiveEventMatchDireTideStompType";
+        public const string LiveEventPlayerDireTideCandyScoredType = "LiveEventPlayerDireTideCandyScoredType";
         public const string LiveEventPlayerHeroAssistsType = "LiveEventPlayerHeroAssistsType";
         public const string LiveEventPlayerHeroBuildingDamageType = "LiveEventPlayerHeroBuildingDamageType";
         public const string LiveEventPlayerHeroDewardType = "LiveEventPlayerHeroDewardType";
@@ -337,7 +337,7 @@ namespace STRATZ
         public const string NpcType = "NpcType";
         public const string PageAghanimQuery = "PageAghanimQuery";
         public const string PageBattlepassQuery = "PageBattlepassQuery";
-        public const string PageDireTide2020Query = "PageDireTide2020Query";
+        public const string PageDireTideQuery = "PageDireTideQuery";
         public const string PageLeaguesQuery = "PageLeaguesQuery";
         public const string PageMatchesQuery = "PageMatchesQuery";
         public const string PagePlayerQuery = "PagePlayerQuery";
@@ -447,7 +447,7 @@ namespace STRATZ
 
         public const string CaptainJackIdentityProfileUpdateRequestType = "CaptainJackIdentityProfileUpdateRequestType";
         public const string DeleteProSteamAccountRequestType = "DeleteProSteamAccountRequestType";
-        public const string FilterDireTide2020CustomMatchRequestType = "FilterDireTide2020CustomMatchRequestType";
+        public const string FilterDireTideCustomMatchRequestType = "FilterDireTideCustomMatchRequestType";
         public const string FilterHeroRampageType = "FilterHeroRampageType";
         public const string FilterLeaderboardGuildRequestType = "FilterLeaderboardGuildRequestType";
         public const string FilterLeaderboardHeroRequestType = "FilterLeaderboardHeroRequestType";
@@ -498,7 +498,7 @@ namespace STRATZ
                 { typeof(ushort), "UShort" },
                 { typeof(CaptainJackIdentityProfileUpdateRequestType), "CaptainJackIdentityProfileUpdateRequestType" },
                 { typeof(DeleteProSteamAccountRequestType), "DeleteProSteamAccountRequestType" },
-                { typeof(FilterDireTide2020CustomMatchRequestType), "FilterDireTide2020CustomMatchRequestType" },
+                { typeof(FilterDireTideCustomMatchRequestType), "FilterDireTideCustomMatchRequestType" },
                 { typeof(FilterHeroRampageType), "FilterHeroRampageType" },
                 { typeof(FilterLeaderboardGuildRequestType), "FilterLeaderboardGuildRequestType" },
                 { typeof(FilterLeaderboardHeroRequestType), "FilterLeaderboardHeroRequestType" },

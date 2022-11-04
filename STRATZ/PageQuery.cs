@@ -19,7 +19,7 @@ namespace STRATZ
         public PageLeaguesQuery Leagues { get; set; }
         public PageAghanimQuery Aghanim { get; set; }
         public ImpQuery Imp { get; set; }
-        public PageDireTide2020Query DireTide2020 { get; set; }
+        public PageDireTideQuery DireTide { get; set; }
         public PageBattlepassQuery BattlePass { get; set; }
     }
 }
