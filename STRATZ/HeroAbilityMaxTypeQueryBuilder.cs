@@ -22,8 +22,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "abilityId" },
                 new FieldMetadata { Name = "level" },
-                new FieldMetadata { Name = "matchCount" },
-                new FieldMetadata { Name = "winCount" }
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true }
             };
 
         protected override string TypeName { get { return "HeroAbilityMaxType"; } } 

@@ -18,9 +18,6 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "activity" },
-                new FieldMetadata { Name = "matchCount" },
-                new FieldMetadata { Name = "coreCount" },
-                new FieldMetadata { Name = "supportCount" },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }
             };
 
@@ -46,36 +43,6 @@ namespace STRATZ
         public ProPlayerFollowTypeQueryBuilder ExceptActivity()
         {
             return ExceptField("activity");
-        }
-
-        public ProPlayerFollowTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public ProPlayerFollowTypeQueryBuilder ExceptMatchCount()
-        {
-            return ExceptField("matchCount");
-        }
-
-        public ProPlayerFollowTypeQueryBuilder WithCoreCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("coreCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public ProPlayerFollowTypeQueryBuilder ExceptCoreCount()
-        {
-            return ExceptField("coreCount");
-        }
-
-        public ProPlayerFollowTypeQueryBuilder WithSupportCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("supportCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public ProPlayerFollowTypeQueryBuilder ExceptSupportCount()
-        {
-            return ExceptField("supportCount");
         }
 
         public ProPlayerFollowTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class SteamAccountByRankType
     {
-        public byte? Rank { get; set; }
+        public short? Rank { get; set; }
         public int? PlayerCount { get; set; }
     }
 }

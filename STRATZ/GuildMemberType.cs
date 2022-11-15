@@ -18,8 +18,8 @@ namespace STRATZ
         public long? JoinDateTime { get; set; }
         public GuildType Guild { get; set; }
         public SteamAccountType SteamAccount { get; set; }
-        public int? WinCount { get; set; }
         public int? MatchCount { get; set; }
+        public int? WinCount { get; set; }
         public int? Imp { get; set; }
     }
 }

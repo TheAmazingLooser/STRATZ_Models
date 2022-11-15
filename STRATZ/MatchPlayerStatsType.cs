@@ -18,23 +18,14 @@ namespace STRATZ
         public short? GameVersionId { get; set; }
         public IList<int> Level { get; set; }
         public IList<MatchPlayerStatsKillEventType> KillEvents { get; set; }
-        public int? KillCount { get; set; }
         public IList<MatchPlayerStatsDeathEventType> DeathEvents { get; set; }
-        public int? DeathCount { get; set; }
         public IList<MatchPlayerStatsAssistEventType> AssistEvents { get; set; }
-        public int? AssistCount { get; set; }
         public IList<int> LastHitsPerMinute { get; set; }
-        public int? LastHitCount { get; set; }
         public IList<int> GoldPerMinute { get; set; }
-        public int? GoldCount { get; set; }
         public IList<int> ExperiencePerMinute { get; set; }
-        public int? ExperienceCount { get; set; }
         public IList<int> HealPerMinute { get; set; }
-        public int? HealCount { get; set; }
         public IList<int> HeroDamagePerMinute { get; set; }
-        public int? HeroDamageCount { get; set; }
         public IList<int> TowerDamagePerMinute { get; set; }
-        public int? TowerDamageCount { get; set; }
         public IList<MatchPlayerStatsTowerDamageReportType> TowerDamageReport { get; set; }
         public IList<MatchPlayerStatsCourierKillEventType> CourierKills { get; set; }
         public IList<MatchPlayerStatsWardEventType> Wards { get; set; }
@@ -44,7 +35,6 @@ namespace STRATZ
         public IList<MatchPlayerStatsChatWheelEventType> ChatWheels { get; set; }
         public IList<int> ActionsPerMinute { get; set; }
         public MatchPlayerStatsActionReportType ActionReport { get; set; }
-        public int? InvisibleSeconds { get; set; }
         public IList<MatchPlayerStatsLocationReportType> LocationReport { get; set; }
         public IList<MatchPlayerStatsFarmDistributionReportType> FarmDistributionReport { get; set; }
         public IList<MatchPlayerStatsRuneEventType> Runes { get; set; }
@@ -56,11 +46,8 @@ namespace STRATZ
         public IList<MatchPlayerStatsBuffEventType> MatchPlayerBuffEvent { get; set; }
         public IList<int> DeniesPerMinute { get; set; }
         public IList<int> ImpPerMinute { get; set; }
-        public IList<int> ImpPerMinute2 { get; set; }
-        public int? DotaPlusHeroXp { get; set; }
         public IList<int> TripsFountainPerMinute { get; set; }
         public IList<MatchPlayerSpiritBearInventoryType> SpiritBearInventoryReport { get; set; }
-        public IList<PlayerAbilityType> Abilities { get; set; }
         public IList<int> HeroDamageReceivedPerMinute { get; set; }
         public IList<MatchPlayerWardDestuctionObjectType> WardDestruction { get; set; }
     }

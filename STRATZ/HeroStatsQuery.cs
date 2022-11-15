@@ -13,19 +13,16 @@ namespace STRATZ
 {
     public partial class HeroStatsQuery
     {
-        public IList<HeroPositionTimeDetailAverageType> Stats { get; set; }
-        public IList<HeroPositionDetailType> Position { get; set; }
+        public IList<HeroPositionTimeDetailType> Stats { get; set; }
         public IList<HeroDryadType> MatchUp { get; set; }
         public HeroPurchasePatternType PurchasePattern { get; set; }
-        public HeroItemPurchaseType ItemFullPurchase { get; set; }
-        public HeroItemStartingPurchaseType ItemStartingPurchase { get; set; }
-        public HeroItemBootPurchaseType ItemBootPurchase { get; set; }
+        public IList<HeroItemPurchaseType> ItemFullPurchase { get; set; }
+        public IList<HeroItemStartingPurchaseType> ItemStartingPurchase { get; set; }
+        public IList<HeroItemBootPurchaseType> ItemBootPurchase { get; set; }
         public IList<HeroNeutralItemType> ItemNeutral { get; set; }
         public IList<HeroLaneOutcomeType> LaneOutcome { get; set; }
         public HeroMatchupType HeroVsHeroMatchup { get; set; }
         public IList<HeroAbilityTalentType> Talent { get; set; }
-        public HeroRatingType Ratings { get; set; }
-        public IList<HeroMetaTrendType> MetaTrend { get; set; }
         public IList<HeroWinHourType> WinHour { get; set; }
         public IList<HeroWinDayType> WinDay { get; set; }
         public IList<HeroWinWeekType> WinWeek { get; set; }

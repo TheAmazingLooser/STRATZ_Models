@@ -17,7 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "heroId", IsComplex = true },
-                new FieldMetadata { Name = "steamId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "level", IsComplex = true },
                 new FieldMetadata { Name = "totalActions", IsComplex = true },
                 new FieldMetadata { Name = "createdDateTime", IsComplex = true },
@@ -38,14 +38,14 @@ namespace STRATZ
             return ExceptField("heroId");
         }
 
-        public HeroDotaPlusLeaderboardRankTypeQueryBuilder WithSteamId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroDotaPlusLeaderboardRankTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("steamId", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroDotaPlusLeaderboardRankTypeQueryBuilder ExceptSteamId()
+        public HeroDotaPlusLeaderboardRankTypeQueryBuilder ExceptSteamAccountId()
         {
-            return ExceptField("steamId");
+            return ExceptField("steamAccountId");
         }
 
         public HeroDotaPlusLeaderboardRankTypeQueryBuilder WithLevel(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

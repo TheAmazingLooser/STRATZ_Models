@@ -17,7 +17,6 @@ namespace STRATZ
         public UserHomepageType Homepage { get; set; }
         public IList<FollowerType> Followers { get; set; }
         public IList<FollowerType> Following { get; set; }
-        public IList<object> CompletedTutorials { get; set; }
         public FeedResponseType Feed { get; set; }
     }
 }

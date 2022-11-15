@@ -21,23 +21,14 @@ namespace STRATZ
                 new FieldMetadata { Name = "gameVersionId", IsComplex = true },
                 new FieldMetadata { Name = "level", IsComplex = true },
                 new FieldMetadata { Name = "killEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsKillEventTypeQueryBuilder) },
-                new FieldMetadata { Name = "killCount" },
                 new FieldMetadata { Name = "deathEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsDeathEventTypeQueryBuilder) },
-                new FieldMetadata { Name = "deathCount" },
                 new FieldMetadata { Name = "assistEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsAssistEventTypeQueryBuilder) },
-                new FieldMetadata { Name = "assistCount" },
                 new FieldMetadata { Name = "lastHitsPerMinute", IsComplex = true },
-                new FieldMetadata { Name = "lastHitCount" },
                 new FieldMetadata { Name = "goldPerMinute", IsComplex = true },
-                new FieldMetadata { Name = "goldCount" },
                 new FieldMetadata { Name = "experiencePerMinute", IsComplex = true },
-                new FieldMetadata { Name = "experienceCount" },
                 new FieldMetadata { Name = "healPerMinute", IsComplex = true },
-                new FieldMetadata { Name = "healCount" },
                 new FieldMetadata { Name = "heroDamagePerMinute", IsComplex = true },
-                new FieldMetadata { Name = "heroDamageCount" },
                 new FieldMetadata { Name = "towerDamagePerMinute", IsComplex = true },
-                new FieldMetadata { Name = "towerDamageCount" },
                 new FieldMetadata { Name = "towerDamageReport", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsTowerDamageReportTypeQueryBuilder) },
                 new FieldMetadata { Name = "courierKills", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsCourierKillEventTypeQueryBuilder) },
                 new FieldMetadata { Name = "wards", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsWardEventTypeQueryBuilder) },
@@ -47,7 +38,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "chatWheels", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsChatWheelEventTypeQueryBuilder) },
                 new FieldMetadata { Name = "actionsPerMinute", IsComplex = true },
                 new FieldMetadata { Name = "actionReport", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsActionReportTypeQueryBuilder) },
-                new FieldMetadata { Name = "invisibleSeconds" },
                 new FieldMetadata { Name = "locationReport", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsLocationReportTypeQueryBuilder) },
                 new FieldMetadata { Name = "farmDistributionReport", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsFarmDistributionReportTypeQueryBuilder) },
                 new FieldMetadata { Name = "runes", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsRuneEventTypeQueryBuilder) },
@@ -59,11 +49,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "matchPlayerBuffEvent", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsBuffEventTypeQueryBuilder) },
                 new FieldMetadata { Name = "deniesPerMinute", IsComplex = true },
                 new FieldMetadata { Name = "impPerMinute", IsComplex = true },
-                new FieldMetadata { Name = "impPerMinute2", IsComplex = true },
-                new FieldMetadata { Name = "dotaPlusHeroXp" },
                 new FieldMetadata { Name = "tripsFountainPerMinute", IsComplex = true },
                 new FieldMetadata { Name = "spiritBearInventoryReport", IsComplex = true, QueryBuilderType = typeof(MatchPlayerSpiritBearInventoryTypeQueryBuilder) },
-                new FieldMetadata { Name = "abilities", IsComplex = true, QueryBuilderType = typeof(PlayerAbilityTypeQueryBuilder) },
                 new FieldMetadata { Name = "heroDamageReceivedPerMinute", IsComplex = true },
                 new FieldMetadata { Name = "wardDestruction", IsComplex = true, QueryBuilderType = typeof(MatchPlayerWardDestuctionObjectTypeQueryBuilder) }
             };
@@ -122,16 +109,6 @@ namespace STRATZ
             return ExceptField("killEvents");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithKillCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("killCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptKillCount()
-        {
-            return ExceptField("killCount");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithDeathEvents(MatchPlayerStatsDeathEventTypeQueryBuilder matchPlayerStatsDeathEventTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithObjectField("deathEvents", alias, matchPlayerStatsDeathEventTypeQueryBuilder, new GraphQlDirective[] { include, skip });
@@ -140,16 +117,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptDeathEvents()
         {
             return ExceptField("deathEvents");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithDeathCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("deathCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptDeathCount()
-        {
-            return ExceptField("deathCount");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithAssistEvents(MatchPlayerStatsAssistEventTypeQueryBuilder matchPlayerStatsAssistEventTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -162,16 +129,6 @@ namespace STRATZ
             return ExceptField("assistEvents");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithAssistCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("assistCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptAssistCount()
-        {
-            return ExceptField("assistCount");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithLastHitsPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("lastHitsPerMinute", alias, new GraphQlDirective[] { include, skip });
@@ -180,16 +137,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptLastHitsPerMinute()
         {
             return ExceptField("lastHitsPerMinute");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithLastHitCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("lastHitCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptLastHitCount()
-        {
-            return ExceptField("lastHitCount");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithGoldPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -202,16 +149,6 @@ namespace STRATZ
             return ExceptField("goldPerMinute");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithGoldCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("goldCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptGoldCount()
-        {
-            return ExceptField("goldCount");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithExperiencePerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("experiencePerMinute", alias, new GraphQlDirective[] { include, skip });
@@ -220,16 +157,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptExperiencePerMinute()
         {
             return ExceptField("experiencePerMinute");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithExperienceCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("experienceCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptExperienceCount()
-        {
-            return ExceptField("experienceCount");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithHealPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -242,16 +169,6 @@ namespace STRATZ
             return ExceptField("healPerMinute");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithHealCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("healCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptHealCount()
-        {
-            return ExceptField("healCount");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithHeroDamagePerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("heroDamagePerMinute", alias, new GraphQlDirective[] { include, skip });
@@ -262,16 +179,6 @@ namespace STRATZ
             return ExceptField("heroDamagePerMinute");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithHeroDamageCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("heroDamageCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptHeroDamageCount()
-        {
-            return ExceptField("heroDamageCount");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithTowerDamagePerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("towerDamagePerMinute", alias, new GraphQlDirective[] { include, skip });
@@ -280,16 +187,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptTowerDamagePerMinute()
         {
             return ExceptField("towerDamagePerMinute");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithTowerDamageCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("towerDamageCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptTowerDamageCount()
-        {
-            return ExceptField("towerDamageCount");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithTowerDamageReport(MatchPlayerStatsTowerDamageReportTypeQueryBuilder matchPlayerStatsTowerDamageReportTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -380,16 +277,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptActionReport()
         {
             return ExceptField("actionReport");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithInvisibleSeconds(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("invisibleSeconds", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptInvisibleSeconds()
-        {
-            return ExceptField("invisibleSeconds");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithLocationReport(MatchPlayerStatsLocationReportTypeQueryBuilder matchPlayerStatsLocationReportTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -502,26 +389,6 @@ namespace STRATZ
             return ExceptField("impPerMinute");
         }
 
-        public MatchPlayerStatsTypeQueryBuilder WithImpPerMinute2(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("impPerMinute2", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptImpPerMinute2()
-        {
-            return ExceptField("impPerMinute2");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithDotaPlusHeroXp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("dotaPlusHeroXp", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptDotaPlusHeroXp()
-        {
-            return ExceptField("dotaPlusHeroXp");
-        }
-
         public MatchPlayerStatsTypeQueryBuilder WithTripsFountainPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("tripsFountainPerMinute", alias, new GraphQlDirective[] { include, skip });
@@ -540,20 +407,6 @@ namespace STRATZ
         public MatchPlayerStatsTypeQueryBuilder ExceptSpiritBearInventoryReport()
         {
             return ExceptField("spiritBearInventoryReport");
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder WithAbilities(PlayerAbilityTypeQueryBuilder playerAbilityTypeQueryBuilder, QueryBuilderParameter<int?> gameVerionId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            if (gameVerionId != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "gameVerionId", ArgumentValue = gameVerionId} );
-
-            return WithObjectField("abilities", alias, playerAbilityTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public MatchPlayerStatsTypeQueryBuilder ExceptAbilities()
-        {
-            return ExceptField("abilities");
         }
 
         public MatchPlayerStatsTypeQueryBuilder WithHeroDamageReceivedPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

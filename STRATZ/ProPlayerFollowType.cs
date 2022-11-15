@@ -15,9 +15,6 @@ namespace STRATZ
     {
         public long? SteamAccountId { get; set; }
         public int? Activity { get; set; }
-        public int? MatchCount { get; set; }
-        public int? CoreCount { get; set; }
-        public int? SupportCount { get; set; }
         public SteamAccountType SteamAccount { get; set; }
     }
 }

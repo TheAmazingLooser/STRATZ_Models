@@ -26,7 +26,6 @@ namespace STRATZ
         public long? EndDateTime { get; set; }
         public string TournamentUrl { get; set; }
         public long? LastMatchDate { get; set; }
-        public long? ModifiedDateTime { get; set; }
         public bool? HasLiveMatches { get; set; }
         public int? PrizePool { get; set; }
         public string ImageUri { get; set; }

@@ -19,7 +19,7 @@ namespace STRATZ
         public MatchPlayerPositionType? Position { get; set; }
         public int? AbilityId { get; set; }
         public int? Level { get; set; }
-        public int? MatchCount { get; set; }
-        public int? WinCount { get; set; }
+        public long? MatchCount { get; set; }
+        public long? WinCount { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace STRATZ
 {
     public partial class HeroPurchasePatternType
     {
-        public HeroItemStartingPurchaseType StartingItems { get; set; }
-        public HeroItemPurchaseType EarlyGame { get; set; }
-        public HeroItemPurchaseType MidGame { get; set; }
-        public HeroItemPurchaseType LateGame { get; set; }
+        public IList<HeroItemStartingPurchaseType> StartingItems { get; set; }
+        public IList<HeroItemPurchaseType> EarlyGame { get; set; }
+        public IList<HeroItemPurchaseType> MidGame { get; set; }
+        public IList<HeroItemPurchaseType> LateGame { get; set; }
     }
 }

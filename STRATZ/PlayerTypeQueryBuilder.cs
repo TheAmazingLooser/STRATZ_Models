@@ -27,7 +27,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "lastMatchRegionId", IsComplex = true },
                 new FieldMetadata { Name = "ranks", IsComplex = true, QueryBuilderType = typeof(SteamAccountSeasonRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "leaderboardRanks", IsComplex = true, QueryBuilderType = typeof(SteamAccountSeasonLeaderBoardRankTypeQueryBuilder) },
-                new FieldMetadata { Name = "languageCodes", IsComplex = true },
                 new FieldMetadata { Name = "badges", IsComplex = true, QueryBuilderType = typeof(PlayerBadgeTypeQueryBuilder) },
                 new FieldMetadata { Name = "names", IsComplex = true, QueryBuilderType = typeof(SteamAccountNameTypeQueryBuilder) },
                 new FieldMetadata { Name = "behaviorScore", IsComplex = true },
@@ -39,7 +38,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "performance", IsComplex = true, QueryBuilderType = typeof(PlayerPerformanceTypeQueryBuilder) },
                 new FieldMetadata { Name = "heroPerformance", IsComplex = true, QueryBuilderType = typeof(PlayerPerformanceTypeQueryBuilder) },
                 new FieldMetadata { Name = "heroesPerformance", IsComplex = true, QueryBuilderType = typeof(PlayerHeroesPerformanceTypeQueryBuilder) },
-                new FieldMetadata { Name = "playedWithPro", IsComplex = true, QueryBuilderType = typeof(PlayerPlayedWithProTypeQueryBuilder) },
                 new FieldMetadata { Name = "matches", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchesGroupBy", IsComplex = true, QueryBuilderType = typeof(MatchGroupByTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
@@ -172,16 +170,6 @@ namespace STRATZ
             return ExceptField("leaderboardRanks");
         }
 
-        public PlayerTypeQueryBuilder WithLanguageCodes(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("languageCodes", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerTypeQueryBuilder ExceptLanguageCodes()
-        {
-            return ExceptField("languageCodes");
-        }
-
         public PlayerTypeQueryBuilder WithBadges(PlayerBadgeTypeQueryBuilder playerBadgeTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithObjectField("badges", alias, playerBadgeTypeQueryBuilder, new GraphQlDirective[] { include, skip });
@@ -310,16 +298,6 @@ namespace STRATZ
         public PlayerTypeQueryBuilder ExceptHeroesPerformance()
         {
             return ExceptField("heroesPerformance");
-        }
-
-        public PlayerTypeQueryBuilder WithPlayedWithPro(PlayerPlayedWithProTypeQueryBuilder playerPlayedWithProTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("playedWithPro", alias, playerPlayedWithProTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerTypeQueryBuilder ExceptPlayedWithPro()
-        {
-            return ExceptField("playedWithPro");
         }
 
         public PlayerTypeQueryBuilder WithMatches(MatchTypeQueryBuilder matchTypeQueryBuilder, QueryBuilderParameter<PlayerMatchesRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -16,12 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "activity" },
-                new FieldMetadata { Name = "matchCount" },
-                new FieldMetadata { Name = "coreCount" },
-                new FieldMetadata { Name = "supportCount" },
-                new FieldMetadata { Name = "imp" },
-                new FieldMetadata { Name = "heroes", IsComplex = true, QueryBuilderType = typeof(PlayerActivitySummaryHeroTypeQueryBuilder) }
+                new FieldMetadata { Name = "activity" }
             };
 
         protected override string TypeName { get { return "PlayerActivitySummaryType"; } } 
@@ -36,56 +31,6 @@ namespace STRATZ
         public PlayerActivitySummaryTypeQueryBuilder ExceptActivity()
         {
             return ExceptField("activity");
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder ExceptMatchCount()
-        {
-            return ExceptField("matchCount");
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder WithCoreCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("coreCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder ExceptCoreCount()
-        {
-            return ExceptField("coreCount");
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder WithSupportCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("supportCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder ExceptSupportCount()
-        {
-            return ExceptField("supportCount");
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder WithImp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("imp", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder ExceptImp()
-        {
-            return ExceptField("imp");
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder WithHeroes(PlayerActivitySummaryHeroTypeQueryBuilder playerActivitySummaryHeroTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("heroes", alias, playerActivitySummaryHeroTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerActivitySummaryTypeQueryBuilder ExceptHeroes()
-        {
-            return ExceptField("heroes");
         }
     }
 }

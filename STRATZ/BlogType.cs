@@ -20,7 +20,6 @@ namespace STRATZ
         public SteamAccountType Poster { get; set; }
         public string Data { get; set; }
         public DateTime? LiveDateTime { get; set; }
-        public IList<BlogMetaTagType> MetaTags { get; set; }
         public string Link { get; set; }
     }
 }

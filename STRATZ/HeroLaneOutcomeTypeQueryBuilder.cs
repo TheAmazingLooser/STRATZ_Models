@@ -16,7 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "heroId" },
+                new FieldMetadata { Name = "heroId1" },
                 new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "bracketBasicIds" },
                 new FieldMetadata { Name = "position" },
@@ -26,22 +26,21 @@ namespace STRATZ
                 new FieldMetadata { Name = "lossCount", IsComplex = true },
                 new FieldMetadata { Name = "stompWinCount", IsComplex = true },
                 new FieldMetadata { Name = "stompLossCount", IsComplex = true },
-                new FieldMetadata { Name = "partners", IsComplex = true, QueryBuilderType = typeof(HeroLaneOutcomeHeroObjectTypeQueryBuilder) },
-                new FieldMetadata { Name = "against", IsComplex = true, QueryBuilderType = typeof(HeroLaneOutcomeHeroObjectTypeQueryBuilder) }
+                new FieldMetadata { Name = "heroId2", IsComplex = true }
             };
 
         protected override string TypeName { get { return "HeroLaneOutcomeType"; } } 
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public HeroLaneOutcomeTypeQueryBuilder WithHeroId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroLaneOutcomeTypeQueryBuilder WithHeroId1(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("heroId", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("heroId1", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroLaneOutcomeTypeQueryBuilder ExceptHeroId()
+        public HeroLaneOutcomeTypeQueryBuilder ExceptHeroId1()
         {
-            return ExceptField("heroId");
+            return ExceptField("heroId1");
         }
 
         public HeroLaneOutcomeTypeQueryBuilder WithWeek(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -134,24 +133,14 @@ namespace STRATZ
             return ExceptField("stompLossCount");
         }
 
-        public HeroLaneOutcomeTypeQueryBuilder WithPartners(HeroLaneOutcomeHeroObjectTypeQueryBuilder heroLaneOutcomeHeroObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroLaneOutcomeTypeQueryBuilder WithHeroId2(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("partners", alias, heroLaneOutcomeHeroObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("heroId2", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroLaneOutcomeTypeQueryBuilder ExceptPartners()
+        public HeroLaneOutcomeTypeQueryBuilder ExceptHeroId2()
         {
-            return ExceptField("partners");
-        }
-
-        public HeroLaneOutcomeTypeQueryBuilder WithAgainst(HeroLaneOutcomeHeroObjectTypeQueryBuilder heroLaneOutcomeHeroObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("against", alias, heroLaneOutcomeHeroObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public HeroLaneOutcomeTypeQueryBuilder ExceptAgainst()
-        {
-            return ExceptField("against");
+            return ExceptField("heroId2");
         }
     }
 }

@@ -17,9 +17,8 @@ namespace STRATZ
         public short? HeroId2 { get; set; }
         public int? Week { get; set; }
         public RankBracketBasicEnum? BracketBasicIds { get; set; }
-        public long? MatchCount { get; set; }
-        public long? Count { get; set; }
         public long? Kills { get; set; }
+        public long? MatchCount { get; set; }
         public long? Deaths { get; set; }
         public long? Assists { get; set; }
         public long? Networth { get; set; }

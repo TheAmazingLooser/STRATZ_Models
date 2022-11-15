@@ -20,7 +20,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "homepage", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
                 new FieldMetadata { Name = "followers", IsComplex = true, QueryBuilderType = typeof(FollowerTypeQueryBuilder) },
                 new FieldMetadata { Name = "following", IsComplex = true, QueryBuilderType = typeof(FollowerTypeQueryBuilder) },
-                new FieldMetadata { Name = "completedTutorials", IsComplex = true },
                 new FieldMetadata { Name = "feed", IsComplex = true, QueryBuilderType = typeof(FeedResponseTypeQueryBuilder) }
             };
 
@@ -68,16 +67,6 @@ namespace STRATZ
         public UserQueryQueryBuilder ExceptFollowing()
         {
             return ExceptField("following");
-        }
-
-        public UserQueryQueryBuilder WithCompletedTutorials(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("completedTutorials", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public UserQueryQueryBuilder ExceptCompletedTutorials()
-        {
-            return ExceptField("completedTutorials");
         }
 
         public UserQueryQueryBuilder WithFeed(FeedResponseTypeQueryBuilder feedResponseTypeQueryBuilder, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)

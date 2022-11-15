@@ -21,8 +21,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "joinDateTime", IsComplex = true },
                 new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildTypeQueryBuilder) },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "winCount" },
                 new FieldMetadata { Name = "matchCount" },
+                new FieldMetadata { Name = "winCount" },
                 new FieldMetadata { Name = "imp" }
             };
 
@@ -80,16 +80,6 @@ namespace STRATZ
             return ExceptField("steamAccount");
         }
 
-        public GuildMemberTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public GuildMemberTypeQueryBuilder ExceptWinCount()
-        {
-            return ExceptField("winCount");
-        }
-
         public GuildMemberTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
@@ -98,6 +88,16 @@ namespace STRATZ
         public GuildMemberTypeQueryBuilder ExceptMatchCount()
         {
             return ExceptField("matchCount");
+        }
+
+        public GuildMemberTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public GuildMemberTypeQueryBuilder ExceptWinCount()
+        {
+            return ExceptField("winCount");
         }
 
         public GuildMemberTypeQueryBuilder WithImp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

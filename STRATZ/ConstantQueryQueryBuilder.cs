@@ -34,7 +34,10 @@ namespace STRATZ
                 new FieldMetadata { Name = "patchNotes", IsComplex = true, QueryBuilderType = typeof(PatchNoteLanguageTypeQueryBuilder) },
                 new FieldMetadata { Name = "customAbilities", IsComplex = true, QueryBuilderType = typeof(AbilityCustomGameTypeQueryBuilder) },
                 new FieldMetadata { Name = "modifiers", IsComplex = true, QueryBuilderType = typeof(ModifierTypeQueryBuilder) },
-                new FieldMetadata { Name = "proSteamAccounts", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) }
+                new FieldMetadata { Name = "proSteamAccounts", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) },
+                new FieldMetadata { Name = "popularTeamIds", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
+                new FieldMetadata { Name = "casters", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
+                new FieldMetadata { Name = "tiWinners", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "ConstantQuery"; } } 
@@ -300,6 +303,36 @@ namespace STRATZ
         public ConstantQueryQueryBuilder ExceptProSteamAccounts()
         {
             return ExceptField("proSteamAccounts");
+        }
+
+        public ConstantQueryQueryBuilder WithPopularTeamIds(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("popularTeamIds", alias, teamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public ConstantQueryQueryBuilder ExceptPopularTeamIds()
+        {
+            return ExceptField("popularTeamIds");
+        }
+
+        public ConstantQueryQueryBuilder WithCasters(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("casters", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public ConstantQueryQueryBuilder ExceptCasters()
+        {
+            return ExceptField("casters");
+        }
+
+        public ConstantQueryQueryBuilder WithTiWinners(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("tiWinners", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public ConstantQueryQueryBuilder ExceptTiWinners()
+        {
+            return ExceptField("tiWinners");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class HeroDotaPlusLeaderboardRankType
     {
         public short? HeroId { get; set; }
-        public long? SteamId { get; set; }
+        public long? SteamAccountId { get; set; }
         public byte? Level { get; set; }
         public long? TotalActions { get; set; }
         public long? CreatedDateTime { get; set; }

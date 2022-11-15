@@ -40,9 +40,13 @@ namespace STRATZ
                 new FieldMetadata { Name = "parsedDateTime", IsComplex = true },
                 new FieldMetadata { Name = "statsDateTime", IsComplex = true },
                 new FieldMetadata { Name = "leagueId" },
+                new FieldMetadata { Name = "league", IsComplex = true, QueryBuilderType = typeof(LeagueTypeQueryBuilder) },
                 new FieldMetadata { Name = "radiantTeamId" },
+                new FieldMetadata { Name = "radiantTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
                 new FieldMetadata { Name = "direTeamId" },
+                new FieldMetadata { Name = "direTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
                 new FieldMetadata { Name = "seriesId", IsComplex = true },
+                new FieldMetadata { Name = "series", IsComplex = true, QueryBuilderType = typeof(SeriesTypeQueryBuilder) },
                 new FieldMetadata { Name = "gameVersionId", IsComplex = true },
                 new FieldMetadata { Name = "regionId", IsComplex = true },
                 new FieldMetadata { Name = "sequenceNum", IsComplex = true },
@@ -51,13 +55,19 @@ namespace STRATZ
                 new FieldMetadata { Name = "analysisOutcome" },
                 new FieldMetadata { Name = "predictedOutcomeWeight", IsComplex = true },
                 new FieldMetadata { Name = "players", IsComplex = true, QueryBuilderType = typeof(MatchPlayerTypeQueryBuilder) },
-                new FieldMetadata { Name = "radiantTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
-                new FieldMetadata { Name = "direTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
-                new FieldMetadata { Name = "series", IsComplex = true, QueryBuilderType = typeof(SeriesTypeQueryBuilder) },
-                new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(MatchStatsTypeQueryBuilder) },
+                new FieldMetadata { Name = "radiantNetworthLeads", IsComplex = true },
+                new FieldMetadata { Name = "radiantExperienceLeads", IsComplex = true },
+                new FieldMetadata { Name = "radiantKills", IsComplex = true },
+                new FieldMetadata { Name = "direKills", IsComplex = true },
+                new FieldMetadata { Name = "pickBans", IsComplex = true, QueryBuilderType = typeof(MatchStatsPickBanTypeQueryBuilder) },
+                new FieldMetadata { Name = "towerStatus", IsComplex = true, QueryBuilderType = typeof(MatchStatsTowerReportTypeQueryBuilder) },
+                new FieldMetadata { Name = "laneReport", IsComplex = true, QueryBuilderType = typeof(MatchStatsLaneReportTypeQueryBuilder) },
+                new FieldMetadata { Name = "winRates", IsComplex = true },
+                new FieldMetadata { Name = "predictedWinRates", IsComplex = true },
+                new FieldMetadata { Name = "chatEvents", IsComplex = true, QueryBuilderType = typeof(MatchStatsChatEventTypeQueryBuilder) },
+                new FieldMetadata { Name = "towerDeaths", IsComplex = true, QueryBuilderType = typeof(MatchStatsTowerDeathTypeQueryBuilder) },
                 new FieldMetadata { Name = "playbackData", IsComplex = true, QueryBuilderType = typeof(MatchPlaybackDataTypeQueryBuilder) },
                 new FieldMetadata { Name = "spectators", IsComplex = true, QueryBuilderType = typeof(MatchPlayerSpectatorTypeQueryBuilder) },
-                new FieldMetadata { Name = "league", IsComplex = true, QueryBuilderType = typeof(LeagueTypeQueryBuilder) },
                 new FieldMetadata { Name = "bottomLaneOutcome" },
                 new FieldMetadata { Name = "midLaneOutcome" },
                 new FieldMetadata { Name = "topLaneOutcome" }
@@ -307,6 +317,16 @@ namespace STRATZ
             return ExceptField("leagueId");
         }
 
+        public MatchTypeQueryBuilder WithLeague(LeagueTypeQueryBuilder leagueTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("league", alias, leagueTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptLeague()
+        {
+            return ExceptField("league");
+        }
+
         public MatchTypeQueryBuilder WithRadiantTeamId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("radiantTeamId", alias, new GraphQlDirective[] { include, skip });
@@ -315,6 +335,16 @@ namespace STRATZ
         public MatchTypeQueryBuilder ExceptRadiantTeamId()
         {
             return ExceptField("radiantTeamId");
+        }
+
+        public MatchTypeQueryBuilder WithRadiantTeam(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("radiantTeam", alias, teamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptRadiantTeam()
+        {
+            return ExceptField("radiantTeam");
         }
 
         public MatchTypeQueryBuilder WithDireTeamId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -327,6 +357,16 @@ namespace STRATZ
             return ExceptField("direTeamId");
         }
 
+        public MatchTypeQueryBuilder WithDireTeam(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("direTeam", alias, teamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptDireTeam()
+        {
+            return ExceptField("direTeam");
+        }
+
         public MatchTypeQueryBuilder WithSeriesId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("seriesId", alias, new GraphQlDirective[] { include, skip });
@@ -335,6 +375,16 @@ namespace STRATZ
         public MatchTypeQueryBuilder ExceptSeriesId()
         {
             return ExceptField("seriesId");
+        }
+
+        public MatchTypeQueryBuilder WithSeries(SeriesTypeQueryBuilder seriesTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("series", alias, seriesTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptSeries()
+        {
+            return ExceptField("series");
         }
 
         public MatchTypeQueryBuilder WithGameVersionId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -421,44 +471,114 @@ namespace STRATZ
             return ExceptField("players");
         }
 
-        public MatchTypeQueryBuilder WithRadiantTeam(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchTypeQueryBuilder WithRadiantNetworthLeads(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("radiantTeam", alias, teamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("radiantNetworthLeads", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchTypeQueryBuilder ExceptRadiantTeam()
+        public MatchTypeQueryBuilder ExceptRadiantNetworthLeads()
         {
-            return ExceptField("radiantTeam");
+            return ExceptField("radiantNetworthLeads");
         }
 
-        public MatchTypeQueryBuilder WithDireTeam(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchTypeQueryBuilder WithRadiantExperienceLeads(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("direTeam", alias, teamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("radiantExperienceLeads", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchTypeQueryBuilder ExceptDireTeam()
+        public MatchTypeQueryBuilder ExceptRadiantExperienceLeads()
         {
-            return ExceptField("direTeam");
+            return ExceptField("radiantExperienceLeads");
         }
 
-        public MatchTypeQueryBuilder WithSeries(SeriesTypeQueryBuilder seriesTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchTypeQueryBuilder WithRadiantKills(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("series", alias, seriesTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("radiantKills", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchTypeQueryBuilder ExceptSeries()
+        public MatchTypeQueryBuilder ExceptRadiantKills()
         {
-            return ExceptField("series");
+            return ExceptField("radiantKills");
         }
 
-        public MatchTypeQueryBuilder WithStats(MatchStatsTypeQueryBuilder matchStatsTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchTypeQueryBuilder WithDireKills(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("stats", alias, matchStatsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("direKills", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchTypeQueryBuilder ExceptStats()
+        public MatchTypeQueryBuilder ExceptDireKills()
         {
-            return ExceptField("stats");
+            return ExceptField("direKills");
+        }
+
+        public MatchTypeQueryBuilder WithPickBans(MatchStatsPickBanTypeQueryBuilder matchStatsPickBanTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("pickBans", alias, matchStatsPickBanTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptPickBans()
+        {
+            return ExceptField("pickBans");
+        }
+
+        public MatchTypeQueryBuilder WithTowerStatus(MatchStatsTowerReportTypeQueryBuilder matchStatsTowerReportTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("towerStatus", alias, matchStatsTowerReportTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptTowerStatus()
+        {
+            return ExceptField("towerStatus");
+        }
+
+        public MatchTypeQueryBuilder WithLaneReport(MatchStatsLaneReportTypeQueryBuilder matchStatsLaneReportTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("laneReport", alias, matchStatsLaneReportTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptLaneReport()
+        {
+            return ExceptField("laneReport");
+        }
+
+        public MatchTypeQueryBuilder WithWinRates(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winRates", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptWinRates()
+        {
+            return ExceptField("winRates");
+        }
+
+        public MatchTypeQueryBuilder WithPredictedWinRates(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("predictedWinRates", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptPredictedWinRates()
+        {
+            return ExceptField("predictedWinRates");
+        }
+
+        public MatchTypeQueryBuilder WithChatEvents(MatchStatsChatEventTypeQueryBuilder matchStatsChatEventTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("chatEvents", alias, matchStatsChatEventTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptChatEvents()
+        {
+            return ExceptField("chatEvents");
+        }
+
+        public MatchTypeQueryBuilder WithTowerDeaths(MatchStatsTowerDeathTypeQueryBuilder matchStatsTowerDeathTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("towerDeaths", alias, matchStatsTowerDeathTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptTowerDeaths()
+        {
+            return ExceptField("towerDeaths");
         }
 
         public MatchTypeQueryBuilder WithPlaybackData(MatchPlaybackDataTypeQueryBuilder matchPlaybackDataTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -479,16 +599,6 @@ namespace STRATZ
         public MatchTypeQueryBuilder ExceptSpectators()
         {
             return ExceptField("spectators");
-        }
-
-        public MatchTypeQueryBuilder WithLeague(LeagueTypeQueryBuilder leagueTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("league", alias, leagueTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchTypeQueryBuilder ExceptLeague()
-        {
-            return ExceptField("league");
         }
 
         public MatchTypeQueryBuilder WithBottomLaneOutcome(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

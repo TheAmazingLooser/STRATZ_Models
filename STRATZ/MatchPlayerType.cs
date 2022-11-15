@@ -61,8 +61,11 @@ namespace STRATZ
         public short? Behavior { get; set; }
         public MatchPlayerStatsType Stats { get; set; }
         public MatchPlayerPlaybackDataType PlaybackData { get; set; }
-        public IList<HeroPositionTimeDetailAverageObjectType> HeroAverage { get; set; }
+        public IList<HeroPositionTimeDetailType> HeroAverage { get; set; }
         public MatchPlayerAdditionalUnitType AdditionalUnit { get; set; }
         public HeroDotaPlusLeaderboardRankType DotaPlus { get; set; }
+        public IList<PlayerAbilityType> Abilities { get; set; }
+        public int? InvisibleSeconds { get; set; }
+        public int? DotaPlusHeroXp { get; set; }
     }
 }

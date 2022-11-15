@@ -20,8 +20,12 @@ namespace STRATZ
                 new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "bracketBasicIds" },
                 new FieldMetadata { Name = "position" },
-                new FieldMetadata { Name = "events", IsComplex = true, QueryBuilderType = typeof(HeroItemStartingPurchaseObjectTypeQueryBuilder) },
-                new FieldMetadata { Name = "count", IsComplex = true }
+                new FieldMetadata { Name = "itemId" },
+                new FieldMetadata { Name = "instance" },
+                new FieldMetadata { Name = "wasGiven" },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
+                new FieldMetadata { Name = "winsAverage", IsComplex = true }
             };
 
         protected override string TypeName { get { return "HeroItemStartingPurchaseType"; } } 
@@ -68,24 +72,64 @@ namespace STRATZ
             return ExceptField("position");
         }
 
-        public HeroItemStartingPurchaseTypeQueryBuilder WithEvents(HeroItemStartingPurchaseObjectTypeQueryBuilder heroItemStartingPurchaseObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroItemStartingPurchaseTypeQueryBuilder WithItemId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("events", alias, heroItemStartingPurchaseObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("itemId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroItemStartingPurchaseTypeQueryBuilder ExceptEvents()
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptItemId()
         {
-            return ExceptField("events");
+            return ExceptField("itemId");
         }
 
-        public HeroItemStartingPurchaseTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroItemStartingPurchaseTypeQueryBuilder WithInstance(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("count", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("instance", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroItemStartingPurchaseTypeQueryBuilder ExceptCount()
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptInstance()
         {
-            return ExceptField("count");
+            return ExceptField("instance");
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder WithWasGiven(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("wasGiven", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptWasGiven()
+        {
+            return ExceptField("wasGiven");
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptMatchCount()
+        {
+            return ExceptField("matchCount");
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptWinCount()
+        {
+            return ExceptField("winCount");
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder WithWinsAverage(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winsAverage", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemStartingPurchaseTypeQueryBuilder ExceptWinsAverage()
+        {
+            return ExceptField("winsAverage");
         }
     }
 }

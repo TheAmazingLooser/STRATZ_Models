@@ -16,8 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(HeroPositionTimeDetailAverageTypeQueryBuilder) },
-                new FieldMetadata { Name = "position", IsComplex = true, QueryBuilderType = typeof(HeroPositionDetailTypeQueryBuilder) },
+                new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(HeroPositionTimeDetailTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchUp", IsComplex = true, QueryBuilderType = typeof(HeroDryadTypeQueryBuilder) },
                 new FieldMetadata { Name = "purchasePattern", IsComplex = true, QueryBuilderType = typeof(HeroPurchasePatternTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemFullPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemPurchaseTypeQueryBuilder) },
@@ -27,8 +26,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "laneOutcome", IsComplex = true, QueryBuilderType = typeof(HeroLaneOutcomeTypeQueryBuilder) },
                 new FieldMetadata { Name = "heroVsHeroMatchup", IsComplex = true, QueryBuilderType = typeof(HeroMatchupTypeQueryBuilder) },
                 new FieldMetadata { Name = "talent", IsComplex = true, QueryBuilderType = typeof(HeroAbilityTalentTypeQueryBuilder) },
-                new FieldMetadata { Name = "ratings", IsComplex = true, QueryBuilderType = typeof(HeroRatingTypeQueryBuilder) },
-                new FieldMetadata { Name = "metaTrend", IsComplex = true, QueryBuilderType = typeof(HeroMetaTrendTypeQueryBuilder) },
                 new FieldMetadata { Name = "winHour", IsComplex = true, QueryBuilderType = typeof(HeroWinHourTypeQueryBuilder) },
                 new FieldMetadata { Name = "winDay", IsComplex = true, QueryBuilderType = typeof(HeroWinDayTypeQueryBuilder) },
                 new FieldMetadata { Name = "winWeek", IsComplex = true, QueryBuilderType = typeof(HeroWinWeekTypeQueryBuilder) },
@@ -44,7 +41,7 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public HeroStatsQueryQueryBuilder WithStats(HeroPositionTimeDetailAverageTypeQueryBuilder heroPositionTimeDetailAverageTypeQueryBuilder, QueryBuilderParameter<IEnumerable<object>> heroIds = null, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<bool?> groupByTime = null, QueryBuilderParameter<bool?> groupByPosition = null, QueryBuilderParameter<bool?> groupByBracket = null, QueryBuilderParameter<int?> minTime = null, QueryBuilderParameter<int?> maxTime = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroStatsQueryQueryBuilder WithStats(HeroPositionTimeDetailTypeQueryBuilder heroPositionTimeDetailTypeQueryBuilder, QueryBuilderParameter<IEnumerable<object>> heroIds = null, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<bool?> groupByTime = null, QueryBuilderParameter<bool?> groupByPosition = null, QueryBuilderParameter<bool?> groupByBracket = null, QueryBuilderParameter<int?> minTime = null, QueryBuilderParameter<int?> maxTime = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (heroIds != null)
@@ -74,39 +71,12 @@ namespace STRATZ
             if (maxTime != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "maxTime", ArgumentValue = maxTime} );
 
-            return WithObjectField("stats", alias, heroPositionTimeDetailAverageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("stats", alias, heroPositionTimeDetailTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public HeroStatsQueryQueryBuilder ExceptStats()
         {
             return ExceptField("stats");
-        }
-
-        public HeroStatsQueryQueryBuilder WithPosition(HeroPositionDetailTypeQueryBuilder heroPositionDetailTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<int?> minTime = null, QueryBuilderParameter<int?> maxTime = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
-            if (week != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
-
-            if (bracketBasicIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
-
-            if (positionIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
-
-            if (minTime != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "minTime", ArgumentValue = minTime} );
-
-            if (maxTime != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "maxTime", ArgumentValue = maxTime} );
-
-            return WithObjectField("position", alias, heroPositionDetailTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public HeroStatsQueryQueryBuilder ExceptPosition()
-        {
-            return ExceptField("position");
         }
 
         public HeroStatsQueryQueryBuilder WithMatchUp(HeroDryadTypeQueryBuilder heroDryadTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<object> orderBy = null, QueryBuilderParameter<int?> matchLimit = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
@@ -253,10 +223,11 @@ namespace STRATZ
             return ExceptField("itemNeutral");
         }
 
-        public HeroStatsQueryQueryBuilder WithLaneOutcome(HeroLaneOutcomeTypeQueryBuilder heroLaneOutcomeTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroStatsQueryQueryBuilder WithLaneOutcome(HeroLaneOutcomeTypeQueryBuilder heroLaneOutcomeTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<bool> isWith, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "isWith", ArgumentValue = isWith} );
             if (week != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
 
@@ -320,41 +291,6 @@ namespace STRATZ
         public HeroStatsQueryQueryBuilder ExceptTalent()
         {
             return ExceptField("talent");
-        }
-
-        public HeroStatsQueryQueryBuilder WithRatings(HeroRatingTypeQueryBuilder heroRatingTypeQueryBuilder, QueryBuilderParameter<object> heroIds, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<object> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroIds", ArgumentValue = heroIds} );
-            if (week != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
-
-            if (bracketBasicIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
-
-            if (positionIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
-
-            return WithObjectField("ratings", alias, heroRatingTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public HeroStatsQueryQueryBuilder ExceptRatings()
-        {
-            return ExceptField("ratings");
-        }
-
-        public HeroStatsQueryQueryBuilder WithMetaTrend(HeroMetaTrendTypeQueryBuilder heroMetaTrendTypeQueryBuilder, QueryBuilderParameter<object> day = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            if (day != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "day", ArgumentValue = day} );
-
-            return WithObjectField("metaTrend", alias, heroMetaTrendTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public HeroStatsQueryQueryBuilder ExceptMetaTrend()
-        {
-            return ExceptField("metaTrend");
         }
 
         public HeroStatsQueryQueryBuilder WithWinHour(HeroWinHourTypeQueryBuilder heroWinHourTypeQueryBuilder, QueryBuilderParameter<IEnumerable<object>> heroIds = null, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<IEnumerable<RankBracket?>> bracketIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<IEnumerable<BasicRegionType?>> regionIds = null, QueryBuilderParameter<IEnumerable<GameModeEnumType?>> gameModeIds = null, QueryBuilderParameter<FilterHeroWinRequestGroupBy?> groupBy = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -32,5 +32,8 @@ namespace STRATZ
         public IList<AbilityCustomGameType> CustomAbilities { get; set; }
         public IList<ModifierType> Modifiers { get; set; }
         public IList<ProSteamAccountType> ProSteamAccounts { get; set; }
+        public IList<TeamType> PopularTeamIds { get; set; }
+        public IList<SteamAccountType> Casters { get; set; }
+        public IList<SteamAccountType> TiWinners { get; set; }
     }
 }

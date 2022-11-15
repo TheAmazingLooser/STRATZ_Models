@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class DotaPlusWeekType
     {
-        public long? Week { get; set; }
+        public int? Week { get; set; }
         public int? Active { get; set; }
         public int? Expired { get; set; }
     }

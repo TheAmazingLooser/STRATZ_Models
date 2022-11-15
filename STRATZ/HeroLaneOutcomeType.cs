@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class HeroLaneOutcomeType
     {
-        public int? HeroId { get; set; }
+        public int? HeroId1 { get; set; }
         public int? Week { get; set; }
         public RankBracketBasicEnum? BracketBasicIds { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
@@ -23,7 +23,6 @@ namespace STRATZ
         public long? LossCount { get; set; }
         public long? StompWinCount { get; set; }
         public long? StompLossCount { get; set; }
-        public IList<HeroLaneOutcomeHeroObjectType> Partners { get; set; }
-        public IList<HeroLaneOutcomeHeroObjectType> Against { get; set; }
+        public short? HeroId2 { get; set; }
     }
 }

@@ -20,9 +20,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "heroId2", IsComplex = true },
                 new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "bracketBasicIds" },
-                new FieldMetadata { Name = "matchCount", IsComplex = true },
-                new FieldMetadata { Name = "count", IsComplex = true },
                 new FieldMetadata { Name = "kills", IsComplex = true },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
                 new FieldMetadata { Name = "deaths", IsComplex = true },
                 new FieldMetadata { Name = "assists", IsComplex = true },
                 new FieldMetadata { Name = "networth", IsComplex = true },
@@ -87,26 +86,6 @@ namespace STRATZ
             return ExceptField("bracketBasicIds");
         }
 
-        public HeroStatsHeroDryadTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public HeroStatsHeroDryadTypeQueryBuilder ExceptMatchCount()
-        {
-            return ExceptField("matchCount");
-        }
-
-        public HeroStatsHeroDryadTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("count", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public HeroStatsHeroDryadTypeQueryBuilder ExceptCount()
-        {
-            return ExceptField("count");
-        }
-
         public HeroStatsHeroDryadTypeQueryBuilder WithKills(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("kills", alias, new GraphQlDirective[] { include, skip });
@@ -115,6 +94,16 @@ namespace STRATZ
         public HeroStatsHeroDryadTypeQueryBuilder ExceptKills()
         {
             return ExceptField("kills");
+        }
+
+        public HeroStatsHeroDryadTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroStatsHeroDryadTypeQueryBuilder ExceptMatchCount()
+        {
+            return ExceptField("matchCount");
         }
 
         public HeroStatsHeroDryadTypeQueryBuilder WithDeaths(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -20,8 +20,12 @@ namespace STRATZ
                 new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "bracketBasicIds" },
                 new FieldMetadata { Name = "position" },
-                new FieldMetadata { Name = "events", IsComplex = true, QueryBuilderType = typeof(HeroItemPurchaseObjectTypeQueryBuilder) },
-                new FieldMetadata { Name = "count", IsComplex = true }
+                new FieldMetadata { Name = "itemId" },
+                new FieldMetadata { Name = "instance" },
+                new FieldMetadata { Name = "time", IsComplex = true },
+                new FieldMetadata { Name = "matchCount", IsComplex = true },
+                new FieldMetadata { Name = "winCount", IsComplex = true },
+                new FieldMetadata { Name = "winsAverage", IsComplex = true }
             };
 
         protected override string TypeName { get { return "HeroItemPurchaseType"; } } 
@@ -68,24 +72,64 @@ namespace STRATZ
             return ExceptField("position");
         }
 
-        public HeroItemPurchaseTypeQueryBuilder WithEvents(HeroItemPurchaseObjectTypeQueryBuilder heroItemPurchaseObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroItemPurchaseTypeQueryBuilder WithItemId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("events", alias, heroItemPurchaseObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("itemId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroItemPurchaseTypeQueryBuilder ExceptEvents()
+        public HeroItemPurchaseTypeQueryBuilder ExceptItemId()
         {
-            return ExceptField("events");
+            return ExceptField("itemId");
         }
 
-        public HeroItemPurchaseTypeQueryBuilder WithCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroItemPurchaseTypeQueryBuilder WithInstance(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("count", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("instance", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public HeroItemPurchaseTypeQueryBuilder ExceptCount()
+        public HeroItemPurchaseTypeQueryBuilder ExceptInstance()
         {
-            return ExceptField("count");
+            return ExceptField("instance");
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder WithTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("time", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder ExceptTime()
+        {
+            return ExceptField("time");
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder ExceptMatchCount()
+        {
+            return ExceptField("matchCount");
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder ExceptWinCount()
+        {
+            return ExceptField("winCount");
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder WithWinsAverage(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("winsAverage", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroItemPurchaseTypeQueryBuilder ExceptWinsAverage()
+        {
+            return ExceptField("winsAverage");
         }
     }
 }

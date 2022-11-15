@@ -24,7 +24,6 @@ namespace STRATZ
         public byte? LastMatchRegionId { get; set; }
         public IList<SteamAccountSeasonRankType> Ranks { get; set; }
         public IList<SteamAccountSeasonLeaderBoardRankType> LeaderboardRanks { get; set; }
-        public IList<string> LanguageCodes { get; set; }
         public IList<PlayerBadgeType> Badges { get; set; }
         public IList<SteamAccountNameType> Names { get; set; }
         public short? BehaviorScore { get; set; }
@@ -36,7 +35,6 @@ namespace STRATZ
         public PlayerPerformanceType Performance { get; set; }
         public PlayerPerformanceType HeroPerformance { get; set; }
         public IList<PlayerHeroesPerformanceType> HeroesPerformance { get; set; }
-        public PlayerPlayedWithProType PlayedWithPro { get; set; }
         public IList<MatchType> Matches { get; set; }
         public IList<MatchGroupByType> MatchesGroupBy { get; set; }
         public IList<HeroDotaPlusLeaderboardRankType> DotaPlus { get; set; }

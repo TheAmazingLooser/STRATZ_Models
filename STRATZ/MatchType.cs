@@ -37,9 +37,13 @@ namespace STRATZ
         public long? ParsedDateTime { get; set; }
         public long? StatsDateTime { get; set; }
         public int? LeagueId { get; set; }
+        public LeagueType League { get; set; }
         public int? RadiantTeamId { get; set; }
+        public TeamType RadiantTeam { get; set; }
         public int? DireTeamId { get; set; }
+        public TeamType DireTeam { get; set; }
         public long? SeriesId { get; set; }
+        public SeriesType Series { get; set; }
         public short? GameVersionId { get; set; }
         public byte? RegionId { get; set; }
         public long? SequenceNum { get; set; }
@@ -48,13 +52,19 @@ namespace STRATZ
         public MatchAnalysisOutcomeType? AnalysisOutcome { get; set; }
         public byte? PredictedOutcomeWeight { get; set; }
         public IList<MatchPlayerType> Players { get; set; }
-        public TeamType RadiantTeam { get; set; }
-        public TeamType DireTeam { get; set; }
-        public SeriesType Series { get; set; }
-        public MatchStatsType Stats { get; set; }
+        public IList<int> RadiantNetworthLeads { get; set; }
+        public IList<int> RadiantExperienceLeads { get; set; }
+        public IList<int> RadiantKills { get; set; }
+        public IList<int> DireKills { get; set; }
+        public IList<MatchStatsPickBanType> PickBans { get; set; }
+        public IList<MatchStatsTowerReportType> TowerStatus { get; set; }
+        public MatchStatsLaneReportType LaneReport { get; set; }
+        public IList<object> WinRates { get; set; }
+        public IList<object> PredictedWinRates { get; set; }
+        public IList<MatchStatsChatEventType> ChatEvents { get; set; }
+        public IList<MatchStatsTowerDeathType> TowerDeaths { get; set; }
         public MatchPlaybackDataType PlaybackData { get; set; }
         public IList<MatchPlayerSpectatorType> Spectators { get; set; }
-        public LeagueType League { get; set; }
         public LaneOutcomeEnums? BottomLaneOutcome { get; set; }
         public LaneOutcomeEnums? MidLaneOutcome { get; set; }
         public LaneOutcomeEnums? TopLaneOutcome { get; set; }

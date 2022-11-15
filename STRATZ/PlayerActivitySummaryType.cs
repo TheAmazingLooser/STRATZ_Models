@@ -14,10 +14,5 @@ namespace STRATZ
     public partial class PlayerActivitySummaryType
     {
         public PlayerBehaviorActivity? Activity { get; set; }
-        public int? MatchCount { get; set; }
-        public int? CoreCount { get; set; }
-        public int? SupportCount { get; set; }
-        public int? Imp { get; set; }
-        public IList<PlayerActivitySummaryHeroType> Heroes { get; set; }
     }
 }

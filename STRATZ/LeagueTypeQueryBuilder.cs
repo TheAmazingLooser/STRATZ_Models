@@ -29,7 +29,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "endDateTime", IsComplex = true },
                 new FieldMetadata { Name = "tournamentUrl" },
                 new FieldMetadata { Name = "lastMatchDate", IsComplex = true },
-                new FieldMetadata { Name = "modifiedDateTime", IsComplex = true },
                 new FieldMetadata { Name = "hasLiveMatches" },
                 new FieldMetadata { Name = "prizePool" },
                 new FieldMetadata { Name = "imageUri" },
@@ -183,16 +182,6 @@ namespace STRATZ
         public LeagueTypeQueryBuilder ExceptLastMatchDate()
         {
             return ExceptField("lastMatchDate");
-        }
-
-        public LeagueTypeQueryBuilder WithModifiedDateTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("modifiedDateTime", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public LeagueTypeQueryBuilder ExceptModifiedDateTime()
-        {
-            return ExceptField("modifiedDateTime");
         }
 
         public LeagueTypeQueryBuilder WithHasLiveMatches(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

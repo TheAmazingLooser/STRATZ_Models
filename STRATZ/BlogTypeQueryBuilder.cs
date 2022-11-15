@@ -23,7 +23,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "poster", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "data" },
                 new FieldMetadata { Name = "liveDateTime", IsComplex = true },
-                new FieldMetadata { Name = "metaTags", IsComplex = true, QueryBuilderType = typeof(BlogMetaTagTypeQueryBuilder) },
                 new FieldMetadata { Name = "link" }
             };
 
@@ -99,16 +98,6 @@ namespace STRATZ
         public BlogTypeQueryBuilder ExceptLiveDateTime()
         {
             return ExceptField("liveDateTime");
-        }
-
-        public BlogTypeQueryBuilder WithMetaTags(BlogMetaTagTypeQueryBuilder blogMetaTagTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("metaTags", alias, blogMetaTagTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public BlogTypeQueryBuilder ExceptMetaTags()
-        {
-            return ExceptField("metaTags");
         }
 
         public BlogTypeQueryBuilder WithLink(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

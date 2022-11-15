@@ -64,9 +64,12 @@ namespace STRATZ
                 new FieldMetadata { Name = "behavior", IsComplex = true },
                 new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsTypeQueryBuilder) },
                 new FieldMetadata { Name = "playbackData", IsComplex = true, QueryBuilderType = typeof(MatchPlayerPlaybackDataTypeQueryBuilder) },
-                new FieldMetadata { Name = "heroAverage", IsComplex = true, QueryBuilderType = typeof(HeroPositionTimeDetailAverageObjectTypeQueryBuilder) },
+                new FieldMetadata { Name = "heroAverage", IsComplex = true, QueryBuilderType = typeof(HeroPositionTimeDetailTypeQueryBuilder) },
                 new FieldMetadata { Name = "additionalUnit", IsComplex = true, QueryBuilderType = typeof(MatchPlayerAdditionalUnitTypeQueryBuilder) },
-                new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) }
+                new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
+                new FieldMetadata { Name = "abilities", IsComplex = true, QueryBuilderType = typeof(PlayerAbilityTypeQueryBuilder) },
+                new FieldMetadata { Name = "invisibleSeconds" },
+                new FieldMetadata { Name = "dotaPlusHeroXp" }
             };
 
         protected override string TypeName { get { return "MatchPlayerType"; } } 
@@ -553,9 +556,9 @@ namespace STRATZ
             return ExceptField("playbackData");
         }
 
-        public MatchPlayerTypeQueryBuilder WithHeroAverage(HeroPositionTimeDetailAverageObjectTypeQueryBuilder heroPositionTimeDetailAverageObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchPlayerTypeQueryBuilder WithHeroAverage(HeroPositionTimeDetailTypeQueryBuilder heroPositionTimeDetailTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("heroAverage", alias, heroPositionTimeDetailAverageObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithObjectField("heroAverage", alias, heroPositionTimeDetailTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
         public MatchPlayerTypeQueryBuilder ExceptHeroAverage()
@@ -581,6 +584,40 @@ namespace STRATZ
         public MatchPlayerTypeQueryBuilder ExceptDotaPlus()
         {
             return ExceptField("dotaPlus");
+        }
+
+        public MatchPlayerTypeQueryBuilder WithAbilities(PlayerAbilityTypeQueryBuilder playerAbilityTypeQueryBuilder, QueryBuilderParameter<int?> gameVerionId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (gameVerionId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "gameVerionId", ArgumentValue = gameVerionId} );
+
+            return WithObjectField("abilities", alias, playerAbilityTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public MatchPlayerTypeQueryBuilder ExceptAbilities()
+        {
+            return ExceptField("abilities");
+        }
+
+        public MatchPlayerTypeQueryBuilder WithInvisibleSeconds(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("invisibleSeconds", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerTypeQueryBuilder ExceptInvisibleSeconds()
+        {
+            return ExceptField("invisibleSeconds");
+        }
+
+        public MatchPlayerTypeQueryBuilder WithDotaPlusHeroXp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("dotaPlusHeroXp", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerTypeQueryBuilder ExceptDotaPlusHeroXp()
+        {
+            return ExceptField("dotaPlusHeroXp");
         }
     }
 }

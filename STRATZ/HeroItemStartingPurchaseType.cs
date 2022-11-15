@@ -17,7 +17,11 @@ namespace STRATZ
         public int? Week { get; set; }
         public RankBracketBasicEnum? BracketBasicIds { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
-        public IList<HeroItemStartingPurchaseObjectType> Events { get; set; }
-        public long? Count { get; set; }
+        public int? ItemId { get; set; }
+        public int? Instance { get; set; }
+        public bool? WasGiven { get; set; }
+        public long? MatchCount { get; set; }
+        public long? WinCount { get; set; }
+        public decimal? WinsAverage { get; set; }
     }
 }

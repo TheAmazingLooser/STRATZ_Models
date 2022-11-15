@@ -18,8 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "season", IsComplex = true, QueryBuilderType = typeof(SteamAccountSeasonActiveLeaderboardRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(PlayerHeroDotaPlusLeaderboardRankResponseTypeQueryBuilder) },
-                new FieldMetadata { Name = "dotaPlusTopLevels", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlusWeek", IsComplex = true, QueryBuilderType = typeof(DotaPlusWeekTypeQueryBuilder) },
+                new FieldMetadata { Name = "dotaPlusTopLevels", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "battlePass", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassResponseTypeQueryBuilder) },
                 new FieldMetadata { Name = "battlePassGroupBy", IsComplex = true, QueryBuilderType = typeof(PlayerBattlePassGroupByTypeQueryBuilder) },
                 new FieldMetadata { Name = "coaching", IsComplex = true, QueryBuilderType = typeof(PlayerCoachingLeaderboardResponseTypeQueryBuilder) },
@@ -71,16 +71,6 @@ namespace STRATZ
             return ExceptField("dotaPlus");
         }
 
-        public LeaderboardQueryQueryBuilder WithDotaPlusTopLevels(HeroDotaPlusLeaderboardRankTypeQueryBuilder heroDotaPlusLeaderboardRankTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("dotaPlusTopLevels", alias, heroDotaPlusLeaderboardRankTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public LeaderboardQueryQueryBuilder ExceptDotaPlusTopLevels()
-        {
-            return ExceptField("dotaPlusTopLevels");
-        }
-
         public LeaderboardQueryQueryBuilder WithDotaPlusWeek(DotaPlusWeekTypeQueryBuilder dotaPlusWeekTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithObjectField("dotaPlusWeek", alias, dotaPlusWeekTypeQueryBuilder, new GraphQlDirective[] { include, skip });
@@ -89,6 +79,16 @@ namespace STRATZ
         public LeaderboardQueryQueryBuilder ExceptDotaPlusWeek()
         {
             return ExceptField("dotaPlusWeek");
+        }
+
+        public LeaderboardQueryQueryBuilder WithDotaPlusTopLevels(HeroDotaPlusLeaderboardRankTypeQueryBuilder heroDotaPlusLeaderboardRankTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("dotaPlusTopLevels", alias, heroDotaPlusLeaderboardRankTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public LeaderboardQueryQueryBuilder ExceptDotaPlusTopLevels()
+        {
+            return ExceptField("dotaPlusTopLevels");
         }
 
         public LeaderboardQueryQueryBuilder WithBattlePass(PlayerBattlePassResponseTypeQueryBuilder playerBattlePassResponseTypeQueryBuilder, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<string> countryCode = null, QueryBuilderParameter<IEnumerable<int?>> levels = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -18,8 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "readAllFeed" },
                 new FieldMetadata { Name = "validateEmail" },
-                new FieldMetadata { Name = "updateTutorial", IsComplex = true },
-                new FieldMetadata { Name = "unsubscribeEmail" },
+                new FieldMetadata { Name = "emailUnsubscribe", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
                 new FieldMetadata { Name = "updateProfile" },
                 new FieldMetadata { Name = "followPlayer" },
                 new FieldMetadata { Name = "unfollowPlayer" },
@@ -58,28 +57,16 @@ namespace STRATZ
             return ExceptField("validateEmail");
         }
 
-        public DotaUserMutationQueryBuilder WithUpdateTutorial(QueryBuilderParameter<object> tutorialId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "tutorialId", ArgumentValue = tutorialId} );
-            return WithScalarField("updateTutorial", alias, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public DotaUserMutationQueryBuilder ExceptUpdateTutorial()
-        {
-            return ExceptField("updateTutorial");
-        }
-
-        public DotaUserMutationQueryBuilder WithUnsubscribeEmail(QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public DotaUserMutationQueryBuilder WithEmailUnsubscribe(UserHomepageTypeQueryBuilder userHomepageTypeQueryBuilder, QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "code", ArgumentValue = code} );
-            return WithScalarField("unsubscribeEmail", alias, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("emailUnsubscribe", alias, userHomepageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
-        public DotaUserMutationQueryBuilder ExceptUnsubscribeEmail()
+        public DotaUserMutationQueryBuilder ExceptEmailUnsubscribe()
         {
-            return ExceptField("unsubscribeEmail");
+            return ExceptField("emailUnsubscribe");
         }
 
         public DotaUserMutationQueryBuilder WithUpdateProfile(QueryBuilderParameter<CaptainJackIdentityProfileUpdateRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
