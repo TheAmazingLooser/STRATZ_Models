@@ -16,6 +16,8 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
+                new FieldMetadata { Name = "heroId", IsComplex = true },
+                new FieldMetadata { Name = "week" },
                 new FieldMetadata { Name = "time" },
                 new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "bracketBasicIds" },
@@ -91,6 +93,26 @@ namespace STRATZ
         protected override string TypeName { get { return "HeroPositionTimeDetailType"; } } 
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
+
+        public HeroPositionTimeDetailTypeQueryBuilder WithHeroId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("heroId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder ExceptHeroId()
+        {
+            return ExceptField("heroId");
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder WithWeek(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("week", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder ExceptWeek()
+        {
+            return ExceptField("week");
+        }
 
         public HeroPositionTimeDetailTypeQueryBuilder WithTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {

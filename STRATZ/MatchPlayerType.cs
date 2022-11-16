@@ -42,7 +42,7 @@ namespace STRATZ
         public bool? IsRandom { get; set; }
         public MatchLaneType? Lane { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
-        public byte? StreakPrediction { get; set; }
+        public short? StreakPrediction { get; set; }
         public bool? IntentionalFeeding { get; set; }
         public MatchPlayerRoleType? Role { get; set; }
         public MatchPlayerRoleType? RoleBasic { get; set; }

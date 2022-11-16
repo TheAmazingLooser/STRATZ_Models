@@ -13,6 +13,8 @@ namespace STRATZ
 {
     public partial class HeroPositionTimeDetailType
     {
+        public short? HeroId { get; set; }
+        public int? Week { get; set; }
         public int? Time { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
         public RankBracketBasicEnum? BracketBasicIds { get; set; }
