@@ -17,7 +17,6 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "heroId", IsComplex = true },
-                new FieldMetadata { Name = "hero", IsComplex = true, QueryBuilderType = typeof(HeroTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchCount" },
                 new FieldMetadata { Name = "winCount" },
                 new FieldMetadata { Name = "streak" },
@@ -59,16 +58,6 @@ namespace STRATZ
         public PlayerPerformanceTypeQueryBuilder ExceptHeroId()
         {
             return ExceptField("heroId");
-        }
-
-        public PlayerPerformanceTypeQueryBuilder WithHero(HeroTypeQueryBuilder heroTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("hero", alias, heroTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public PlayerPerformanceTypeQueryBuilder ExceptHero()
-        {
-            return ExceptField("hero");
         }
 
         public PlayerPerformanceTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

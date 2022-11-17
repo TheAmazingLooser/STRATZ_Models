@@ -28,7 +28,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "matches", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
                 new FieldMetadata { Name = "teamOne", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
                 new FieldMetadata { Name = "teamTwo", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
-                new FieldMetadata { Name = "league", IsComplex = true, QueryBuilderType = typeof(LeagueTypeQueryBuilder) }
+                new FieldMetadata { Name = "league", IsComplex = true, QueryBuilderType = typeof(LeagueTypeQueryBuilder) },
+                new FieldMetadata { Name = "node", IsComplex = true, QueryBuilderType = typeof(LeagueNodeTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "SeriesType"; } } 
@@ -163,6 +164,16 @@ namespace STRATZ
         public SeriesTypeQueryBuilder ExceptLeague()
         {
             return ExceptField("league");
+        }
+
+        public SeriesTypeQueryBuilder WithNode(LeagueNodeTypeQueryBuilder leagueNodeTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("node", alias, leagueNodeTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public SeriesTypeQueryBuilder ExceptNode()
+        {
+            return ExceptField("node");
         }
     }
 }

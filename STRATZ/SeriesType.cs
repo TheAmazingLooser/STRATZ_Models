@@ -26,5 +26,6 @@ namespace STRATZ
         public TeamType TeamOne { get; set; }
         public TeamType TeamTwo { get; set; }
         public LeagueType League { get; set; }
+        public LeagueNodeType Node { get; set; }
     }
 }

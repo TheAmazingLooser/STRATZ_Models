@@ -39,7 +39,8 @@ namespace STRATZ
         public int? GameVersionId { get; set; }
         public string Notes { get; set; }
         public IList<MatchReplayUploadPlayerType> Players { get; set; }
-        public MatchReplayUploadStatsType Stats { get; set; }
+        public IList<object> Spectators { get; set; }
+        public IList<MatchReplayUploadPickBanType> PickBans { get; set; }
         public TeamType RadiantTeam { get; set; }
         public TeamType DireTeam { get; set; }
         public LeagueType League { get; set; }

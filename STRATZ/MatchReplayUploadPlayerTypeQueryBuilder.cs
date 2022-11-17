@@ -57,8 +57,57 @@ namespace STRATZ
                 new FieldMetadata { Name = "pickOrder", IsComplex = true },
                 new FieldMetadata { Name = "teamPickOrder" },
                 new FieldMetadata { Name = "isVictory" },
-                new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(MatchReplayUploadPlayerStatsTypeQueryBuilder) },
-                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }
+                new FieldMetadata { Name = "killsList", IsComplex = true },
+                new FieldMetadata { Name = "assistsList", IsComplex = true },
+                new FieldMetadata { Name = "deathsList", IsComplex = true },
+                new FieldMetadata { Name = "streakList", IsComplex = true },
+                new FieldMetadata { Name = "levelList", IsComplex = true },
+                new FieldMetadata { Name = "totalEarnedGoldList", IsComplex = true },
+                new FieldMetadata { Name = "reliableGoldList", IsComplex = true },
+                new FieldMetadata { Name = "unreliableGoldList", IsComplex = true },
+                new FieldMetadata { Name = "totalEarnedXpList", IsComplex = true },
+                new FieldMetadata { Name = "sharedGoldList", IsComplex = true },
+                new FieldMetadata { Name = "heroKillGoldList", IsComplex = true },
+                new FieldMetadata { Name = "creepKillGoldList", IsComplex = true },
+                new FieldMetadata { Name = "incomeGoldList", IsComplex = true },
+                new FieldMetadata { Name = "networthList", IsComplex = true },
+                new FieldMetadata { Name = "denyCountList", IsComplex = true },
+                new FieldMetadata { Name = "lastHitCountList", IsComplex = true },
+                new FieldMetadata { Name = "lastHitStreakList", IsComplex = true },
+                new FieldMetadata { Name = "lastHitMultiKillList", IsComplex = true },
+                new FieldMetadata { Name = "nearbyCreepDeathCountList", IsComplex = true },
+                new FieldMetadata { Name = "claimedDenyCountList", IsComplex = true },
+                new FieldMetadata { Name = "claimedMissCountList", IsComplex = true },
+                new FieldMetadata { Name = "missCountList", IsComplex = true },
+                new FieldMetadata { Name = "stunsList", IsComplex = true },
+                new FieldMetadata { Name = "heroHealingList", IsComplex = true },
+                new FieldMetadata { Name = "towerKillsList", IsComplex = true },
+                new FieldMetadata { Name = "roshanKillsList", IsComplex = true },
+                new FieldMetadata { Name = "observerWardsPlacedList", IsComplex = true },
+                new FieldMetadata { Name = "sentryWardsPlacedList", IsComplex = true },
+                new FieldMetadata { Name = "creepStackList", IsComplex = true },
+                new FieldMetadata { Name = "campStackList", IsComplex = true },
+                new FieldMetadata { Name = "runePicksupList", IsComplex = true },
+                new FieldMetadata { Name = "goldSpentOnSupportList", IsComplex = true },
+                new FieldMetadata { Name = "heroDamageList", IsComplex = true },
+                new FieldMetadata { Name = "wardsPurchasedList", IsComplex = true },
+                new FieldMetadata { Name = "wardsDestroyedList", IsComplex = true },
+                new FieldMetadata { Name = "commandsIssuedList", IsComplex = true },
+                new FieldMetadata { Name = "goldSpentOnConsumablesList", IsComplex = true },
+                new FieldMetadata { Name = "goldSpentOnItemsList", IsComplex = true },
+                new FieldMetadata { Name = "goldSpentOnBuybacksList", IsComplex = true },
+                new FieldMetadata { Name = "goldLostToDeathList", IsComplex = true },
+                new FieldMetadata { Name = "maxHealthList", IsComplex = true },
+                new FieldMetadata { Name = "maxManaList", IsComplex = true },
+                new FieldMetadata { Name = "bkbChargesUsedList", IsComplex = true },
+                new FieldMetadata { Name = "damageMinList", IsComplex = true },
+                new FieldMetadata { Name = "damageMaxList", IsComplex = true },
+                new FieldMetadata { Name = "damageBonusList", IsComplex = true },
+                new FieldMetadata { Name = "strengthTotalList", IsComplex = true },
+                new FieldMetadata { Name = "agilityTotalList", IsComplex = true },
+                new FieldMetadata { Name = "intellectTotalList", IsComplex = true },
+                new FieldMetadata { Name = "towerDamageList", IsComplex = true },
+                new FieldMetadata { Name = "items", IsComplex = true, QueryBuilderType = typeof(MatchReplayUploadPlayerStatsItemsTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "MatchReplayUploadPlayerType"; } } 
@@ -475,24 +524,514 @@ namespace STRATZ
             return ExceptField("isVictory");
         }
 
-        public MatchReplayUploadPlayerTypeQueryBuilder WithStats(MatchReplayUploadPlayerStatsTypeQueryBuilder matchReplayUploadPlayerStatsTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchReplayUploadPlayerTypeQueryBuilder WithKillsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("stats", alias, matchReplayUploadPlayerStatsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("killsList", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchReplayUploadPlayerTypeQueryBuilder ExceptStats()
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptKillsList()
         {
-            return ExceptField("stats");
+            return ExceptField("killsList");
         }
 
-        public MatchReplayUploadPlayerTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchReplayUploadPlayerTypeQueryBuilder WithAssistsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("assistsList", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchReplayUploadPlayerTypeQueryBuilder ExceptSteamAccount()
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptAssistsList()
         {
-            return ExceptField("steamAccount");
+            return ExceptField("assistsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithDeathsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("deathsList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptDeathsList()
+        {
+            return ExceptField("deathsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithStreakList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("streakList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptStreakList()
+        {
+            return ExceptField("streakList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithLevelList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("levelList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptLevelList()
+        {
+            return ExceptField("levelList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithTotalEarnedGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("totalEarnedGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptTotalEarnedGoldList()
+        {
+            return ExceptField("totalEarnedGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithReliableGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("reliableGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptReliableGoldList()
+        {
+            return ExceptField("reliableGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithUnreliableGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("unreliableGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptUnreliableGoldList()
+        {
+            return ExceptField("unreliableGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithTotalEarnedXpList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("totalEarnedXpList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptTotalEarnedXpList()
+        {
+            return ExceptField("totalEarnedXpList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithSharedGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("sharedGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptSharedGoldList()
+        {
+            return ExceptField("sharedGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithHeroKillGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("heroKillGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptHeroKillGoldList()
+        {
+            return ExceptField("heroKillGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithCreepKillGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("creepKillGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptCreepKillGoldList()
+        {
+            return ExceptField("creepKillGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithIncomeGoldList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("incomeGoldList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptIncomeGoldList()
+        {
+            return ExceptField("incomeGoldList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithNetworthList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("networthList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptNetworthList()
+        {
+            return ExceptField("networthList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithDenyCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("denyCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptDenyCountList()
+        {
+            return ExceptField("denyCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithLastHitCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("lastHitCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptLastHitCountList()
+        {
+            return ExceptField("lastHitCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithLastHitStreakList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("lastHitStreakList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptLastHitStreakList()
+        {
+            return ExceptField("lastHitStreakList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithLastHitMultiKillList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("lastHitMultiKillList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptLastHitMultiKillList()
+        {
+            return ExceptField("lastHitMultiKillList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithNearbyCreepDeathCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("nearbyCreepDeathCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptNearbyCreepDeathCountList()
+        {
+            return ExceptField("nearbyCreepDeathCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithClaimedDenyCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("claimedDenyCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptClaimedDenyCountList()
+        {
+            return ExceptField("claimedDenyCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithClaimedMissCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("claimedMissCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptClaimedMissCountList()
+        {
+            return ExceptField("claimedMissCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithMissCountList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("missCountList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptMissCountList()
+        {
+            return ExceptField("missCountList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithStunsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("stunsList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptStunsList()
+        {
+            return ExceptField("stunsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithHeroHealingList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("heroHealingList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptHeroHealingList()
+        {
+            return ExceptField("heroHealingList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithTowerKillsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("towerKillsList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptTowerKillsList()
+        {
+            return ExceptField("towerKillsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithRoshanKillsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("roshanKillsList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptRoshanKillsList()
+        {
+            return ExceptField("roshanKillsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithObserverWardsPlacedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("observerWardsPlacedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptObserverWardsPlacedList()
+        {
+            return ExceptField("observerWardsPlacedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithSentryWardsPlacedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("sentryWardsPlacedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptSentryWardsPlacedList()
+        {
+            return ExceptField("sentryWardsPlacedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithCreepStackList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("creepStackList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptCreepStackList()
+        {
+            return ExceptField("creepStackList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithCampStackList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("campStackList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptCampStackList()
+        {
+            return ExceptField("campStackList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithRunePicksupList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("runePicksupList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptRunePicksupList()
+        {
+            return ExceptField("runePicksupList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithGoldSpentOnSupportList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldSpentOnSupportList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptGoldSpentOnSupportList()
+        {
+            return ExceptField("goldSpentOnSupportList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithHeroDamageList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("heroDamageList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptHeroDamageList()
+        {
+            return ExceptField("heroDamageList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithWardsPurchasedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("wardsPurchasedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptWardsPurchasedList()
+        {
+            return ExceptField("wardsPurchasedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithWardsDestroyedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("wardsDestroyedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptWardsDestroyedList()
+        {
+            return ExceptField("wardsDestroyedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithCommandsIssuedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("commandsIssuedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptCommandsIssuedList()
+        {
+            return ExceptField("commandsIssuedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithGoldSpentOnConsumablesList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldSpentOnConsumablesList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptGoldSpentOnConsumablesList()
+        {
+            return ExceptField("goldSpentOnConsumablesList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithGoldSpentOnItemsList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldSpentOnItemsList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptGoldSpentOnItemsList()
+        {
+            return ExceptField("goldSpentOnItemsList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithGoldSpentOnBuybacksList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldSpentOnBuybacksList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptGoldSpentOnBuybacksList()
+        {
+            return ExceptField("goldSpentOnBuybacksList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithGoldLostToDeathList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldLostToDeathList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptGoldLostToDeathList()
+        {
+            return ExceptField("goldLostToDeathList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithMaxHealthList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("maxHealthList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptMaxHealthList()
+        {
+            return ExceptField("maxHealthList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithMaxManaList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("maxManaList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptMaxManaList()
+        {
+            return ExceptField("maxManaList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithBkbChargesUsedList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("bkbChargesUsedList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptBkbChargesUsedList()
+        {
+            return ExceptField("bkbChargesUsedList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithDamageMinList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("damageMinList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptDamageMinList()
+        {
+            return ExceptField("damageMinList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithDamageMaxList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("damageMaxList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptDamageMaxList()
+        {
+            return ExceptField("damageMaxList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithDamageBonusList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("damageBonusList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptDamageBonusList()
+        {
+            return ExceptField("damageBonusList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithStrengthTotalList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("strengthTotalList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptStrengthTotalList()
+        {
+            return ExceptField("strengthTotalList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithAgilityTotalList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("agilityTotalList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptAgilityTotalList()
+        {
+            return ExceptField("agilityTotalList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithIntellectTotalList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("intellectTotalList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptIntellectTotalList()
+        {
+            return ExceptField("intellectTotalList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithTowerDamageList(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("towerDamageList", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptTowerDamageList()
+        {
+            return ExceptField("towerDamageList");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithItems(MatchReplayUploadPlayerStatsItemsTypeQueryBuilder matchReplayUploadPlayerStatsItemsTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("items", alias, matchReplayUploadPlayerStatsItemsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptItems()
+        {
+            return ExceptField("items");
         }
     }
 }

@@ -42,7 +42,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "gameVersionId" },
                 new FieldMetadata { Name = "notes" },
                 new FieldMetadata { Name = "players", IsComplex = true, QueryBuilderType = typeof(MatchReplayUploadPlayerTypeQueryBuilder) },
-                new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(MatchReplayUploadStatsTypeQueryBuilder) },
+                new FieldMetadata { Name = "spectators", IsComplex = true },
+                new FieldMetadata { Name = "pickBans", IsComplex = true, QueryBuilderType = typeof(MatchReplayUploadPickBanTypeQueryBuilder) },
                 new FieldMetadata { Name = "radiantTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
                 new FieldMetadata { Name = "direTeam", IsComplex = true, QueryBuilderType = typeof(TeamTypeQueryBuilder) },
                 new FieldMetadata { Name = "league", IsComplex = true, QueryBuilderType = typeof(LeagueTypeQueryBuilder) }
@@ -312,14 +313,24 @@ namespace STRATZ
             return ExceptField("players");
         }
 
-        public MatchReplayUploadMatchTypeQueryBuilder WithStats(MatchReplayUploadStatsTypeQueryBuilder matchReplayUploadStatsTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchReplayUploadMatchTypeQueryBuilder WithSpectators(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("stats", alias, matchReplayUploadStatsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("spectators", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchReplayUploadMatchTypeQueryBuilder ExceptStats()
+        public MatchReplayUploadMatchTypeQueryBuilder ExceptSpectators()
         {
-            return ExceptField("stats");
+            return ExceptField("spectators");
+        }
+
+        public MatchReplayUploadMatchTypeQueryBuilder WithPickBans(MatchReplayUploadPickBanTypeQueryBuilder matchReplayUploadPickBanTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("pickBans", alias, matchReplayUploadPickBanTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadMatchTypeQueryBuilder ExceptPickBans()
+        {
+            return ExceptField("pickBans");
         }
 
         public MatchReplayUploadMatchTypeQueryBuilder WithRadiantTeam(TeamTypeQueryBuilder teamTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

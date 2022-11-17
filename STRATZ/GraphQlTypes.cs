@@ -304,9 +304,7 @@ namespace STRATZ
         public const string MatchReplayUploadOverviewType = "MatchReplayUploadOverviewType";
         public const string MatchReplayUploadPickBanType = "MatchReplayUploadPickBanType";
         public const string MatchReplayUploadPlayerStatsItemsType = "MatchReplayUploadPlayerStatsItemsType";
-        public const string MatchReplayUploadPlayerStatsType = "MatchReplayUploadPlayerStatsType";
         public const string MatchReplayUploadPlayerType = "MatchReplayUploadPlayerType";
-        public const string MatchReplayUploadStatsType = "MatchReplayUploadStatsType";
         public const string MatchReplayUploadTeamMemberType = "MatchReplayUploadTeamMemberType";
         public const string MatchReplayUploadTeamType = "MatchReplayUploadTeamType";
         public const string MatchStatsChatEventType = "MatchStatsChatEventType";

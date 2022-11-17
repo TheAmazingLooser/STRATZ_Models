@@ -14,7 +14,6 @@ namespace STRATZ
     public partial class PlayerPerformanceType
     {
         public IList<object> HeroId { get; set; }
-        public HeroType Hero { get; set; }
         public int? MatchCount { get; set; }
         public int? WinCount { get; set; }
         public int? Streak { get; set; }
