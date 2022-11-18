@@ -16,7 +16,7 @@ namespace STRATZ
         public IList<SteamAccountSeasonActiveLeaderboardRankType> Season { get; set; }
         public PlayerHeroDotaPlusLeaderboardRankResponseType DotaPlus { get; set; }
         public IList<DotaPlusWeekType> DotaPlusWeek { get; set; }
-        public IList<HeroDotaPlusLeaderboardRankType> DotaPlusTopLevels { get; set; }
+        public IList<HeroDotaPlusLeaderboardRankTopType> DotaPlusTopLevels { get; set; }
         public PlayerBattlePassResponseType BattlePass { get; set; }
         public IList<PlayerBattlePassGroupByType> BattlePassGroupBy { get; set; }
         public PlayerCoachingLeaderboardResponseType Coaching { get; set; }

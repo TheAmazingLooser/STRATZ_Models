@@ -138,6 +138,7 @@ namespace STRATZ
         public const string HeroAbilityTalentType = "HeroAbilityTalentType";
         public const string HeroAbilityType = "HeroAbilityType";
         public const string HeroDamageDetailType = "HeroDamageDetailType";
+        public const string HeroDotaPlusLeaderboardRankTopType = "HeroDotaPlusLeaderboardRankTopType";
         public const string HeroDotaPlusLeaderboardRankType = "HeroDotaPlusLeaderboardRankType";
         public const string HeroDryadType = "HeroDryadType";
         public const string HeroGuideListType = "HeroGuideListType";
