@@ -19,5 +19,6 @@ namespace STRATZ
         public int? Damage { get; set; }
         public short? ByAbility { get; set; }
         public short? ByItem { get; set; }
+        public short? FromNpc { get; set; }
     }
 }

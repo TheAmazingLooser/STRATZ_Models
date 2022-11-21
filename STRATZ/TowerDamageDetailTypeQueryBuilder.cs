@@ -21,7 +21,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "npcId", IsComplex = true },
                 new FieldMetadata { Name = "damage" },
                 new FieldMetadata { Name = "byAbility", IsComplex = true },
-                new FieldMetadata { Name = "byItem", IsComplex = true }
+                new FieldMetadata { Name = "byItem", IsComplex = true },
+                new FieldMetadata { Name = "fromNpc", IsComplex = true }
             };
 
         protected override string TypeName { get { return "TowerDamageDetailType"; } } 
@@ -86,6 +87,16 @@ namespace STRATZ
         public TowerDamageDetailTypeQueryBuilder ExceptByItem()
         {
             return ExceptField("byItem");
+        }
+
+        public TowerDamageDetailTypeQueryBuilder WithFromNpc(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("fromNpc", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public TowerDamageDetailTypeQueryBuilder ExceptFromNpc()
+        {
+            return ExceptField("fromNpc");
         }
     }
 }
