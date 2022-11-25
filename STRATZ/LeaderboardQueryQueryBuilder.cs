@@ -16,7 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "season", IsComplex = true, QueryBuilderType = typeof(SteamAccountSeasonActiveLeaderboardRankTypeQueryBuilder) },
+                new FieldMetadata { Name = "season", IsComplex = true, QueryBuilderType = typeof(SteamAccountSeasonActiveLeaderboardTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(PlayerHeroDotaPlusLeaderboardRankResponseTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlusWeek", IsComplex = true, QueryBuilderType = typeof(DotaPlusWeekTypeQueryBuilder) },
                 new FieldMetadata { Name = "dotaPlusTopLevels", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTopTypeQueryBuilder) },
@@ -31,13 +31,13 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public LeaderboardQueryQueryBuilder WithSeason(SteamAccountSeasonActiveLeaderboardRankTypeQueryBuilder steamAccountSeasonActiveLeaderboardRankTypeQueryBuilder, QueryBuilderParameter<FilterSeasonLeaderboardRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public LeaderboardQueryQueryBuilder WithSeason(SteamAccountSeasonActiveLeaderboardTypeQueryBuilder steamAccountSeasonActiveLeaderboardTypeQueryBuilder, QueryBuilderParameter<FilterSeasonLeaderboardRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (request != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
 
-            return WithObjectField("season", alias, steamAccountSeasonActiveLeaderboardRankTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("season", alias, steamAccountSeasonActiveLeaderboardTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public LeaderboardQueryQueryBuilder ExceptSeason()

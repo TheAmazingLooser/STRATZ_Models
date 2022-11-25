@@ -17,8 +17,8 @@ namespace STRATZ
         private InputPropertyInfo _leaderBoardDivision;
         private InputPropertyInfo _heroId;
         private InputPropertyInfo _position;
-        private InputPropertyInfo _skip;
-        private InputPropertyInfo _take;
+        private InputPropertyInfo _countryCode;
+        private InputPropertyInfo _teamId;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
@@ -57,21 +57,21 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> Skip
+        public QueryBuilderParameter<string> CountryCode
         {
-            get { return (QueryBuilderParameter<int?>)_skip.Value; }
-            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
+            get { return (QueryBuilderParameter<string>)_countryCode.Value; }
+            set { _countryCode = new InputPropertyInfo { Name = "countryCode", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Take
+        public QueryBuilderParameter<int?> TeamId
         {
-            get { return (QueryBuilderParameter<int?>)_take.Value; }
-            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_teamId.Value; }
+            set { _teamId = new InputPropertyInfo { Name = "teamId", Value = value }; }
         }
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
@@ -80,8 +80,8 @@ namespace STRATZ
             if (_leaderBoardDivision.Name != null) yield return _leaderBoardDivision;
             if (_heroId.Name != null) yield return _heroId;
             if (_position.Name != null) yield return _position;
-            if (_skip.Name != null) yield return _skip;
-            if (_take.Name != null) yield return _take;
+            if (_countryCode.Name != null) yield return _countryCode;
+            if (_teamId.Name != null) yield return _teamId;
         }
     }
 }

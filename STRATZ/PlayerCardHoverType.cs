@@ -19,7 +19,7 @@ namespace STRATZ
         public int? CoreCount { get; set; }
         public int? SupportCount { get; set; }
         public int? Imp { get; set; }
-        public PlayerCardHoverHeroType Heroes { get; set; }
+        public IList<PlayerCardHoverHeroType> Heroes { get; set; }
         public byte? Activity { get; set; }
     }
 }

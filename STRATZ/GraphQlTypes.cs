@@ -395,7 +395,10 @@ namespace STRATZ
         public const string SteamAccountBattlePassType = "SteamAccountBattlePassType";
         public const string SteamAccountByRankType = "SteamAccountByRankType";
         public const string SteamAccountNameType = "SteamAccountNameType";
+        public const string SteamAccountSeasonActiveLeaderboardCountryDataType = "SteamAccountSeasonActiveLeaderboardCountryDataType";
+        public const string SteamAccountSeasonActiveLeaderboardPositionDataType = "SteamAccountSeasonActiveLeaderboardPositionDataType";
         public const string SteamAccountSeasonActiveLeaderboardRankType = "SteamAccountSeasonActiveLeaderboardRankType";
+        public const string SteamAccountSeasonActiveLeaderboardType = "SteamAccountSeasonActiveLeaderboardType";
         public const string SteamAccountSeasonLeaderBoardRankType = "SteamAccountSeasonLeaderBoardRankType";
         public const string SteamAccountSeasonRankType = "SteamAccountSeasonRankType";
         public const string SteamAccountTeamMemberType = "SteamAccountTeamMemberType";

@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class LeaderboardQuery
     {
-        public IList<SteamAccountSeasonActiveLeaderboardRankType> Season { get; set; }
+        public SteamAccountSeasonActiveLeaderboardType Season { get; set; }
         public PlayerHeroDotaPlusLeaderboardRankResponseType DotaPlus { get; set; }
         public IList<DotaPlusWeekType> DotaPlusWeek { get; set; }
         public IList<HeroDotaPlusLeaderboardRankTopType> DotaPlusTopLevels { get; set; }
