@@ -13,11 +13,11 @@ namespace STRATZ
 {
     public enum RuneEnums
     {
-        [EnumMember(Value = "HASTE")] Haste,
-        [EnumMember(Value = "REGEN")] Regen,
         [EnumMember(Value = "DOUBLE_DAMAGE")] DoubleDamage,
+        [EnumMember(Value = "HASTE")] Haste,
         [EnumMember(Value = "ILLUSION")] Illusion,
         [EnumMember(Value = "INVISIBILITY")] Invisibility,
+        [EnumMember(Value = "REGEN")] Regen,
         [EnumMember(Value = "BOUNTY")] Bounty,
         [EnumMember(Value = "ARCANE")] Arcane,
         [EnumMember(Value = "WATER")] Water
