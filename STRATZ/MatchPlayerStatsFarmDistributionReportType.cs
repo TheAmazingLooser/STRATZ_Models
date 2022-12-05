@@ -21,8 +21,6 @@ namespace STRATZ
         public int? BuyBackGold { get; set; }
         public int? AbandonGold { get; set; }
         public MatchPlayerStatsFarmDistributionObjectType BountyGold { get; set; }
-        public int? TalentGold { get; set; }
         public IList<MatchPlayerStatsFarmDistributionObjectType> Other { get; set; }
-        public int? ItemGold { get; set; }
     }
 }

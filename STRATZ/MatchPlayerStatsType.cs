@@ -36,7 +36,7 @@ namespace STRATZ
         public IList<int> ActionsPerMinute { get; set; }
         public MatchPlayerStatsActionReportType ActionReport { get; set; }
         public IList<MatchPlayerStatsLocationReportType> LocationReport { get; set; }
-        public IList<MatchPlayerStatsFarmDistributionReportType> FarmDistributionReport { get; set; }
+        public MatchPlayerStatsFarmDistributionReportType FarmDistributionReport { get; set; }
         public IList<MatchPlayerStatsRuneEventType> Runes { get; set; }
         public IList<MatchPlayerStatsAbilityCastReportType> AbilityCastReport { get; set; }
         public MatchPlayerStatsHeroDamageReportType HeroDamageReport { get; set; }

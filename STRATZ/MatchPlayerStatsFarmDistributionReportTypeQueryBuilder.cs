@@ -24,9 +24,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "buyBackGold" },
                 new FieldMetadata { Name = "abandonGold" },
                 new FieldMetadata { Name = "bountyGold", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsFarmDistributionObjectTypeQueryBuilder) },
-                new FieldMetadata { Name = "talentGold" },
-                new FieldMetadata { Name = "other", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsFarmDistributionObjectTypeQueryBuilder) },
-                new FieldMetadata { Name = "itemGold" }
+                new FieldMetadata { Name = "other", IsComplex = true, QueryBuilderType = typeof(MatchPlayerStatsFarmDistributionObjectTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "MatchPlayerStatsFarmDistributionReportType"; } } 
@@ -113,16 +111,6 @@ namespace STRATZ
             return ExceptField("bountyGold");
         }
 
-        public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder WithTalentGold(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("talentGold", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder ExceptTalentGold()
-        {
-            return ExceptField("talentGold");
-        }
-
         public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder WithOther(MatchPlayerStatsFarmDistributionObjectTypeQueryBuilder matchPlayerStatsFarmDistributionObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithObjectField("other", alias, matchPlayerStatsFarmDistributionObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
@@ -131,16 +119,6 @@ namespace STRATZ
         public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder ExceptOther()
         {
             return ExceptField("other");
-        }
-
-        public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder WithItemGold(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("itemGold", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlayerStatsFarmDistributionReportTypeQueryBuilder ExceptItemGold()
-        {
-            return ExceptField("itemGold");
         }
     }
 }
