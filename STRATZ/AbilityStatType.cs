@@ -46,5 +46,6 @@ namespace STRATZ
         public string ChargeRestoreTime { get; set; }
         public bool? IsGrantedByShard { get; set; }
         public AbilityDispellEnum? Dispellable { get; set; }
+        public short? LinkedAbilityId { get; set; }
     }
 }

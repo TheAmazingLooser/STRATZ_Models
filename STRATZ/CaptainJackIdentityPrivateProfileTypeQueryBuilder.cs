@@ -18,7 +18,6 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "captainJackIdentityId", IsComplex = true },
                 new FieldMetadata { Name = "name" },
-                new FieldMetadata { Name = "email" },
                 new FieldMetadata { Name = "twitter" },
                 new FieldMetadata { Name = "facebook" },
                 new FieldMetadata { Name = "twitch" },
@@ -70,16 +69,6 @@ namespace STRATZ
         public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptName()
         {
             return ExceptField("name");
-        }
-
-        public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithEmail(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("email", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptEmail()
-        {
-            return ExceptField("email");
         }
 
         public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithTwitter(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

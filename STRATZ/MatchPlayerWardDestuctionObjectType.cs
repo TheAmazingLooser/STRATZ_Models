@@ -16,5 +16,6 @@ namespace STRATZ
         public int? Time { get; set; }
         public int? Gold { get; set; }
         public int? Experience { get; set; }
+        public bool? IsWard { get; set; }
     }
 }

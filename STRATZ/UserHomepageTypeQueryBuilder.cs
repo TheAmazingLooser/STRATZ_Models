@@ -23,13 +23,13 @@ namespace STRATZ
                 new FieldMetadata { Name = "topProPlayers", IsComplex = true, QueryBuilderType = typeof(ProPlayerFollowTypeQueryBuilder) },
                 new FieldMetadata { Name = "topPlayersByHeroType", IsComplex = true, QueryBuilderType = typeof(TopPlayersByHeroTypeQueryBuilder) },
                 new FieldMetadata { Name = "topSynergiesByHero", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
-                new FieldMetadata { Name = "matchAwards", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
-                new FieldMetadata { Name = "recentRampages", IsComplex = true, QueryBuilderType = typeof(RecentRampageTypeQueryBuilder) },
-                new FieldMetadata { Name = "recentWinStreaks", IsComplex = true, QueryBuilderType = typeof(RecentWinStreakTypeQueryBuilder) },
-                new FieldMetadata { Name = "recentHighImps", IsComplex = true, QueryBuilderType = typeof(RecentHighImpTypeQueryBuilder) },
-                new FieldMetadata { Name = "recentMatches", IsComplex = true, QueryBuilderType = typeof(MatchPlayerTypeQueryBuilder) },
-                new FieldMetadata { Name = "activeLeagueGames", IsComplex = true, QueryBuilderType = typeof(MatchLiveTypeQueryBuilder) },
-                new FieldMetadata { Name = "topLiveGames", IsComplex = true, QueryBuilderType = typeof(MatchLiveTypeQueryBuilder) },
+                new FieldMetadata { Name = "matchAwards", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "recentRampages", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "recentWinStreaks", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "recentHighImps", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "recentMatches", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "activeLeagueGames", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
+                new FieldMetadata { Name = "topLiveGames", IsComplex = true, QueryBuilderType = typeof(HomepageHeroSynergyTypeQueryBuilder) },
                 new FieldMetadata { Name = "totalComponents" }
             };
 
@@ -152,7 +152,7 @@ namespace STRATZ
             return ExceptField("topProPlayers");
         }
 
-        public UserHomepageTypeQueryBuilder WithTopPlayersByHeroType(TopPlayersByHeroTypeQueryBuilder topPlayersByHeroTypeQueryBuilder, QueryBuilderParameter<int?> heroComponentsTake = null, QueryBuilderParameter<int?> playersTake = null, QueryBuilderParameter<IEnumerable<object>> heroIds = null, QueryBuilderParameter<IEnumerable<object>> rankBracketIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public UserHomepageTypeQueryBuilder WithTopPlayersByHeroType(TopPlayersByHeroTypeQueryBuilder topPlayersByHeroTypeQueryBuilder, QueryBuilderParameter<int?> heroComponentsTake = null, QueryBuilderParameter<int?> playersTake = null, QueryBuilderParameter<int?> heroIds = null, QueryBuilderParameter<int?> rankBracketIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (heroComponentsTake != null)
@@ -175,7 +175,7 @@ namespace STRATZ
             return ExceptField("topPlayersByHeroType");
         }
 
-        public UserHomepageTypeQueryBuilder WithTopSynergiesByHero(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> synergyComponentsTake = null, QueryBuilderParameter<IEnumerable<object>> heroIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public UserHomepageTypeQueryBuilder WithTopSynergiesByHero(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> synergyComponentsTake = null, QueryBuilderParameter<int?> heroIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (synergyComponentsTake != null)
@@ -192,7 +192,7 @@ namespace STRATZ
             return ExceptField("topSynergiesByHero");
         }
 
-        public UserHomepageTypeQueryBuilder WithMatchAwards(MatchTypeQueryBuilder matchTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<IEnumerable<object>> matchPlayerAwardTypeIds = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithMatchAwards(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<IEnumerable<object>> matchPlayerAwardTypeIds = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -204,7 +204,7 @@ namespace STRATZ
             if (matchPlayerAwardTypeIds != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchPlayerAwardTypeIds", ArgumentValue = matchPlayerAwardTypeIds} );
 
-            return WithObjectField("matchAwards", alias, matchTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("matchAwards", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptMatchAwards()
@@ -212,7 +212,7 @@ namespace STRATZ
             return ExceptField("matchAwards");
         }
 
-        public UserHomepageTypeQueryBuilder WithRecentRampages(RecentRampageTypeQueryBuilder recentRampageTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithRecentRampages(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -221,7 +221,7 @@ namespace STRATZ
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 
-            return WithObjectField("recentRampages", alias, recentRampageTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("recentRampages", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptRecentRampages()
@@ -229,13 +229,16 @@ namespace STRATZ
             return ExceptField("recentRampages");
         }
 
-        public UserHomepageTypeQueryBuilder WithRecentWinStreaks(RecentWinStreakTypeQueryBuilder recentWinStreakTypeQueryBuilder, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public UserHomepageTypeQueryBuilder WithRecentWinStreaks(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
 
-            return WithObjectField("recentWinStreaks", alias, recentWinStreakTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            if (skip != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
+
+            return WithObjectField("recentWinStreaks", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptRecentWinStreaks()
@@ -243,7 +246,7 @@ namespace STRATZ
             return ExceptField("recentWinStreaks");
         }
 
-        public UserHomepageTypeQueryBuilder WithRecentHighImps(RecentHighImpTypeQueryBuilder recentHighImpTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithRecentHighImps(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -252,7 +255,7 @@ namespace STRATZ
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 
-            return WithObjectField("recentHighImps", alias, recentHighImpTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("recentHighImps", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptRecentHighImps()
@@ -260,7 +263,7 @@ namespace STRATZ
             return ExceptField("recentHighImps");
         }
 
-        public UserHomepageTypeQueryBuilder WithRecentMatches(MatchPlayerTypeQueryBuilder matchPlayerTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithRecentMatches(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -269,7 +272,7 @@ namespace STRATZ
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 
-            return WithObjectField("recentMatches", alias, matchPlayerTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("recentMatches", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptRecentMatches()
@@ -277,7 +280,7 @@ namespace STRATZ
             return ExceptField("recentMatches");
         }
 
-        public UserHomepageTypeQueryBuilder WithActiveLeagueGames(MatchLiveTypeQueryBuilder matchLiveTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithActiveLeagueGames(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -286,7 +289,7 @@ namespace STRATZ
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 
-            return WithObjectField("activeLeagueGames", alias, matchLiveTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("activeLeagueGames", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptActiveLeagueGames()
@@ -294,7 +297,7 @@ namespace STRATZ
             return ExceptField("activeLeagueGames");
         }
 
-        public UserHomepageTypeQueryBuilder WithTopLiveGames(MatchLiveTypeQueryBuilder matchLiveTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public UserHomepageTypeQueryBuilder WithTopLiveGames(HomepageHeroSynergyTypeQueryBuilder homepageHeroSynergyTypeQueryBuilder, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (take != null)
@@ -303,7 +306,7 @@ namespace STRATZ
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 
-            return WithObjectField("topLiveGames", alias, matchLiveTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+            return WithObjectField("topLiveGames", alias, homepageHeroSynergyTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
         }
 
         public UserHomepageTypeQueryBuilder ExceptTopLiveGames()

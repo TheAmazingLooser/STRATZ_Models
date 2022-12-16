@@ -41,10 +41,10 @@ namespace STRATZ
         private InputPropertyInfo _minGameVersionId;
         private InputPropertyInfo _maxGameVersionId;
         private InputPropertyInfo _playerList;
-        private InputPropertyInfo _skip;
         private InputPropertyInfo _take;
-        private InputPropertyInfo _before;
-        private InputPropertyInfo _after;
+        private InputPropertyInfo _skip;
+        private InputPropertyInfo _afterMatchId;
+        private InputPropertyInfo _beforeMatchId;
         private InputPropertyInfo _orderBy;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -302,15 +302,6 @@ namespace STRATZ
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Skip
-        {
-            get { return (QueryBuilderParameter<int?>)_skip.Value; }
-            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
-        }
-
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
-        #endif
         public QueryBuilderParameter<int?> Take
         {
             get { return (QueryBuilderParameter<int?>)_take.Value; }
@@ -318,21 +309,30 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<long?> Before
+        public QueryBuilderParameter<int?> Skip
         {
-            get { return (QueryBuilderParameter<long?>)_before.Value; }
-            set { _before = new InputPropertyInfo { Name = "before", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_skip.Value; }
+            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<long?> After
+        public QueryBuilderParameter<long?> AfterMatchId
         {
-            get { return (QueryBuilderParameter<long?>)_after.Value; }
-            set { _after = new InputPropertyInfo { Name = "after", Value = value }; }
+            get { return (QueryBuilderParameter<long?>)_afterMatchId.Value; }
+            set { _afterMatchId = new InputPropertyInfo { Name = "afterMatchId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        #endif
+        public QueryBuilderParameter<long?> BeforeMatchId
+        {
+            get { return (QueryBuilderParameter<long?>)_beforeMatchId.Value; }
+            set { _beforeMatchId = new InputPropertyInfo { Name = "beforeMatchId", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -374,10 +374,10 @@ namespace STRATZ
             if (_minGameVersionId.Name != null) yield return _minGameVersionId;
             if (_maxGameVersionId.Name != null) yield return _maxGameVersionId;
             if (_playerList.Name != null) yield return _playerList;
-            if (_skip.Name != null) yield return _skip;
             if (_take.Name != null) yield return _take;
-            if (_before.Name != null) yield return _before;
-            if (_after.Name != null) yield return _after;
+            if (_skip.Name != null) yield return _skip;
+            if (_afterMatchId.Name != null) yield return _afterMatchId;
+            if (_beforeMatchId.Name != null) yield return _beforeMatchId;
             if (_orderBy.Name != null) yield return _orderBy;
         }
     }

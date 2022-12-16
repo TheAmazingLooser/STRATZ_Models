@@ -18,7 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "time" },
                 new FieldMetadata { Name = "gold" },
-                new FieldMetadata { Name = "experience" }
+                new FieldMetadata { Name = "experience" },
+                new FieldMetadata { Name = "isWard" }
             };
 
         protected override string TypeName { get { return "MatchPlayerWardDestuctionObjectType"; } } 
@@ -53,6 +54,16 @@ namespace STRATZ
         public MatchPlayerWardDestuctionObjectTypeQueryBuilder ExceptExperience()
         {
             return ExceptField("experience");
+        }
+
+        public MatchPlayerWardDestuctionObjectTypeQueryBuilder WithIsWard(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("isWard", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerWardDestuctionObjectTypeQueryBuilder ExceptIsWard()
+        {
+            return ExceptField("isWard");
         }
     }
 }

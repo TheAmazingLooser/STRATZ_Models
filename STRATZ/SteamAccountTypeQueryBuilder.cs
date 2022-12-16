@@ -32,12 +32,12 @@ namespace STRATZ
                 new FieldMetadata { Name = "dotaAccountLevel", IsComplex = true },
                 new FieldMetadata { Name = "rankShift", IsComplex = true },
                 new FieldMetadata { Name = "isAnonymous" },
-                new FieldMetadata { Name = "isStratzAnonymous" },
+                new FieldMetadata { Name = "isStratzPublic" },
                 new FieldMetadata { Name = "seasonRank", IsComplex = true },
                 new FieldMetadata { Name = "seasonLeaderboardRank", IsComplex = true },
                 new FieldMetadata { Name = "seasonLeaderboardDivisionId", IsComplex = true },
                 new FieldMetadata { Name = "proSteamAccount", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "activity", IsComplex = true, QueryBuilderType = typeof(ProSteamAccountTypeQueryBuilder) },
+                new FieldMetadata { Name = "activity", IsComplex = true, QueryBuilderType = typeof(PlayerActivitySummaryTypeQueryBuilder) },
                 new FieldMetadata { Name = "smurfFlag", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchRegionId", IsComplex = true },
@@ -208,14 +208,14 @@ namespace STRATZ
             return ExceptField("isAnonymous");
         }
 
-        public SteamAccountTypeQueryBuilder WithIsStratzAnonymous(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public SteamAccountTypeQueryBuilder WithIsStratzPublic(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("isStratzAnonymous", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("isStratzPublic", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public SteamAccountTypeQueryBuilder ExceptIsStratzAnonymous()
+        public SteamAccountTypeQueryBuilder ExceptIsStratzPublic()
         {
-            return ExceptField("isStratzAnonymous");
+            return ExceptField("isStratzPublic");
         }
 
         public SteamAccountTypeQueryBuilder WithSeasonRank(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -258,9 +258,9 @@ namespace STRATZ
             return ExceptField("proSteamAccount");
         }
 
-        public SteamAccountTypeQueryBuilder WithActivity(ProSteamAccountTypeQueryBuilder proSteamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public SteamAccountTypeQueryBuilder WithActivity(PlayerActivitySummaryTypeQueryBuilder playerActivitySummaryTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("activity", alias, proSteamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithObjectField("activity", alias, playerActivitySummaryTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
         public SteamAccountTypeQueryBuilder ExceptActivity()

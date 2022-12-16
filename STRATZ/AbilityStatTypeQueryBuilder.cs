@@ -48,7 +48,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "charges" },
                 new FieldMetadata { Name = "chargeRestoreTime" },
                 new FieldMetadata { Name = "isGrantedByShard" },
-                new FieldMetadata { Name = "dispellable" }
+                new FieldMetadata { Name = "dispellable" },
+                new FieldMetadata { Name = "linkedAbilityId", IsComplex = true }
             };
 
         protected override string TypeName { get { return "AbilityStatType"; } } 
@@ -383,6 +384,16 @@ namespace STRATZ
         public AbilityStatTypeQueryBuilder ExceptDispellable()
         {
             return ExceptField("dispellable");
+        }
+
+        public AbilityStatTypeQueryBuilder WithLinkedAbilityId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("linkedAbilityId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public AbilityStatTypeQueryBuilder ExceptLinkedAbilityId()
+        {
+            return ExceptField("linkedAbilityId");
         }
     }
 }

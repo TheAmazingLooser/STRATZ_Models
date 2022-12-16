@@ -46,8 +46,8 @@ namespace STRATZ
         private InputPropertyInfo _matchLimitMax;
         private InputPropertyInfo _onlyCasters;
         private InputPropertyInfo _onlyPros;
-        private InputPropertyInfo _skip;
         private InputPropertyInfo _take;
+        private InputPropertyInfo _skip;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<FilterPlayerTeammateEnum?>))]
@@ -349,19 +349,19 @@ namespace STRATZ
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Skip
+        public QueryBuilderParameter<int?> Take
         {
-            get { return (QueryBuilderParameter<int?>)_skip.Value; }
-            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_take.Value; }
+            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Take
+        public QueryBuilderParameter<int?> Skip
         {
-            get { return (QueryBuilderParameter<int?>)_take.Value; }
-            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_skip.Value; }
+            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
         }
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
@@ -399,8 +399,8 @@ namespace STRATZ
             if (_matchLimitMax.Name != null) yield return _matchLimitMax;
             if (_onlyCasters.Name != null) yield return _onlyCasters;
             if (_onlyPros.Name != null) yield return _onlyPros;
-            if (_skip.Name != null) yield return _skip;
             if (_take.Name != null) yield return _take;
+            if (_skip.Name != null) yield return _skip;
         }
     }
 }

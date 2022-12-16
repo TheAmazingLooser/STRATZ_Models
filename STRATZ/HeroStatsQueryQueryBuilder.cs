@@ -34,7 +34,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "guide", IsComplex = true, QueryBuilderType = typeof(HeroGuideListTypeQueryBuilder) },
                 new FieldMetadata { Name = "rampages", IsComplex = true, QueryBuilderType = typeof(HeroRampageObjectTypeQueryBuilder) },
                 new FieldMetadata { Name = "abilityMinLevel", IsComplex = true, QueryBuilderType = typeof(HeroAbilityMinTypeQueryBuilder) },
-                new FieldMetadata { Name = "abilityMaxLevel", IsComplex = true, QueryBuilderType = typeof(HeroAbilityMaxTypeQueryBuilder) }
+                new FieldMetadata { Name = "abilityMaxLevel", IsComplex = true, QueryBuilderType = typeof(HeroAbilityMaxTypeQueryBuilder) },
+                new FieldMetadata { Name = "banDay", IsComplex = true, QueryBuilderType = typeof(HeroBanTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "HeroStatsQuery"; } } 
@@ -543,6 +544,36 @@ namespace STRATZ
         public HeroStatsQueryQueryBuilder ExceptAbilityMaxLevel()
         {
             return ExceptField("abilityMaxLevel");
+        }
+
+        public HeroStatsQueryQueryBuilder WithBanDay(HeroBanTypeQueryBuilder heroBanTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<int?> day = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<bool?> groupByDay = null, QueryBuilderParameter<bool?> groupByRank = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            if (day != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "day", ArgumentValue = day} );
+
+            if (bracketBasicIds != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
+
+            if (take != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );
+
+            if (skip != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
+
+            if (groupByDay != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "groupByDay", ArgumentValue = groupByDay} );
+
+            if (groupByRank != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "groupByRank", ArgumentValue = groupByRank} );
+
+            return WithObjectField("banDay", alias, heroBanTypeQueryBuilder, new GraphQlDirective[] { include, skipDirective }, args);
+        }
+
+        public HeroStatsQueryQueryBuilder ExceptBanDay()
+        {
+            return ExceptField("banDay");
         }
     }
 }

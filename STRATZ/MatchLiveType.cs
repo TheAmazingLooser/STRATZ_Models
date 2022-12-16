@@ -25,7 +25,7 @@ namespace STRATZ
         public int? RadiantLead { get; set; }
         public long? LobbyId { get; set; }
         public LobbyTypeEnum? LobbyType { get; set; }
-        public string ServerSteamId { get; set; }
+        public long? ServerSteamId { get; set; }
         public int? GameTime { get; set; }
         public bool? Completed { get; set; }
         public bool? IsUpdating { get; set; }

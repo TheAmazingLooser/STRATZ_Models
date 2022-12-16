@@ -29,12 +29,12 @@ namespace STRATZ
         public short? DotaAccountLevel { get; set; }
         public short? RankShift { get; set; }
         public bool? IsAnonymous { get; set; }
-        public bool? IsStratzAnonymous { get; set; }
+        public bool? IsStratzPublic { get; set; }
         public byte? SeasonRank { get; set; }
         public short? SeasonLeaderboardRank { get; set; }
         public byte? SeasonLeaderboardDivisionId { get; set; }
         public ProSteamAccountType ProSteamAccount { get; set; }
-        public ProSteamAccountType Activity { get; set; }
+        public PlayerActivitySummaryType Activity { get; set; }
         public byte? SmurfFlag { get; set; }
         public long? LastMatchDateTime { get; set; }
         public byte? LastMatchRegionId { get; set; }

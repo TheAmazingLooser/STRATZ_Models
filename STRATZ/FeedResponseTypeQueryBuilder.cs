@@ -18,7 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "data", IsComplex = true, QueryBuilderType = typeof(FeedTypeQueryBuilder) },
                 new FieldMetadata { Name = "count" },
-                new FieldMetadata { Name = "date", IsComplex = true }
+                new FieldMetadata { Name = "attackAnimationPoint", IsComplex = true }
             };
 
         protected override string TypeName { get { return "FeedResponseType"; } } 
@@ -45,14 +45,14 @@ namespace STRATZ
             return ExceptField("count");
         }
 
-        public FeedResponseTypeQueryBuilder WithDate(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public FeedResponseTypeQueryBuilder WithAttackAnimationPoint(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("date", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("attackAnimationPoint", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public FeedResponseTypeQueryBuilder ExceptDate()
+        public FeedResponseTypeQueryBuilder ExceptAttackAnimationPoint()
         {
-            return ExceptField("date");
+            return ExceptField("attackAnimationPoint");
         }
     }
 }

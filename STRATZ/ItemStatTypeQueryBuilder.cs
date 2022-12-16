@@ -23,7 +23,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "fightRecapLevel", IsComplex = true },
                 new FieldMetadata { Name = "castRange", IsComplex = true },
                 new FieldMetadata { Name = "castPoint", IsComplex = true },
-                new FieldMetadata { Name = "cooldown", IsComplex = true },
                 new FieldMetadata { Name = "manaCost", IsComplex = true },
                 new FieldMetadata { Name = "channelTime", IsComplex = true },
                 new FieldMetadata { Name = "sharedCooldown" },
@@ -129,16 +128,6 @@ namespace STRATZ
         public ItemStatTypeQueryBuilder ExceptCastPoint()
         {
             return ExceptField("castPoint");
-        }
-
-        public ItemStatTypeQueryBuilder WithCooldown(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("cooldown", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public ItemStatTypeQueryBuilder ExceptCooldown()
-        {
-            return ExceptField("cooldown");
         }
 
         public ItemStatTypeQueryBuilder WithManaCost(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

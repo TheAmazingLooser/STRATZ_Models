@@ -20,11 +20,11 @@ namespace STRATZ
         private InputPropertyInfo _position;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
         #endif
-        public QueryBuilderParameter<long?> SteamAccountId
+        public QueryBuilderParameter<byte?> SteamAccountId
         {
-            get { return (QueryBuilderParameter<long?>)_steamAccountId.Value; }
+            get { return (QueryBuilderParameter<byte?>)_steamAccountId.Value; }
             set { _steamAccountId = new InputPropertyInfo { Name = "steamAccountId", Value = value }; }
         }
 

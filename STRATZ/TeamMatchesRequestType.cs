@@ -35,15 +35,15 @@ namespace STRATZ
         private InputPropertyInfo _hasAward;
         private InputPropertyInfo _withFriendSteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
-        private InputPropertyInfo _skip;
         private InputPropertyInfo _take;
+        private InputPropertyInfo _skip;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
         #endif
-        public QueryBuilderParameter<long?> SteamAccountId
+        public QueryBuilderParameter<byte?> SteamAccountId
         {
-            get { return (QueryBuilderParameter<long?>)_steamAccountId.Value; }
+            get { return (QueryBuilderParameter<byte?>)_steamAccountId.Value; }
             set { _steamAccountId = new InputPropertyInfo { Name = "steamAccountId", Value = value }; }
         }
 
@@ -239,19 +239,19 @@ namespace STRATZ
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Skip
+        public QueryBuilderParameter<int?> Take
         {
-            get { return (QueryBuilderParameter<int?>)_skip.Value; }
-            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_take.Value; }
+            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<int?> Take
+        public QueryBuilderParameter<int?> Skip
         {
-            get { return (QueryBuilderParameter<int?>)_take.Value; }
-            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
+            get { return (QueryBuilderParameter<int?>)_skip.Value; }
+            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
         }
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
@@ -278,8 +278,8 @@ namespace STRATZ
             if (_hasAward.Name != null) yield return _hasAward;
             if (_withFriendSteamAccountIds.Name != null) yield return _withFriendSteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
-            if (_skip.Name != null) yield return _skip;
             if (_take.Name != null) yield return _take;
+            if (_skip.Name != null) yield return _skip;
         }
     }
 }

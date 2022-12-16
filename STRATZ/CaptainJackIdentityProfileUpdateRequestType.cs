@@ -22,9 +22,9 @@ namespace STRATZ
         private InputPropertyInfo _proCircuitFeedLevel;
         private InputPropertyInfo _proCircuitEmailLevel;
         private InputPropertyInfo _themeType;
-        private InputPropertyInfo _languageId;
+        private InputPropertyInfo _language;
         private InputPropertyInfo _emailHour;
-        private InputPropertyInfo _isStratzAnonymous;
+        private InputPropertyInfo _isStratzPublic;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
@@ -108,12 +108,12 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<Language?>))]
         #endif
-        public QueryBuilderParameter<byte?> LanguageId
+        public QueryBuilderParameter<Language?> Language
         {
-            get { return (QueryBuilderParameter<byte?>)_languageId.Value; }
-            set { _languageId = new InputPropertyInfo { Name = "languageId", Value = value }; }
+            get { return (QueryBuilderParameter<Language?>)_language.Value; }
+            set { _language = new InputPropertyInfo { Name = "language", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -126,12 +126,12 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
         #endif
-        public QueryBuilderParameter<byte?> IsStratzAnonymous
+        public QueryBuilderParameter<bool?> IsStratzPublic
         {
-            get { return (QueryBuilderParameter<byte?>)_isStratzAnonymous.Value; }
-            set { _isStratzAnonymous = new InputPropertyInfo { Name = "isStratzAnonymous", Value = value }; }
+            get { return (QueryBuilderParameter<bool?>)_isStratzPublic.Value; }
+            set { _isStratzPublic = new InputPropertyInfo { Name = "isStratzPublic", Value = value }; }
         }
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
@@ -145,9 +145,9 @@ namespace STRATZ
             if (_proCircuitFeedLevel.Name != null) yield return _proCircuitFeedLevel;
             if (_proCircuitEmailLevel.Name != null) yield return _proCircuitEmailLevel;
             if (_themeType.Name != null) yield return _themeType;
-            if (_languageId.Name != null) yield return _languageId;
+            if (_language.Name != null) yield return _language;
             if (_emailHour.Name != null) yield return _emailHour;
-            if (_isStratzAnonymous.Name != null) yield return _isStratzAnonymous;
+            if (_isStratzPublic.Name != null) yield return _isStratzPublic;
         }
     }
 }

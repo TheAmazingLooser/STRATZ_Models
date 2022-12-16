@@ -16,7 +16,7 @@ namespace STRATZ
         public long? SteamAccountId { get; set; }
         public SteamAccountType SteamAccount { get; set; }
         public PlayerType Player { get; set; }
-        public long? TeamId { get; set; }
+        public int? TeamId { get; set; }
         public long? FirstMatchId { get; set; }
         public long? FirstMatchDateTime { get; set; }
         public long? LastMatchId { get; set; }

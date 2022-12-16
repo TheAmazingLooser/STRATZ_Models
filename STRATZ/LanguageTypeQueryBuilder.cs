@@ -18,7 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "id", IsComplex = true },
                 new FieldMetadata { Name = "languageCode" },
-                new FieldMetadata { Name = "languageName" }
+                new FieldMetadata { Name = "displaLanguageNameyName" }
             };
 
         protected override string TypeName { get { return "LanguageType"; } } 
@@ -45,14 +45,14 @@ namespace STRATZ
             return ExceptField("languageCode");
         }
 
-        public LanguageTypeQueryBuilder WithLanguageName(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public LanguageTypeQueryBuilder WithDisplaLanguageNameyName(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("languageName", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("displaLanguageNameyName", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public LanguageTypeQueryBuilder ExceptLanguageName()
+        public LanguageTypeQueryBuilder ExceptDisplaLanguageNameyName()
         {
-            return ExceptField("languageName");
+            return ExceptField("displaLanguageNameyName");
         }
     }
 }

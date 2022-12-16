@@ -13,13 +13,13 @@ namespace STRATZ
 {
     public partial class PageAghanimQuery
     {
-        public Ti2020CustomGameMatchType Match { get; set; }
-        public IList<Ti2020CustomGameMatchType> Matches { get; set; }
-        public IList<Ti2020CustomGameHeroCompositionType> HeroCompositions { get; set; }
-        public Ti2020CustomGameHeroCompositionType HeroComposition { get; set; }
-        public Ti2020CustomGameHeroWinRateType WinRate { get; set; }
-        public IList<Ti2020CustomGameHeroAbilityType> HeroAbility { get; set; }
-        public IList<Ti2020CustomGameRoomType> Room { get; set; }
+        public AghanimLabMatchType Match { get; set; }
+        public IList<AghanimLabMatchType> Matches { get; set; }
+        public IList<AghanimLabHeroCompositionType> HeroCompositions { get; set; }
+        public AghanimLabHeroCompositionType HeroComposition { get; set; }
+        public AghanimLabHeroWinRateType WinRate { get; set; }
+        public IList<AghanimLabHeroAbilityType> HeroAbility { get; set; }
+        public IList<AghanimLabRoomType> Room { get; set; }
         public IList<Ti2020CustomGameRoomModifierType> RoomModifier { get; set; }
     }
 }

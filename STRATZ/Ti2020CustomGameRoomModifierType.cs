@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class Ti2020CustomGameRoomModifierType
     {
-        public Ti2020CustomGameMatchDifficultyType? Difficulty { get; set; }
+        public AghanimLabMatchDifficultyEnum? Difficulty { get; set; }
         public short? ModifierId { get; set; }
         public int? MatchCount { get; set; }
         public int? WinCount { get; set; }

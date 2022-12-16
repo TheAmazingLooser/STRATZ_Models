@@ -15,6 +15,6 @@ namespace STRATZ
     {
         public byte? Id { get; set; }
         public string LanguageCode { get; set; }
-        public string LanguageName { get; set; }
+        public string DisplaLanguageNameyName { get; set; }
     }
 }

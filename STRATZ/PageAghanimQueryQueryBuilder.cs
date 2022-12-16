@@ -16,13 +16,13 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "match", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameMatchTypeQueryBuilder) },
-                new FieldMetadata { Name = "matches", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameMatchTypeQueryBuilder) },
-                new FieldMetadata { Name = "heroCompositions", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameHeroCompositionTypeQueryBuilder) },
-                new FieldMetadata { Name = "heroComposition", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameHeroCompositionTypeQueryBuilder) },
-                new FieldMetadata { Name = "winRate", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameHeroWinRateTypeQueryBuilder) },
-                new FieldMetadata { Name = "heroAbility", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameHeroAbilityTypeQueryBuilder) },
-                new FieldMetadata { Name = "room", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameRoomTypeQueryBuilder) },
+                new FieldMetadata { Name = "match", IsComplex = true, QueryBuilderType = typeof(AghanimLabMatchTypeQueryBuilder) },
+                new FieldMetadata { Name = "matches", IsComplex = true, QueryBuilderType = typeof(AghanimLabMatchTypeQueryBuilder) },
+                new FieldMetadata { Name = "heroCompositions", IsComplex = true, QueryBuilderType = typeof(AghanimLabHeroCompositionTypeQueryBuilder) },
+                new FieldMetadata { Name = "heroComposition", IsComplex = true, QueryBuilderType = typeof(AghanimLabHeroCompositionTypeQueryBuilder) },
+                new FieldMetadata { Name = "winRate", IsComplex = true, QueryBuilderType = typeof(AghanimLabHeroWinRateTypeQueryBuilder) },
+                new FieldMetadata { Name = "heroAbility", IsComplex = true, QueryBuilderType = typeof(AghanimLabHeroAbilityTypeQueryBuilder) },
+                new FieldMetadata { Name = "room", IsComplex = true, QueryBuilderType = typeof(AghanimLabRoomTypeQueryBuilder) },
                 new FieldMetadata { Name = "roomModifier", IsComplex = true, QueryBuilderType = typeof(Ti2020CustomGameRoomModifierTypeQueryBuilder) }
             };
 
@@ -30,11 +30,11 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public PageAghanimQueryQueryBuilder WithMatch(Ti2020CustomGameMatchTypeQueryBuilder ti2020CustomGameMatchTypeQueryBuilder, QueryBuilderParameter<object> id, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithMatch(AghanimLabMatchTypeQueryBuilder aghanimLabMatchTypeQueryBuilder, QueryBuilderParameter<object> id, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "id", ArgumentValue = id} );
-            return WithObjectField("match", alias, ti2020CustomGameMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("match", alias, aghanimLabMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptMatch()
@@ -42,13 +42,13 @@ namespace STRATZ
             return ExceptField("match");
         }
 
-        public PageAghanimQueryQueryBuilder WithMatches(Ti2020CustomGameMatchTypeQueryBuilder ti2020CustomGameMatchTypeQueryBuilder, QueryBuilderParameter<FilterTi2020MatchRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithMatches(AghanimLabMatchTypeQueryBuilder aghanimLabMatchTypeQueryBuilder, QueryBuilderParameter<FilterAghanimLabMatchRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (request != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
 
-            return WithObjectField("matches", alias, ti2020CustomGameMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("matches", alias, aghanimLabMatchTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptMatches()
@@ -56,11 +56,11 @@ namespace STRATZ
             return ExceptField("matches");
         }
 
-        public PageAghanimQueryQueryBuilder WithHeroCompositions(Ti2020CustomGameHeroCompositionTypeQueryBuilder ti2020CustomGameHeroCompositionTypeQueryBuilder, QueryBuilderParameter<FilterTi2020HeroCompositionRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithHeroCompositions(AghanimLabHeroCompositionTypeQueryBuilder aghanimLabHeroCompositionTypeQueryBuilder, QueryBuilderParameter<FilterAghanimLabHeroCompositionRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
-            return WithObjectField("heroCompositions", alias, ti2020CustomGameHeroCompositionTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("heroCompositions", alias, aghanimLabHeroCompositionTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptHeroCompositions()
@@ -68,12 +68,12 @@ namespace STRATZ
             return ExceptField("heroCompositions");
         }
 
-        public PageAghanimQueryQueryBuilder WithHeroComposition(Ti2020CustomGameHeroCompositionTypeQueryBuilder ti2020CustomGameHeroCompositionTypeQueryBuilder, QueryBuilderParameter<IEnumerable<object>> heroIds, QueryBuilderParameter<Ti2020CustomGameMatchDifficultyType> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithHeroComposition(AghanimLabHeroCompositionTypeQueryBuilder aghanimLabHeroCompositionTypeQueryBuilder, QueryBuilderParameter<IEnumerable<object>> heroIds, QueryBuilderParameter<AghanimLabMatchDifficultyEnum> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroIds", ArgumentValue = heroIds} );
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "difficulty", ArgumentValue = difficulty} );
-            return WithObjectField("heroComposition", alias, ti2020CustomGameHeroCompositionTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("heroComposition", alias, aghanimLabHeroCompositionTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptHeroComposition()
@@ -81,11 +81,11 @@ namespace STRATZ
             return ExceptField("heroComposition");
         }
 
-        public PageAghanimQueryQueryBuilder WithWinRate(Ti2020CustomGameHeroWinRateTypeQueryBuilder ti2020CustomGameHeroWinRateTypeQueryBuilder, QueryBuilderParameter<Ti2020CustomGameMatchDifficultyType> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithWinRate(AghanimLabHeroWinRateTypeQueryBuilder aghanimLabHeroWinRateTypeQueryBuilder, QueryBuilderParameter<AghanimLabMatchDifficultyEnum> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "difficulty", ArgumentValue = difficulty} );
-            return WithObjectField("winRate", alias, ti2020CustomGameHeroWinRateTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("winRate", alias, aghanimLabHeroWinRateTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptWinRate()
@@ -93,11 +93,11 @@ namespace STRATZ
             return ExceptField("winRate");
         }
 
-        public PageAghanimQueryQueryBuilder WithHeroAbility(Ti2020CustomGameHeroAbilityTypeQueryBuilder ti2020CustomGameHeroAbilityTypeQueryBuilder, QueryBuilderParameter<Ti2020CustomGameMatchDifficultyType> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithHeroAbility(AghanimLabHeroAbilityTypeQueryBuilder aghanimLabHeroAbilityTypeQueryBuilder, QueryBuilderParameter<AghanimLabMatchDifficultyEnum> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "difficulty", ArgumentValue = difficulty} );
-            return WithObjectField("heroAbility", alias, ti2020CustomGameHeroAbilityTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("heroAbility", alias, aghanimLabHeroAbilityTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptHeroAbility()
@@ -105,11 +105,11 @@ namespace STRATZ
             return ExceptField("heroAbility");
         }
 
-        public PageAghanimQueryQueryBuilder WithRoom(Ti2020CustomGameRoomTypeQueryBuilder ti2020CustomGameRoomTypeQueryBuilder, QueryBuilderParameter<Ti2020CustomGameMatchDifficultyType> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithRoom(AghanimLabRoomTypeQueryBuilder aghanimLabRoomTypeQueryBuilder, QueryBuilderParameter<AghanimLabMatchDifficultyEnum> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "difficulty", ArgumentValue = difficulty} );
-            return WithObjectField("room", alias, ti2020CustomGameRoomTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("room", alias, aghanimLabRoomTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PageAghanimQueryQueryBuilder ExceptRoom()
@@ -117,7 +117,7 @@ namespace STRATZ
             return ExceptField("room");
         }
 
-        public PageAghanimQueryQueryBuilder WithRoomModifier(Ti2020CustomGameRoomModifierTypeQueryBuilder ti2020CustomGameRoomModifierTypeQueryBuilder, QueryBuilderParameter<Ti2020CustomGameMatchDifficultyType> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PageAghanimQueryQueryBuilder WithRoomModifier(Ti2020CustomGameRoomModifierTypeQueryBuilder ti2020CustomGameRoomModifierTypeQueryBuilder, QueryBuilderParameter<AghanimLabMatchDifficultyEnum> difficulty, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "difficulty", ArgumentValue = difficulty} );

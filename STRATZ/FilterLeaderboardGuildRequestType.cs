@@ -129,20 +129,20 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<byte?> MinRequiredRank
+        public QueryBuilderParameter<long?> MinRequiredRank
         {
-            get { return (QueryBuilderParameter<byte?>)_minRequiredRank.Value; }
+            get { return (QueryBuilderParameter<long?>)_minRequiredRank.Value; }
             set { _minRequiredRank = new InputPropertyInfo { Name = "minRequiredRank", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<byte?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<byte?> MaxRequiredRank
+        public QueryBuilderParameter<long?> MaxRequiredRank
         {
-            get { return (QueryBuilderParameter<byte?>)_maxRequiredRank.Value; }
+            get { return (QueryBuilderParameter<long?>)_maxRequiredRank.Value; }
             set { _maxRequiredRank = new InputPropertyInfo { Name = "maxRequiredRank", Value = value }; }
         }
 

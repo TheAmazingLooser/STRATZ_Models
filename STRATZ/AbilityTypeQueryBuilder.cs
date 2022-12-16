@@ -22,8 +22,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "language", IsComplex = true, QueryBuilderType = typeof(AbilityLanguageTypeQueryBuilder) },
                 new FieldMetadata { Name = "stat", IsComplex = true, QueryBuilderType = typeof(AbilityStatTypeQueryBuilder) },
                 new FieldMetadata { Name = "attributes", IsComplex = true, QueryBuilderType = typeof(AbilityAttributeTypeQueryBuilder) },
-                new FieldMetadata { Name = "isTalent" },
-                new FieldMetadata { Name = "drawMatchPage" }
+                new FieldMetadata { Name = "isTalent" }
             };
 
         protected override string TypeName { get { return "AbilityType"; } } 
@@ -98,16 +97,6 @@ namespace STRATZ
         public AbilityTypeQueryBuilder ExceptIsTalent()
         {
             return ExceptField("isTalent");
-        }
-
-        public AbilityTypeQueryBuilder WithDrawMatchPage(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("drawMatchPage", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public AbilityTypeQueryBuilder ExceptDrawMatchPage()
-        {
-            return ExceptField("drawMatchPage");
         }
     }
 }

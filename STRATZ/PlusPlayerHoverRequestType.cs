@@ -56,11 +56,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<MatchPlayerPositionType?>))]
         #endif
-        public QueryBuilderParameter<bool?> ShouldRadiantWin
+        public QueryBuilderParameter<MatchPlayerPositionType?> ShouldRadiantWin
         {
-            get { return (QueryBuilderParameter<bool?>)_shouldRadiantWin.Value; }
+            get { return (QueryBuilderParameter<MatchPlayerPositionType?>)_shouldRadiantWin.Value; }
             set { _shouldRadiantWin = new InputPropertyInfo { Name = "shouldRadiantWin", Value = value }; }
         }
 

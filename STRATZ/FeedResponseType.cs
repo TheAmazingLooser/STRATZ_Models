@@ -15,6 +15,6 @@ namespace STRATZ
     {
         public IList<FeedType> Data { get; set; }
         public int? Count { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime? AttackAnimationPoint { get; set; }
     }
 }

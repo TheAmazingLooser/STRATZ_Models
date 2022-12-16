@@ -32,5 +32,6 @@ namespace STRATZ
         public IList<HeroRampageObjectType> Rampages { get; set; }
         public IList<HeroAbilityMinType> AbilityMinLevel { get; set; }
         public IList<HeroAbilityMaxType> AbilityMaxLevel { get; set; }
+        public IList<HeroBanType> BanDay { get; set; }
     }
 }

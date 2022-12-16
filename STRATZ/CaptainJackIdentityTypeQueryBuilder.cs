@@ -17,7 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "id", IsComplex = true },
-                new FieldMetadata { Name = "steamAccountId" },
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "profile", IsComplex = true, QueryBuilderType = typeof(CaptainJackIdentityPublicProfileTypeQueryBuilder) }
             };

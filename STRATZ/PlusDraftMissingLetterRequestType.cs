@@ -19,11 +19,11 @@ namespace STRATZ
         private InputPropertyInfo _gameVersionId;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<short?>))]
         #endif
-        public QueryBuilderParameter<IList<object>> Bans
+        public QueryBuilderParameter<short?> Bans
         {
-            get { return (QueryBuilderParameter<IList<object>>)_bans.Value; }
+            get { return (QueryBuilderParameter<short?>)_bans.Value; }
             set { _bans = new InputPropertyInfo { Name = "bans", Value = value }; }
         }
 
@@ -37,11 +37,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<PlusDraftMissingLetterPlayerObjectType>>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<PlusDraftPlayerRequestType>>))]
         #endif
-        public QueryBuilderParameter<IList<PlusDraftMissingLetterPlayerObjectType>> Players
+        public QueryBuilderParameter<IList<PlusDraftPlayerRequestType>> Players
         {
-            get { return (QueryBuilderParameter<IList<PlusDraftMissingLetterPlayerObjectType>>)_players.Value; }
+            get { return (QueryBuilderParameter<IList<PlusDraftPlayerRequestType>>)_players.Value; }
             set { _players = new InputPropertyInfo { Name = "players", Value = value }; }
         }
 

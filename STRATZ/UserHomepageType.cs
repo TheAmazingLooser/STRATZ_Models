@@ -20,13 +20,13 @@ namespace STRATZ
         public IList<ProPlayerFollowType> TopProPlayers { get; set; }
         public IList<TopPlayersByHeroType> TopPlayersByHeroType { get; set; }
         public IList<HomepageHeroSynergyType> TopSynergiesByHero { get; set; }
-        public IList<MatchType> MatchAwards { get; set; }
-        public IList<RecentRampageType> RecentRampages { get; set; }
-        public IList<RecentWinStreakType> RecentWinStreaks { get; set; }
-        public IList<RecentHighImpType> RecentHighImps { get; set; }
-        public IList<MatchPlayerType> RecentMatches { get; set; }
-        public IList<MatchLiveType> ActiveLeagueGames { get; set; }
-        public IList<MatchLiveType> TopLiveGames { get; set; }
+        public IList<HomepageHeroSynergyType> MatchAwards { get; set; }
+        public IList<HomepageHeroSynergyType> RecentRampages { get; set; }
+        public IList<HomepageHeroSynergyType> RecentWinStreaks { get; set; }
+        public IList<HomepageHeroSynergyType> RecentHighImps { get; set; }
+        public IList<HomepageHeroSynergyType> RecentMatches { get; set; }
+        public IList<HomepageHeroSynergyType> ActiveLeagueGames { get; set; }
+        public IList<HomepageHeroSynergyType> TopLiveGames { get; set; }
         public int? TotalComponents { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "radiantLead" },
                 new FieldMetadata { Name = "lobbyId", IsComplex = true },
                 new FieldMetadata { Name = "lobbyType" },
-                new FieldMetadata { Name = "serverSteamId" },
+                new FieldMetadata { Name = "serverSteamId", IsComplex = true },
                 new FieldMetadata { Name = "gameTime" },
                 new FieldMetadata { Name = "completed" },
                 new FieldMetadata { Name = "isUpdating" },

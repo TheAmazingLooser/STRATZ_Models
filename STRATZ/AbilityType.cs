@@ -20,6 +20,5 @@ namespace STRATZ
         public AbilityStatType Stat { get; set; }
         public IList<AbilityAttributeType> Attributes { get; set; }
         public bool? IsTalent { get; set; }
-        public bool? DrawMatchPage { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class CaptainJackIdentityType
     {
         public object Id { get; set; }
-        public string SteamAccountId { get; set; }
+        public long? SteamAccountId { get; set; }
         public SteamAccountType SteamAccount { get; set; }
         public CaptainJackIdentityPublicProfileType Profile { get; set; }
     }

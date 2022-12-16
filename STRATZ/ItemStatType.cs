@@ -20,7 +20,6 @@ namespace STRATZ
         public byte? FightRecapLevel { get; set; }
         public IList<int> CastRange { get; set; }
         public IList<decimal> CastPoint { get; set; }
-        public IList<decimal> Cooldown { get; set; }
         public IList<decimal> ManaCost { get; set; }
         public IList<decimal> ChannelTime { get; set; }
         public string SharedCooldown { get; set; }

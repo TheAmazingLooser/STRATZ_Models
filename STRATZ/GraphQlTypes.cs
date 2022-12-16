@@ -27,10 +27,16 @@ namespace STRATZ
         public const string UShort = "UShort";
 
         public const string AbilityDispellEnum = "AbilityDispellEnum";
+        public const string AghanimLabDepthListAscensionAbilitiesEnum = "AghanimLabDepthListAscensionAbilitiesEnum";
+        public const string AghanimLabDepthListEncounterEnum = "AghanimLabDepthListEncounterEnum";
+        public const string AghanimLabDepthListRewardEnum = "AghanimLabDepthListRewardEnum";
+        public const string AghanimLabMatchDifficultyEnum = "AghanimLabMatchDifficultyEnum";
+        public const string AghanimLabPlayerBlessingEnum = "AghanimLabPlayerBlessingEnum";
         public const string BasicRegionType = "BasicRegionType";
         public const string BuildingType = "BuildingType";
         public const string Damage = "Damage";
         public const string Feat = "Feat";
+        public const string FilterAghanimLabMatchOrderBy = "FilterAghanimLabMatchOrderBy";
         public const string FilterDireTide2020CustomGameMatchOrderBy = "FilterDireTide2020CustomGameMatchOrderBy";
         public const string FilterHeroWinRequestGroupBy = "FilterHeroWinRequestGroupBy";
         public const string FilterLeaderboardGuildOrderBy = "FilterLeaderboardGuildOrderBy";
@@ -39,7 +45,6 @@ namespace STRATZ
         public const string FilterOrder = "FilterOrder";
         public const string FilterOrderBy = "FilterOrderBy";
         public const string FilterPlayerTeammateEnum = "FilterPlayerTeammateEnum";
-        public const string FilterTi2020CustomGameMatchOrderBy = "FilterTI2020CustomGameMatchOrderBy";
         public const string FindMatchPlayerGroupBy = "FindMatchPlayerGroupBy";
         public const string FindMatchPlayerList = "FindMatchPlayerList";
         public const string FindMatchPlayerOrderBy = "FindMatchPlayerOrderBy";
@@ -79,11 +84,6 @@ namespace STRATZ
         public const string StratzApiType = "StratzApiType";
         public const string Streak = "Streak";
         public const string TableCalculateEnum = "TableCalculateEnum";
-        public const string Ti2020CustomGameDepthListAscensionAbilitiesType = "TI2020CustomGameDepthListAscensionAbilitiesType";
-        public const string Ti2020CustomGameDepthListEncounterType = "TI2020CustomGameDepthListEncounterType";
-        public const string Ti2020CustomGameDepthListRewardType = "TI2020CustomGameDepthListRewardType";
-        public const string Ti2020CustomGameMatchDifficultyType = "TI2020CustomGameMatchDifficultyType";
-        public const string Ti2020CustomGamePlayerBlessingType = "TI2020CustomGamePlayerBlessingType";
         public const string XpReason = "XpReason";
 
         public const string AbilityActiveListType = "AbilityActiveListType";
@@ -97,6 +97,16 @@ namespace STRATZ
         public const string AbilityUsedEventsType = "AbilityUsedEventsType";
         public const string AdminMutation = "AdminMutation";
         public const string AdminQuery = "AdminQuery";
+        public const string AghanimLabDepthListAscensionAbilitiesObjectType = "AghanimLabDepthListAscensionAbilitiesObjectType";
+        public const string AghanimLabHeroAbilityType = "AghanimLabHeroAbilityType";
+        public const string AghanimLabHeroCompositionType = "AghanimLabHeroCompositionType";
+        public const string AghanimLabHeroWinRateType = "AghanimLabHeroWinRateType";
+        public const string AghanimLabMatchDepthListType = "AghanimLabMatchDepthListType";
+        public const string AghanimLabMatchType = "AghanimLabMatchType";
+        public const string AghanimLabPlayerBlessingObjectType = "AghanimLabPlayerBlessingObjectType";
+        public const string AghanimLabPlayerDepthListType = "AghanimLabPlayerDepthListType";
+        public const string AghanimLabPlayerSeasonOneType = "AghanimLabPlayerSeasonOneType";
+        public const string AghanimLabRoomType = "AghanimLabRoomType";
         public const string AssistDetailType = "AssistDetailType";
         public const string BattlepassPredictionHeroType = "BattlepassPredictionHeroType";
         public const string BattlepassPredictionIdValueType = "BattlepassPredictionIdValueType";
@@ -137,6 +147,7 @@ namespace STRATZ
         public const string HeroAbilityMinType = "HeroAbilityMinType";
         public const string HeroAbilityTalentType = "HeroAbilityTalentType";
         public const string HeroAbilityType = "HeroAbilityType";
+        public const string HeroBanType = "HeroBanType";
         public const string HeroDamageDetailType = "HeroDamageDetailType";
         public const string HeroDotaPlusLeaderboardRankTopType = "HeroDotaPlusLeaderboardRankTopType";
         public const string HeroDotaPlusLeaderboardRankType = "HeroDotaPlusLeaderboardRankType";
@@ -382,9 +393,6 @@ namespace STRATZ
         public const string ProSteamAccountType = "ProSteamAccountType";
         public const string RabbitDetailType = "RabbitDetailType";
         public const string RabbitQueueDetailType = "RabbitQueueDetailType";
-        public const string RecentHighImpType = "RecentHighImpType";
-        public const string RecentRampageType = "RecentRampageType";
-        public const string RecentWinStreakType = "RecentWinStreakType";
         public const string RegionType = "RegionType";
         public const string RoleType = "RoleType";
         public const string SearchType = "SearchType";
@@ -409,17 +417,7 @@ namespace STRATZ
         public const string StreakEventType = "StreakEventType";
         public const string TeamPrizeType = "TeamPrizeType";
         public const string TeamType = "TeamType";
-        public const string Ti2020CustomGameDepthListAscensionAbilitiesObjectType = "TI2020CustomGameDepthListAscensionAbilitiesObjectType";
-        public const string Ti2020CustomGameHeroAbilityType = "TI2020CustomGameHeroAbilityType";
-        public const string Ti2020CustomGameHeroCompositionType = "TI2020CustomGameHeroCompositionType";
-        public const string Ti2020CustomGameHeroWinRateType = "TI2020CustomGameHeroWinRateType";
-        public const string Ti2020CustomGameMatchDepthListType = "TI2020CustomGameMatchDepthListType";
-        public const string Ti2020CustomGameMatchType = "TI2020CustomGameMatchType";
-        public const string Ti2020CustomGamePlayerBlessingObjectType = "TI2020CustomGamePlayerBlessingObjectType";
-        public const string Ti2020CustomGamePlayerDepthListType = "TI2020CustomGamePlayerDepthListType";
-        public const string Ti2020CustomGamePlayerType = "TI2020CustomGamePlayerType";
         public const string Ti2020CustomGameRoomModifierType = "TI2020CustomGameRoomModifierType";
-        public const string Ti2020CustomGameRoomType = "TI2020CustomGameRoomType";
         public const string TopPlayersByHeroType = "TopPlayersByHeroType";
         public const string TotalMatchCountType = "TotalMatchCountType";
         public const string TotalPlayerCountType = "TotalPlayerCountType";
@@ -436,6 +434,8 @@ namespace STRATZ
 
         public const string CaptainJackIdentityProfileUpdateRequestType = "CaptainJackIdentityProfileUpdateRequestType";
         public const string DeleteProSteamAccountRequestType = "DeleteProSteamAccountRequestType";
+        public const string FilterAghanimLabHeroCompositionRequestType = "FilterAghanimLabHeroCompositionRequestType";
+        public const string FilterAghanimLabMatchRequestType = "FilterAghanimLabMatchRequestType";
         public const string FilterDireTideCustomMatchRequestType = "FilterDireTideCustomMatchRequestType";
         public const string FilterHeroRampageType = "FilterHeroRampageType";
         public const string FilterLeaderboardGuildRequestType = "FilterLeaderboardGuildRequestType";
@@ -444,8 +444,6 @@ namespace STRATZ
         public const string FilterSearchRequestType = "FilterSearchRequestType";
         public const string FilterSeasonLeaderboardRequestType = "FilterSeasonLeaderboardRequestType";
         public const string FilterSeriesRequestType = "FilterSeriesRequestType";
-        public const string FilterTi2020HeroCompositionRequestType = "FilterTI2020HeroCompositionRequestType";
-        public const string FilterTi2020MatchRequestType = "FilterTI2020MatchRequestType";
         public const string ImpGeneratorPlayerEventRequestType = "ImpGeneratorPlayerEventRequestType";
         public const string ImpGeneratorPlayerRequestType = "ImpGeneratorPlayerRequestType";
         public const string ImpGeneratorRequestType = "ImpGeneratorRequestType";
@@ -461,7 +459,6 @@ namespace STRATZ
         public const string PlayerMatchesRequestType = "PlayerMatchesRequestType";
         public const string PlayerPerformanceMatchesRequestType = "PlayerPerformanceMatchesRequestType";
         public const string PlayerTeammatesGroupByRequestType = "PlayerTeammatesGroupByRequestType";
-        public const string PlusDraftMissingLetterPlayerObjectType = "PlusDraftMissingLetterPlayerObjectType";
         public const string PlusDraftMissingLetterRequestType = "PlusDraftMissingLetterRequestType";
         public const string PlusDraftPlayerRequestType = "PlusDraftPlayerRequestType";
         public const string PlusDraftRequestType = "PlusDraftRequestType";
@@ -487,6 +484,8 @@ namespace STRATZ
                 { typeof(ushort), "UShort" },
                 { typeof(CaptainJackIdentityProfileUpdateRequestType), "CaptainJackIdentityProfileUpdateRequestType" },
                 { typeof(DeleteProSteamAccountRequestType), "DeleteProSteamAccountRequestType" },
+                { typeof(FilterAghanimLabHeroCompositionRequestType), "FilterAghanimLabHeroCompositionRequestType" },
+                { typeof(FilterAghanimLabMatchRequestType), "FilterAghanimLabMatchRequestType" },
                 { typeof(FilterDireTideCustomMatchRequestType), "FilterDireTideCustomMatchRequestType" },
                 { typeof(FilterHeroRampageType), "FilterHeroRampageType" },
                 { typeof(FilterLeaderboardGuildRequestType), "FilterLeaderboardGuildRequestType" },
@@ -495,8 +494,6 @@ namespace STRATZ
                 { typeof(FilterSearchRequestType), "FilterSearchRequestType" },
                 { typeof(FilterSeasonLeaderboardRequestType), "FilterSeasonLeaderboardRequestType" },
                 { typeof(FilterSeriesRequestType), "FilterSeriesRequestType" },
-                { typeof(FilterTi2020HeroCompositionRequestType), "FilterTI2020HeroCompositionRequestType" },
-                { typeof(FilterTi2020MatchRequestType), "FilterTI2020MatchRequestType" },
                 { typeof(ImpGeneratorPlayerEventRequestType), "ImpGeneratorPlayerEventRequestType" },
                 { typeof(ImpGeneratorPlayerRequestType), "ImpGeneratorPlayerRequestType" },
                 { typeof(ImpGeneratorRequestType), "ImpGeneratorRequestType" },
@@ -512,7 +509,6 @@ namespace STRATZ
                 { typeof(PlayerMatchesRequestType), "PlayerMatchesRequestType" },
                 { typeof(PlayerPerformanceMatchesRequestType), "PlayerPerformanceMatchesRequestType" },
                 { typeof(PlayerTeammatesGroupByRequestType), "PlayerTeammatesGroupByRequestType" },
-                { typeof(PlusDraftMissingLetterPlayerObjectType), "PlusDraftMissingLetterPlayerObjectType" },
                 { typeof(PlusDraftMissingLetterRequestType), "PlusDraftMissingLetterRequestType" },
                 { typeof(PlusDraftPlayerRequestType), "PlusDraftPlayerRequestType" },
                 { typeof(PlusDraftRequestType), "PlusDraftRequestType" },
