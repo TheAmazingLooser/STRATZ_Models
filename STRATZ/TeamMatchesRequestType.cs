@@ -35,6 +35,7 @@ namespace STRATZ
         private InputPropertyInfo _hasAward;
         private InputPropertyInfo _withFriendSteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
+        private InputPropertyInfo _playerList;
         private InputPropertyInfo _take;
         private InputPropertyInfo _skip;
 
@@ -237,6 +238,15 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<FindMatchPlayerList?>))]
+        #endif
+        public QueryBuilderParameter<FindMatchPlayerList?> PlayerList
+        {
+            get { return (QueryBuilderParameter<FindMatchPlayerList?>)_playerList.Value; }
+            set { _playerList = new InputPropertyInfo { Name = "playerList", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
         public QueryBuilderParameter<int?> Take
@@ -278,6 +288,7 @@ namespace STRATZ
             if (_hasAward.Name != null) yield return _hasAward;
             if (_withFriendSteamAccountIds.Name != null) yield return _withFriendSteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
+            if (_playerList.Name != null) yield return _playerList;
             if (_take.Name != null) yield return _take;
             if (_skip.Name != null) yield return _skip;
         }

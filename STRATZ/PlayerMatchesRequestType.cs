@@ -43,8 +43,8 @@ namespace STRATZ
         private InputPropertyInfo _playerList;
         private InputPropertyInfo _take;
         private InputPropertyInfo _skip;
-        private InputPropertyInfo _afterMatchId;
-        private InputPropertyInfo _beforeMatchId;
+        private InputPropertyInfo _after;
+        private InputPropertyInfo _before;
         private InputPropertyInfo _orderBy;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -320,19 +320,19 @@ namespace STRATZ
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<long?> AfterMatchId
+        public QueryBuilderParameter<long?> After
         {
-            get { return (QueryBuilderParameter<long?>)_afterMatchId.Value; }
-            set { _afterMatchId = new InputPropertyInfo { Name = "afterMatchId", Value = value }; }
+            get { return (QueryBuilderParameter<long?>)_after.Value; }
+            set { _after = new InputPropertyInfo { Name = "after", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<long?> BeforeMatchId
+        public QueryBuilderParameter<long?> Before
         {
-            get { return (QueryBuilderParameter<long?>)_beforeMatchId.Value; }
-            set { _beforeMatchId = new InputPropertyInfo { Name = "beforeMatchId", Value = value }; }
+            get { return (QueryBuilderParameter<long?>)_before.Value; }
+            set { _before = new InputPropertyInfo { Name = "before", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -376,8 +376,8 @@ namespace STRATZ
             if (_playerList.Name != null) yield return _playerList;
             if (_take.Name != null) yield return _take;
             if (_skip.Name != null) yield return _skip;
-            if (_afterMatchId.Name != null) yield return _afterMatchId;
-            if (_beforeMatchId.Name != null) yield return _beforeMatchId;
+            if (_after.Name != null) yield return _after;
+            if (_before.Name != null) yield return _before;
             if (_orderBy.Name != null) yield return _orderBy;
         }
     }

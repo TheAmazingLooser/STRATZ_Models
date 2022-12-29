@@ -14,6 +14,8 @@ namespace STRATZ
     public enum FindMatchPlayerList
     {
         [EnumMember(Value = "ALL")] All,
-        [EnumMember(Value = "SINGLE")] Single
+        [EnumMember(Value = "SINGLE")] Single,
+        [EnumMember(Value = "WITH")] With,
+        [EnumMember(Value = "AGAINST")] Against
     }
 }
