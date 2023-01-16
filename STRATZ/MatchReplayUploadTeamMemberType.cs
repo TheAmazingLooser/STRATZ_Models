@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class MatchReplayUploadTeamMemberType
     {
         public object CaptainJackIdentityId { get; set; }
-        public int? MatchUploadTeamId { get; set; }
+        public long? MatchUploadTeamId { get; set; }
         public bool? IsAdmin { get; set; }
         public bool? IsDefaultTeam { get; set; }
         public SteamAccountType SteamAccount { get; set; }

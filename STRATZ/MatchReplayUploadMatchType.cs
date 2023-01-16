@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public partial class MatchReplayUploadMatchType
     {
-        public int? MatchUploadTeamId { get; set; }
+        public long? MatchUploadTeamId { get; set; }
         public long? Id { get; set; }
         public string FileName { get; set; }
         public object UploaderCaptainJackIdentityId { get; set; }

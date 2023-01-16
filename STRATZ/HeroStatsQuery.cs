@@ -15,7 +15,6 @@ namespace STRATZ
     {
         public IList<HeroPositionTimeDetailType> Stats { get; set; }
         public IList<HeroDryadType> MatchUp { get; set; }
-        public HeroPurchasePatternType PurchasePattern { get; set; }
         public IList<HeroItemPurchaseType> ItemFullPurchase { get; set; }
         public IList<HeroItemStartingPurchaseType> ItemStartingPurchase { get; set; }
         public IList<HeroItemBootPurchaseType> ItemBootPurchase { get; set; }

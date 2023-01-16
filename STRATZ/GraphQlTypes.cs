@@ -162,7 +162,6 @@ namespace STRATZ
         public const string HeroMatchupType = "HeroMatchupType";
         public const string HeroNeutralItemType = "HeroNeutralItemType";
         public const string HeroPositionTimeDetailType = "HeroPositionTimeDetailType";
-        public const string HeroPurchasePatternType = "HeroPurchasePatternType";
         public const string HeroRampageObjectType = "HeroRampageObjectType";
         public const string HeroRoleType = "HeroRoleType";
         public const string HeroStatsHeroDryadType = "HeroStatsHeroDryadType";
@@ -245,7 +244,41 @@ namespace STRATZ
         public const string MatchesHourType = "MatchesHourType";
         public const string MatchesMonthType = "MatchesMonthType";
         public const string MatchesWeekType = "MatchesWeekType";
-        public const string MatchGroupByType = "MatchGroupByType";
+        public const string MatchGroupByAssistsType = "MatchGroupByAssistsType";
+        public const string MatchGroupByAwardType = "MatchGroupByAwardType";
+        public const string MatchGroupByClusterType = "MatchGroupByClusterType";
+        public const string MatchGroupByDateDayType = "MatchGroupByDateDayType";
+        public const string MatchGroupByDeathsType = "MatchGroupByDeathsType";
+        public const string MatchGroupByDurationMinutesType = "MatchGroupByDurationMinutesType";
+        public const string MatchGroupByFactionType = "MatchGroupByFactionType";
+        public const string MatchGroupByGameModeType = "MatchGroupByGameModeType";
+        public const string MatchGroupByGameVersionType = "MatchGroupByGameVersionType";
+        public const string MatchGroupByGoldPerMinuteType = "MatchGroupByGoldPerMinuteType";
+        public const string MatchGroupByHeroPerformanceType = "MatchGroupByHeroPerformanceType";
+        public const string MatchGroupByHeroType = "MatchGroupByHeroType";
+        public const string MatchGroupByIsIntentionalFeedingType = "MatchGroupByIsIntentionalFeedingType";
+        public const string MatchGroupByIsLeagueType = "MatchGroupByIsLeagueType";
+        public const string MatchGroupByIsLeaverType = "MatchGroupByIsLeaverType";
+        public const string MatchGroupByIsPartyType = "MatchGroupByIsPartyType";
+        public const string MatchGroupByIsRandomType = "MatchGroupByIsRandomType";
+        public const string MatchGroupByIsSeriesType = "MatchGroupByIsSeriesType";
+        public const string MatchGroupByIsStatsType = "MatchGroupByIsStatsType";
+        public const string MatchGroupByIsVictoryType = "MatchGroupByIsVictoryType";
+        public const string MatchGroupByKillsType = "MatchGroupByKillsType";
+        public const string MatchGroupByLaneType = "MatchGroupByLaneType";
+        public const string MatchGroupByLeagueIdType = "MatchGroupByLeagueIdType";
+        public const string MatchGroupByLevelType = "MatchGroupByLevelType";
+        public const string MatchGroupByLobbyTypeType = "MatchGroupByLobbyTypeType";
+        public const string MatchGroupByPositionType = "MatchGroupByPositionType";
+        public const string MatchGroupByRegionType = "MatchGroupByRegionType";
+        public const string MatchGroupByRoamLaneType = "MatchGroupByRoamLaneType";
+        public const string MatchGroupByRoleType = "MatchGroupByRoleType";
+        public const string MatchGroupBySteamAccountIdAgainstTeamType = "MatchGroupBySteamAccountIdAgainstTeamType";
+        public const string MatchGroupBySteamAccountIdHeroIdType = "MatchGroupBySteamAccountIdHeroIdType";
+        public const string MatchGroupBySteamAccountIdType = "MatchGroupBySteamAccountIdType";
+        public const string MatchGroupBySteamAccountIdWithTeamType = "MatchGroupBySteamAccountIdWithTeamType";
+        public const string MatchGroupByTeamType = "MatchGroupByTeamType";
+        public const string MatchGroupByTotalKillsType = "MatchGroupByTotalKillsType";
         public const string MatchLiveBuildingDetailType = "MatchLiveBuildingDetailType";
         public const string MatchLiveInsightType = "MatchLiveInsightType";
         public const string MatchLivePickBanType = "MatchLivePickBanType";
@@ -469,6 +502,7 @@ namespace STRATZ
         public const string UpdateMatchReplayUploadObjectType = "UpdateMatchReplayUploadObjectType";
 
         public const string LiveEventType = "LiveEventType";
+        public const string MatchGroupByType = "MatchGroupByType";
 
         public static readonly IReadOnlyDictionary<Type, string> ReverseMapping =
             new Dictionary<Type, string>

@@ -28,7 +28,7 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public YogurtQueryQueryBuilder WithTeam(MatchReplayUploadTeamTypeQueryBuilder matchReplayUploadTeamTypeQueryBuilder, QueryBuilderParameter<int> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtQueryQueryBuilder WithTeam(MatchReplayUploadTeamTypeQueryBuilder matchReplayUploadTeamTypeQueryBuilder, QueryBuilderParameter<object> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -60,7 +60,7 @@ namespace STRATZ
             return ExceptField("defaultTeam");
         }
 
-        public YogurtQueryQueryBuilder WithTeamMembers(MatchReplayUploadTeamMemberTypeQueryBuilder matchReplayUploadTeamMemberTypeQueryBuilder, QueryBuilderParameter<int> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtQueryQueryBuilder WithTeamMembers(MatchReplayUploadTeamMemberTypeQueryBuilder matchReplayUploadTeamMemberTypeQueryBuilder, QueryBuilderParameter<object> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -72,7 +72,7 @@ namespace STRATZ
             return ExceptField("teamMembers");
         }
 
-        public YogurtQueryQueryBuilder WithOverview(MatchReplayUploadOverviewTypeQueryBuilder matchReplayUploadOverviewTypeQueryBuilder, QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<FilterMatchReplayUploadRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtQueryQueryBuilder WithOverview(MatchReplayUploadOverviewTypeQueryBuilder matchReplayUploadOverviewTypeQueryBuilder, QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<FilterMatchReplayUploadRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -87,7 +87,7 @@ namespace STRATZ
             return ExceptField("overview");
         }
 
-        public YogurtQueryQueryBuilder WithHeroSummary(MatchReplayUploadHeroSummaryTypeQueryBuilder matchReplayUploadHeroSummaryTypeQueryBuilder, QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<FilterMatchReplayUploadRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtQueryQueryBuilder WithHeroSummary(MatchReplayUploadHeroSummaryTypeQueryBuilder matchReplayUploadHeroSummaryTypeQueryBuilder, QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<FilterMatchReplayUploadRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );

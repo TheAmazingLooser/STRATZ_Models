@@ -18,8 +18,9 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "matchId", IsComplex = true },
                 new FieldMetadata { Name = "playerSlot", IsComplex = true },
-                new FieldMetadata { Name = "matchUploadTeamId" },
+                new FieldMetadata { Name = "matchUploadTeamId", IsComplex = true },
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "isRadiant" },
                 new FieldMetadata { Name = "isDire" },
                 new FieldMetadata { Name = "teamSlot", IsComplex = true },
@@ -152,6 +153,16 @@ namespace STRATZ
         public MatchReplayUploadPlayerTypeQueryBuilder ExceptSteamAccountId()
         {
             return ExceptField("steamAccountId");
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchReplayUploadPlayerTypeQueryBuilder ExceptSteamAccount()
+        {
+            return ExceptField("steamAccount");
         }
 
         public MatchReplayUploadPlayerTypeQueryBuilder WithIsRadiant(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

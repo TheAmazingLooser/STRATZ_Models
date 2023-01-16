@@ -15,8 +15,9 @@ namespace STRATZ
     {
         public long? MatchId { get; set; }
         public byte? PlayerSlot { get; set; }
-        public int? MatchUploadTeamId { get; set; }
+        public long? MatchUploadTeamId { get; set; }
         public long? SteamAccountId { get; set; }
+        public SteamAccountType SteamAccount { get; set; }
         public bool? IsRadiant { get; set; }
         public bool? IsDire { get; set; }
         public byte? TeamSlot { get; set; }

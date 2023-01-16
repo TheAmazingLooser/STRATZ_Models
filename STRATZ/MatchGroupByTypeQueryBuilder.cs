@@ -13,167 +13,185 @@ namespace STRATZ
 {
     public partial class MatchGroupByTypeQueryBuilder : GraphQlQueryBuilder<MatchGroupByTypeQueryBuilder>
     {
-        private static readonly FieldMetadata[] AllFieldMetadata =
-            new []
-            {
-                new FieldMetadata { Name = "id", IsComplex = true },
-                new FieldMetadata { Name = "id2", IsComplex = true },
-                new FieldMetadata { Name = "id3", IsComplex = true },
-                new FieldMetadata { Name = "matchCount" },
-                new FieldMetadata { Name = "winCount" },
-                new FieldMetadata { Name = "avgImp" },
-                new FieldMetadata { Name = "avgGoldPerMinute" },
-                new FieldMetadata { Name = "avgExperiencePerMinute" },
-                new FieldMetadata { Name = "avgKDA" },
-                new FieldMetadata { Name = "avgKills" },
-                new FieldMetadata { Name = "avgDeaths" },
-                new FieldMetadata { Name = "avgAssists" },
-                new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
-                new FieldMetadata { Name = "firstMatchDateTime", IsComplex = true }
-            };
+        private static readonly FieldMetadata[] AllFieldMetadata = new FieldMetadata[0];
 
         protected override string TypeName { get { return "MatchGroupByType"; } } 
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public MatchGroupByTypeQueryBuilder WithId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByHeroTypeFragment(MatchGroupByHeroTypeQueryBuilder matchGroupByHeroTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("id", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByHeroTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptId()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByFactionTypeFragment(MatchGroupByFactionTypeQueryBuilder matchGroupByFactionTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("id");
+            return WithFragment(matchGroupByFactionTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithId2(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByKillsTypeFragment(MatchGroupByKillsTypeQueryBuilder matchGroupByKillsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("id2", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByKillsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptId2()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByDeathsTypeFragment(MatchGroupByDeathsTypeQueryBuilder matchGroupByDeathsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("id2");
+            return WithFragment(matchGroupByDeathsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithId3(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByAssistsTypeFragment(MatchGroupByAssistsTypeQueryBuilder matchGroupByAssistsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("id3", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByAssistsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptId3()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsLeaverTypeFragment(MatchGroupByIsLeaverTypeQueryBuilder matchGroupByIsLeaverTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("id3");
+            return WithFragment(matchGroupByIsLeaverTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByLevelTypeFragment(MatchGroupByLevelTypeQueryBuilder matchGroupByLevelTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByLevelTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptMatchCount()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsPartyTypeFragment(MatchGroupByIsPartyTypeQueryBuilder matchGroupByIsPartyTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("matchCount");
+            return WithFragment(matchGroupByIsPartyTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsRandomTypeFragment(MatchGroupByIsRandomTypeQueryBuilder matchGroupByIsRandomTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("winCount", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByIsRandomTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptWinCount()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByLaneTypeFragment(MatchGroupByLaneTypeQueryBuilder matchGroupByLaneTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("winCount");
+            return WithFragment(matchGroupByLaneTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgImp(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByRoleTypeFragment(MatchGroupByRoleTypeQueryBuilder matchGroupByRoleTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgImp", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByRoleTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgImp()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsIntentionalFeedingTypeFragment(MatchGroupByIsIntentionalFeedingTypeQueryBuilder matchGroupByIsIntentionalFeedingTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgImp");
+            return WithFragment(matchGroupByIsIntentionalFeedingTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgGoldPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByAwardTypeFragment(MatchGroupByAwardTypeQueryBuilder matchGroupByAwardTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgGoldPerMinute", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByAwardTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgGoldPerMinute()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByRoamLaneTypeFragment(MatchGroupByRoamLaneTypeQueryBuilder matchGroupByRoamLaneTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgGoldPerMinute");
+            return WithFragment(matchGroupByRoamLaneTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgExperiencePerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsVictoryTypeFragment(MatchGroupByIsVictoryTypeQueryBuilder matchGroupByIsVictoryTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgExperiencePerMinute", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByIsVictoryTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgExperiencePerMinute()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByDurationMinutesTypeFragment(MatchGroupByDurationMinutesTypeQueryBuilder matchGroupByDurationMinutesTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgExperiencePerMinute");
+            return WithFragment(matchGroupByDurationMinutesTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgKda(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByClusterTypeFragment(MatchGroupByClusterTypeQueryBuilder matchGroupByClusterTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgKDA", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByClusterTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgKda()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByRegionTypeFragment(MatchGroupByRegionTypeQueryBuilder matchGroupByRegionTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgKDA");
+            return WithFragment(matchGroupByRegionTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgKills(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByLobbyTypeTypeFragment(MatchGroupByLobbyTypeTypeQueryBuilder matchGroupByLobbyTypeTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgKills", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByLobbyTypeTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgKills()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsLeagueTypeFragment(MatchGroupByIsLeagueTypeQueryBuilder matchGroupByIsLeagueTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgKills");
+            return WithFragment(matchGroupByIsLeagueTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgDeaths(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsSeriesTypeFragment(MatchGroupByIsSeriesTypeQueryBuilder matchGroupByIsSeriesTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgDeaths", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByIsSeriesTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgDeaths()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByGameModeTypeFragment(MatchGroupByGameModeTypeQueryBuilder matchGroupByGameModeTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgDeaths");
+            return WithFragment(matchGroupByGameModeTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithAvgAssists(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByIsStatsTypeFragment(MatchGroupByIsStatsTypeQueryBuilder matchGroupByIsStatsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("avgAssists", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByIsStatsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptAvgAssists()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByGameVersionTypeFragment(MatchGroupByGameVersionTypeQueryBuilder matchGroupByGameVersionTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("avgAssists");
+            return WithFragment(matchGroupByGameVersionTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithLastMatchDateTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByTeamTypeFragment(MatchGroupByTeamTypeQueryBuilder matchGroupByTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("lastMatchDateTime", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupByTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptLastMatchDateTime()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByHeroPerformanceTypeFragment(MatchGroupByHeroPerformanceTypeQueryBuilder matchGroupByHeroPerformanceTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("lastMatchDateTime");
+            return WithFragment(matchGroupByHeroPerformanceTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder WithFirstMatchDateTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdTypeFragment(MatchGroupBySteamAccountIdTypeQueryBuilder matchGroupBySteamAccountIdTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("firstMatchDateTime", alias, new GraphQlDirective[] { include, skip });
+            return WithFragment(matchGroupBySteamAccountIdTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByTypeQueryBuilder ExceptFirstMatchDateTime()
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdHeroIdTypeFragment(MatchGroupBySteamAccountIdHeroIdTypeQueryBuilder matchGroupBySteamAccountIdHeroIdTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return ExceptField("firstMatchDateTime");
+            return WithFragment(matchGroupBySteamAccountIdHeroIdTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdWithTeamTypeFragment(MatchGroupBySteamAccountIdWithTeamTypeQueryBuilder matchGroupBySteamAccountIdWithTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupBySteamAccountIdWithTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdAgainstTeamTypeFragment(MatchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder matchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByLeagueIdTypeFragment(MatchGroupByLeagueIdTypeQueryBuilder matchGroupByLeagueIdTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByLeagueIdTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByPositionTypeFragment(MatchGroupByPositionTypeQueryBuilder matchGroupByPositionTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByPositionTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByDateDayTypeFragment(MatchGroupByDateDayTypeQueryBuilder matchGroupByDateDayTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByDateDayTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByTotalKillsTypeFragment(MatchGroupByTotalKillsTypeQueryBuilder matchGroupByTotalKillsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByTotalKillsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByGoldPerMinuteTypeFragment(MatchGroupByGoldPerMinuteTypeQueryBuilder matchGroupByGoldPerMinuteTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByGoldPerMinuteTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
     }
 }

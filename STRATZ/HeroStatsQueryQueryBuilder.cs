@@ -18,7 +18,6 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(HeroPositionTimeDetailTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchUp", IsComplex = true, QueryBuilderType = typeof(HeroDryadTypeQueryBuilder) },
-                new FieldMetadata { Name = "purchasePattern", IsComplex = true, QueryBuilderType = typeof(HeroPurchasePatternTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemFullPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemPurchaseTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemStartingPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemStartingPurchaseTypeQueryBuilder) },
                 new FieldMetadata { Name = "itemBootPurchase", IsComplex = true, QueryBuilderType = typeof(HeroItemBootPurchaseTypeQueryBuilder) },
@@ -108,27 +107,6 @@ namespace STRATZ
         public HeroStatsQueryQueryBuilder ExceptMatchUp()
         {
             return ExceptField("matchUp");
-        }
-
-        public HeroStatsQueryQueryBuilder WithPurchasePattern(HeroPurchasePatternTypeQueryBuilder heroPurchasePatternTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            var args = new List<QueryBuilderArgumentInfo>();
-            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
-            if (week != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
-
-            if (bracketBasicIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "bracketBasicIds", ArgumentValue = bracketBasicIds} );
-
-            if (positionIds != null)
-                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionIds", ArgumentValue = positionIds} );
-
-            return WithObjectField("purchasePattern", alias, heroPurchasePatternTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
-        }
-
-        public HeroStatsQueryQueryBuilder ExceptPurchasePattern()
-        {
-            return ExceptField("purchasePattern");
         }
 
         public HeroStatsQueryQueryBuilder WithItemFullPurchase(HeroItemPurchaseTypeQueryBuilder heroItemPurchaseTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<IEnumerable<MatchPlayerPositionType?>> positionIds = null, QueryBuilderParameter<int?> minTime = null, QueryBuilderParameter<int?> maxTime = null, QueryBuilderParameter<int?> matchLimit = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
