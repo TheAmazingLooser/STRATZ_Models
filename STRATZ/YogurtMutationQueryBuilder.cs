@@ -50,7 +50,7 @@ namespace STRATZ
             return ExceptField("createTeam");
         }
 
-        public YogurtMutationQueryBuilder WithUpdateTeam(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<string> matchReplayUploadTeamName = null, QueryBuilderParameter<int?> teamId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithUpdateTeam(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<string> matchReplayUploadTeamName = null, QueryBuilderParameter<int?> teamId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -68,7 +68,7 @@ namespace STRATZ
             return ExceptField("updateTeam");
         }
 
-        public YogurtMutationQueryBuilder WithAddTeamMember(QueryBuilderParameter<object> steamAccountId, QueryBuilderParameter<int> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithAddTeamMember(QueryBuilderParameter<object> steamAccountId, QueryBuilderParameter<object> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "steamAccountId", ArgumentValue = steamAccountId} );
@@ -81,7 +81,7 @@ namespace STRATZ
             return ExceptField("addTeamMember");
         }
 
-        public YogurtMutationQueryBuilder WithUpdateTeamMember(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<bool> isAdmin, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithUpdateTeamMember(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<bool> isAdmin, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "captainJackIdentityId", ArgumentValue = captainJackIdentityId} );
@@ -95,7 +95,7 @@ namespace STRATZ
             return ExceptField("updateTeamMember");
         }
 
-        public YogurtMutationQueryBuilder WithSetTeamMemberDefaultTeam(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<int> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithSetTeamMemberDefaultTeam(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<object> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "captainJackIdentityId", ArgumentValue = captainJackIdentityId} );
@@ -108,7 +108,7 @@ namespace STRATZ
             return ExceptField("setTeamMemberDefaultTeam");
         }
 
-        public YogurtMutationQueryBuilder WithRemoveTeamMember(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<int> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithRemoveTeamMember(QueryBuilderParameter<Guid> captainJackIdentityId, QueryBuilderParameter<object> matchReplayUploadTeamId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "captainJackIdentityId", ArgumentValue = captainJackIdentityId} );
@@ -133,7 +133,7 @@ namespace STRATZ
             return ExceptField("update");
         }
 
-        public YogurtMutationQueryBuilder WithValidate(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithValidate(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -146,7 +146,7 @@ namespace STRATZ
             return ExceptField("validate");
         }
 
-        public YogurtMutationQueryBuilder WithInvalidate(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithInvalidate(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -159,7 +159,7 @@ namespace STRATZ
             return ExceptField("invalidate");
         }
 
-        public YogurtMutationQueryBuilder WithDelete(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithDelete(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -172,7 +172,7 @@ namespace STRATZ
             return ExceptField("delete");
         }
 
-        public YogurtMutationQueryBuilder WithLinkSeriesId(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<IEnumerable<object>> matchIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithLinkSeriesId(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<IEnumerable<object>> matchIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -185,7 +185,7 @@ namespace STRATZ
             return ExceptField("linkSeriesId");
         }
 
-        public YogurtMutationQueryBuilder WithRemoveSeriesId(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<IEnumerable<object>> matchIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithRemoveSeriesId(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<IEnumerable<object>> matchIds, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -198,7 +198,7 @@ namespace STRATZ
             return ExceptField("removeSeriesId");
         }
 
-        public YogurtMutationQueryBuilder WithImportMatch(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithImportMatch(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
@@ -211,7 +211,7 @@ namespace STRATZ
             return ExceptField("importMatch");
         }
 
-        public YogurtMutationQueryBuilder WithImportPickBans(QueryBuilderParameter<int> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, QueryBuilderParameter<IEnumerable<ImportPickBanType>> pickBans, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public YogurtMutationQueryBuilder WithImportPickBans(QueryBuilderParameter<object> matchReplayUploadTeamId, QueryBuilderParameter<object> matchId, QueryBuilderParameter<IEnumerable<ImportPickBanType>> pickBans, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchReplayUploadTeamId", ArgumentValue = matchReplayUploadTeamId} );
