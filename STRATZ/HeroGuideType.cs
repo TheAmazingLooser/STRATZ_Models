@@ -19,5 +19,7 @@ namespace STRATZ
         public MatchType Match { get; set; }
         public MatchPlayerType MatchPlayer { get; set; }
         public long? CreatedDateTime { get; set; }
+        public IList<object> ItemIds { get; set; }
+        public IList<object> NeutralItemIds { get; set; }
     }
 }

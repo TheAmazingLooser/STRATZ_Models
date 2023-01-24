@@ -45,9 +45,15 @@ namespace STRATZ
             return ExceptField("matchCount");
         }
 
-        public HeroGuideListTypeQueryBuilder WithGuides(HeroGuideTypeQueryBuilder heroGuideTypeQueryBuilder, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public HeroGuideListTypeQueryBuilder WithGuides(HeroGuideTypeQueryBuilder heroGuideTypeQueryBuilder, QueryBuilderParameter<object> itemId = null, QueryBuilderParameter<object> neutralItemId = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
+            if (itemId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "itemId", ArgumentValue = itemId} );
+
+            if (neutralItemId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "neutralItemId", ArgumentValue = neutralItemId} );
+
             if (skip != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "skip", ArgumentValue = skip} );
 

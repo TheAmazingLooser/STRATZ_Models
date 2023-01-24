@@ -21,8 +21,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "positionX" },
                 new FieldMetadata { Name = "positionY" },
                 new FieldMetadata { Name = "fromPlayer" },
-                new FieldMetadata { Name = "wardType", IsComplex = true },
-                new FieldMetadata { Name = "action", IsComplex = true },
+                new FieldMetadata { Name = "wardType" },
+                new FieldMetadata { Name = "action" },
                 new FieldMetadata { Name = "playerDestroyed" }
             };
 

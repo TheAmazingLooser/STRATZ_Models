@@ -164,9 +164,19 @@ namespace STRATZ
             return WithFragment(matchGroupBySteamAccountIdWithTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdHeroIdWithTeamTypeFragment(MatchGroupBySteamAccountIdHeroIdWithTeamTypeQueryBuilder matchGroupBySteamAccountIdHeroIdWithTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupBySteamAccountIdHeroIdWithTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
         public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdAgainstTeamTypeFragment(MatchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder matchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithFragment(matchGroupBySteamAccountIdAgainstTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupBySteamAccountIdHeroIdAgainstTeamTypeFragment(MatchGroupBySteamAccountIdHeroIdAgainstTeamTypeQueryBuilder matchGroupBySteamAccountIdHeroIdAgainstTeamTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupBySteamAccountIdHeroIdAgainstTeamTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
         public MatchGroupByTypeQueryBuilder WithMatchGroupByLeagueIdTypeFragment(MatchGroupByLeagueIdTypeQueryBuilder matchGroupByLeagueIdTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)

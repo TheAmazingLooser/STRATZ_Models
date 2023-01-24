@@ -21,7 +21,9 @@ namespace STRATZ
                 new FieldMetadata { Name = "matchId", IsComplex = true },
                 new FieldMetadata { Name = "match", IsComplex = true, QueryBuilderType = typeof(MatchTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchPlayer", IsComplex = true, QueryBuilderType = typeof(MatchPlayerTypeQueryBuilder) },
-                new FieldMetadata { Name = "createdDateTime", IsComplex = true }
+                new FieldMetadata { Name = "createdDateTime", IsComplex = true },
+                new FieldMetadata { Name = "itemIds", IsComplex = true },
+                new FieldMetadata { Name = "neutralItemIds", IsComplex = true }
             };
 
         protected override string TypeName { get { return "HeroGuideType"; } } 
@@ -86,6 +88,26 @@ namespace STRATZ
         public HeroGuideTypeQueryBuilder ExceptCreatedDateTime()
         {
             return ExceptField("createdDateTime");
+        }
+
+        public HeroGuideTypeQueryBuilder WithItemIds(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("itemIds", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroGuideTypeQueryBuilder ExceptItemIds()
+        {
+            return ExceptField("itemIds");
+        }
+
+        public HeroGuideTypeQueryBuilder WithNeutralItemIds(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("neutralItemIds", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroGuideTypeQueryBuilder ExceptNeutralItemIds()
+        {
+            return ExceptField("neutralItemIds");
         }
     }
 }

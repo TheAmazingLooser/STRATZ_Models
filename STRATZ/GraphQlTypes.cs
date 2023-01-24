@@ -81,9 +81,11 @@ namespace STRATZ
         public const string RuneEnums = "RuneEnums";
         public const string Search = "Search";
         public const string Series = "Series";
+        public const string SpawnActionType = "SpawnActionType";
         public const string StratzApiType = "StratzApiType";
         public const string Streak = "Streak";
         public const string TableCalculateEnum = "TableCalculateEnum";
+        public const string WardType = "WardType";
         public const string XpReason = "XpReason";
 
         public const string AbilityActiveListType = "AbilityActiveListType";
@@ -274,7 +276,9 @@ namespace STRATZ
         public const string MatchGroupByRoamLaneType = "MatchGroupByRoamLaneType";
         public const string MatchGroupByRoleType = "MatchGroupByRoleType";
         public const string MatchGroupBySteamAccountIdAgainstTeamType = "MatchGroupBySteamAccountIdAgainstTeamType";
+        public const string MatchGroupBySteamAccountIdHeroIdAgainstTeamType = "MatchGroupBySteamAccountIdHeroIdAgainstTeamType";
         public const string MatchGroupBySteamAccountIdHeroIdType = "MatchGroupBySteamAccountIdHeroIdType";
+        public const string MatchGroupBySteamAccountIdHeroIdWithTeamType = "MatchGroupBySteamAccountIdHeroIdWithTeamType";
         public const string MatchGroupBySteamAccountIdType = "MatchGroupBySteamAccountIdType";
         public const string MatchGroupBySteamAccountIdWithTeamType = "MatchGroupBySteamAccountIdWithTeamType";
         public const string MatchGroupByTeamType = "MatchGroupByTeamType";

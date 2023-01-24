@@ -18,8 +18,8 @@ namespace STRATZ
         public int? PositionX { get; set; }
         public int? PositionY { get; set; }
         public int? FromPlayer { get; set; }
-        public byte? WardType { get; set; }
-        public byte? Action { get; set; }
+        public WardType? WardType { get; set; }
+        public SpawnActionType? Action { get; set; }
         public int? PlayerDestroyed { get; set; }
     }
 }
