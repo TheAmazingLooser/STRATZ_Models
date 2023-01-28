@@ -14,6 +14,7 @@ namespace STRATZ
     public partial class MatchPickBanGroupByType
     {
         public short? HeroId { get; set; }
+        public int? MatchCount { get; set; }
         public int? PickCount { get; set; }
         public int? BanCount { get; set; }
     }

@@ -438,7 +438,7 @@ namespace STRATZ
             return ExceptField("winGameVersion");
         }
 
-        public HeroStatsQueryQueryBuilder WithGuide(HeroGuideListTypeQueryBuilder heroGuideListTypeQueryBuilder, QueryBuilderParameter<object> heroId = null, QueryBuilderParameter<object> withHeroId = null, QueryBuilderParameter<object> againstHeroId = null, QueryBuilderParameter<bool?> isPro = null, QueryBuilderParameter<MatchPlayerPositionType?> positionId = null, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public HeroStatsQueryQueryBuilder WithGuide(HeroGuideListTypeQueryBuilder heroGuideListTypeQueryBuilder, QueryBuilderParameter<object> heroId = null, QueryBuilderParameter<object> withHeroId = null, QueryBuilderParameter<object> againstHeroId = null, QueryBuilderParameter<bool?> isPro = null, QueryBuilderParameter<MatchPlayerPositionType?> positionId = null, QueryBuilderParameter<object> itemId = null, QueryBuilderParameter<object> neutralItemId = null, QueryBuilderParameter<int?> take = null, QueryBuilderParameter<int?> skip = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (heroId != null)
@@ -455,6 +455,12 @@ namespace STRATZ
 
             if (positionId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "positionId", ArgumentValue = positionId} );
+
+            if (itemId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "itemId", ArgumentValue = itemId} );
+
+            if (neutralItemId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "neutralItemId", ArgumentValue = neutralItemId} );
 
             if (take != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "take", ArgumentValue = take} );

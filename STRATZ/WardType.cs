@@ -13,7 +13,7 @@ namespace STRATZ
 {
     public enum WardType
     {
-        [EnumMember(Value = "WARD")] Ward,
+        [EnumMember(Value = "OBSERVER")] Observer,
         [EnumMember(Value = "SENTRY")] Sentry
     }
 }

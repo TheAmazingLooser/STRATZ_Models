@@ -17,6 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "heroId", IsComplex = true },
+                new FieldMetadata { Name = "matchCount" },
                 new FieldMetadata { Name = "pickCount" },
                 new FieldMetadata { Name = "banCount" }
             };
@@ -33,6 +34,16 @@ namespace STRATZ
         public MatchPickBanGroupByTypeQueryBuilder ExceptHeroId()
         {
             return ExceptField("heroId");
+        }
+
+        public MatchPickBanGroupByTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPickBanGroupByTypeQueryBuilder ExceptMatchCount()
+        {
+            return ExceptField("matchCount");
         }
 
         public MatchPickBanGroupByTypeQueryBuilder WithPickCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

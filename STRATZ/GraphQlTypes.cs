@@ -481,6 +481,7 @@ namespace STRATZ
         public const string FilterSearchRequestType = "FilterSearchRequestType";
         public const string FilterSeasonLeaderboardRequestType = "FilterSeasonLeaderboardRequestType";
         public const string FilterSeriesRequestType = "FilterSeriesRequestType";
+        public const string HeroPickBanRequestType = "HeroPickBanRequestType";
         public const string ImpGeneratorPlayerEventRequestType = "ImpGeneratorPlayerEventRequestType";
         public const string ImpGeneratorPlayerRequestType = "ImpGeneratorPlayerRequestType";
         public const string ImpGeneratorRequestType = "ImpGeneratorRequestType";
@@ -532,6 +533,7 @@ namespace STRATZ
                 { typeof(FilterSearchRequestType), "FilterSearchRequestType" },
                 { typeof(FilterSeasonLeaderboardRequestType), "FilterSeasonLeaderboardRequestType" },
                 { typeof(FilterSeriesRequestType), "FilterSeriesRequestType" },
+                { typeof(HeroPickBanRequestType), "HeroPickBanRequestType" },
                 { typeof(ImpGeneratorPlayerEventRequestType), "ImpGeneratorPlayerEventRequestType" },
                 { typeof(ImpGeneratorPlayerRequestType), "ImpGeneratorPlayerRequestType" },
                 { typeof(ImpGeneratorRequestType), "ImpGeneratorRequestType" },

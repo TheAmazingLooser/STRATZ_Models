@@ -268,9 +268,11 @@ namespace STRATZ
             return ExceptField("matchesGroupBy");
         }
 
-        public TeamTypeQueryBuilder WithHeroPickBan(MatchPickBanGroupByTypeQueryBuilder matchPickBanGroupByTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public TeamTypeQueryBuilder WithHeroPickBan(MatchPickBanGroupByTypeQueryBuilder matchPickBanGroupByTypeQueryBuilder, QueryBuilderParameter<HeroPickBanRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("heroPickBan", alias, matchPickBanGroupByTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
+            return WithObjectField("heroPickBan", alias, matchPickBanGroupByTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public TeamTypeQueryBuilder ExceptHeroPickBan()
