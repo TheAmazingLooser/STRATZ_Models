@@ -17,7 +17,6 @@ namespace STRATZ
         public object CaptainJackIdentityId { get; set; }
         public string Title { get; set; }
         public string BannerImageUrl { get; set; }
-        public SteamAccountType Poster { get; set; }
         public string Data { get; set; }
         public DateTime? LiveDateTime { get; set; }
         public string Link { get; set; }

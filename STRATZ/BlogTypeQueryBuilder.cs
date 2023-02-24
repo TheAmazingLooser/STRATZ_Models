@@ -20,7 +20,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "captainJackIdentityId", IsComplex = true },
                 new FieldMetadata { Name = "title" },
                 new FieldMetadata { Name = "bannerImageUrl" },
-                new FieldMetadata { Name = "poster", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "data" },
                 new FieldMetadata { Name = "liveDateTime", IsComplex = true },
                 new FieldMetadata { Name = "link" }
@@ -68,16 +67,6 @@ namespace STRATZ
         public BlogTypeQueryBuilder ExceptBannerImageUrl()
         {
             return ExceptField("bannerImageUrl");
-        }
-
-        public BlogTypeQueryBuilder WithPoster(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("poster", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public BlogTypeQueryBuilder ExceptPoster()
-        {
-            return ExceptField("poster");
         }
 
         public BlogTypeQueryBuilder WithData(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
