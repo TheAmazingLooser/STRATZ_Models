@@ -15,7 +15,7 @@ namespace STRATZ
     {
         public bool? ReadAllFeed { get; set; }
         public bool? ValidateEmail { get; set; }
-        public UserHomepageType EmailUnsubscribe { get; set; }
+        public UserHomepageType UnsubscribeEmail { get; set; }
         public bool? UpdateProfile { get; set; }
         public bool? FollowPlayer { get; set; }
         public bool? UnfollowPlayer { get; set; }

@@ -18,7 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "readAllFeed" },
                 new FieldMetadata { Name = "validateEmail" },
-                new FieldMetadata { Name = "emailUnsubscribe", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
+                new FieldMetadata { Name = "unsubscribeEmail", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
                 new FieldMetadata { Name = "updateProfile" },
                 new FieldMetadata { Name = "followPlayer" },
                 new FieldMetadata { Name = "unfollowPlayer" },
@@ -57,16 +57,16 @@ namespace STRATZ
             return ExceptField("validateEmail");
         }
 
-        public DotaUserMutationQueryBuilder WithEmailUnsubscribe(UserHomepageTypeQueryBuilder userHomepageTypeQueryBuilder, QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public DotaUserMutationQueryBuilder WithUnsubscribeEmail(UserHomepageTypeQueryBuilder userHomepageTypeQueryBuilder, QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "code", ArgumentValue = code} );
-            return WithObjectField("emailUnsubscribe", alias, userHomepageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithObjectField("unsubscribeEmail", alias, userHomepageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
-        public DotaUserMutationQueryBuilder ExceptEmailUnsubscribe()
+        public DotaUserMutationQueryBuilder ExceptUnsubscribeEmail()
         {
-            return ExceptField("emailUnsubscribe");
+            return ExceptField("unsubscribeEmail");
         }
 
         public DotaUserMutationQueryBuilder WithUpdateProfile(QueryBuilderParameter<CaptainJackIdentityProfileUpdateRequestType> request, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

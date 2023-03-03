@@ -79,10 +79,12 @@ namespace STRATZ
             return ExceptField("stats");
         }
 
-        public HeroStatsQueryQueryBuilder WithMatchUp(HeroDryadTypeQueryBuilder heroDryadTypeQueryBuilder, QueryBuilderParameter<object> heroId, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<object> orderBy = null, QueryBuilderParameter<int?> matchLimit = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public HeroStatsQueryQueryBuilder WithMatchUp(HeroDryadTypeQueryBuilder heroDryadTypeQueryBuilder, QueryBuilderParameter<object> heroId = null, QueryBuilderParameter<object> week = null, QueryBuilderParameter<IEnumerable<RankBracketBasicEnum?>> bracketBasicIds = null, QueryBuilderParameter<object> orderBy = null, QueryBuilderParameter<int?> matchLimit = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
-            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+            if (heroId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "heroId", ArgumentValue = heroId} );
+
             if (week != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
 
