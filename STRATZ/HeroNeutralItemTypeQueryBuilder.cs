@@ -21,6 +21,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "bracketBasicIds" },
                 new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "itemId" },
+                new FieldMetadata { Name = "item", IsComplex = true, QueryBuilderType = typeof(ItemTypeQueryBuilder) },
                 new FieldMetadata { Name = "matchCount", IsComplex = true },
                 new FieldMetadata { Name = "winCount", IsComplex = true },
                 new FieldMetadata { Name = "equippedMatchCount", IsComplex = true },
@@ -79,6 +80,16 @@ namespace STRATZ
         public HeroNeutralItemTypeQueryBuilder ExceptItemId()
         {
             return ExceptField("itemId");
+        }
+
+        public HeroNeutralItemTypeQueryBuilder WithItem(ItemTypeQueryBuilder itemTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("item", alias, itemTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroNeutralItemTypeQueryBuilder ExceptItem()
+        {
+            return ExceptField("item");
         }
 
         public HeroNeutralItemTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

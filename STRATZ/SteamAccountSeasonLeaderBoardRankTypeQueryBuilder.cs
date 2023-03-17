@@ -18,8 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
                 new FieldMetadata { Name = "seasonRankId", IsComplex = true },
-                new FieldMetadata { Name = "actionsPerMinute", IsComplex = true },
-                new FieldMetadata { Name = "seasonLeaderBoardDivisionId", IsComplex = true },
+                new FieldMetadata { Name = "asOfDateTime", IsComplex = true },
+                new FieldMetadata { Name = "seasonLeaderBoardDivisionId" },
                 new FieldMetadata { Name = "rank", IsComplex = true }
             };
 
@@ -47,14 +47,14 @@ namespace STRATZ
             return ExceptField("seasonRankId");
         }
 
-        public SteamAccountSeasonLeaderBoardRankTypeQueryBuilder WithActionsPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public SteamAccountSeasonLeaderBoardRankTypeQueryBuilder WithAsOfDateTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("actionsPerMinute", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("asOfDateTime", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public SteamAccountSeasonLeaderBoardRankTypeQueryBuilder ExceptActionsPerMinute()
+        public SteamAccountSeasonLeaderBoardRankTypeQueryBuilder ExceptAsOfDateTime()
         {
-            return ExceptField("actionsPerMinute");
+            return ExceptField("asOfDateTime");
         }
 
         public SteamAccountSeasonLeaderBoardRankTypeQueryBuilder WithSeasonLeaderBoardDivisionId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

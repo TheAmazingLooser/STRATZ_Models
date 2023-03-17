@@ -18,6 +18,7 @@ namespace STRATZ
         public RankBracketBasicEnum? BracketBasicIds { get; set; }
         public MatchPlayerPositionType? Position { get; set; }
         public int? ItemId { get; set; }
+        public ItemType Item { get; set; }
         public long? MatchCount { get; set; }
         public long? WinCount { get; set; }
         public long? EquippedMatchCount { get; set; }

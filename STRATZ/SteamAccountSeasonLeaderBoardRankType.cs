@@ -15,8 +15,8 @@ namespace STRATZ
     {
         public long? SteamAccountId { get; set; }
         public byte? SeasonRankId { get; set; }
-        public IList<int> ActionsPerMinute { get; set; }
-        public byte? SeasonLeaderBoardDivisionId { get; set; }
+        public long? AsOfDateTime { get; set; }
+        public LeaderboardDivision? SeasonLeaderBoardDivisionId { get; set; }
         public short? Rank { get; set; }
     }
 }
