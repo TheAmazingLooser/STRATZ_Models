@@ -16,6 +16,7 @@ namespace STRATZ
         [EnumMember(Value = "HERO_ID")] HeroId,
         [EnumMember(Value = "ALL")] All,
         [EnumMember(Value = "HERO_ID_DURATION_MINUTES")] HeroIdDurationMinutes,
-        [EnumMember(Value = "TIME")] Time
+        [EnumMember(Value = "TIME")] Time,
+        [EnumMember(Value = "HERO_ID_POSITION_BRACKET")] HeroIdPositionBracket
     }
 }
