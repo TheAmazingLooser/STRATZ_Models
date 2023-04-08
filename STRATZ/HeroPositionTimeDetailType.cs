@@ -46,6 +46,7 @@ namespace STRATZ
         public decimal? UltraKill { get; set; }
         public decimal? Rampage { get; set; }
         public decimal? GodLike { get; set; }
+        public decimal? GoldPerMinute { get; set; }
         public decimal? DisableCount { get; set; }
         public decimal? DisableDuration { get; set; }
         public decimal? StunCount { get; set; }
@@ -75,6 +76,7 @@ namespace STRATZ
         public decimal? XpFed { get; set; }
         public decimal? PureDamageReceived { get; set; }
         public decimal? AttackDamage { get; set; }
+        public decimal? AttackCount { get; set; }
         public decimal? CastDamage { get; set; }
         public decimal? DamageReceived { get; set; }
         public decimal? Damage { get; set; }

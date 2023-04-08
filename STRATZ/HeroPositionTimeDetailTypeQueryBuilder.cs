@@ -49,6 +49,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "ultraKill", IsComplex = true },
                 new FieldMetadata { Name = "rampage", IsComplex = true },
                 new FieldMetadata { Name = "godLike", IsComplex = true },
+                new FieldMetadata { Name = "goldPerMinute", IsComplex = true },
                 new FieldMetadata { Name = "disableCount", IsComplex = true },
                 new FieldMetadata { Name = "disableDuration", IsComplex = true },
                 new FieldMetadata { Name = "stunCount", IsComplex = true },
@@ -78,6 +79,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "xpFed", IsComplex = true },
                 new FieldMetadata { Name = "pureDamageReceived", IsComplex = true },
                 new FieldMetadata { Name = "attackDamage", IsComplex = true },
+                new FieldMetadata { Name = "attackCount", IsComplex = true },
                 new FieldMetadata { Name = "castDamage", IsComplex = true },
                 new FieldMetadata { Name = "damageReceived", IsComplex = true },
                 new FieldMetadata { Name = "damage", IsComplex = true },
@@ -424,6 +426,16 @@ namespace STRATZ
             return ExceptField("godLike");
         }
 
+        public HeroPositionTimeDetailTypeQueryBuilder WithGoldPerMinute(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("goldPerMinute", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder ExceptGoldPerMinute()
+        {
+            return ExceptField("goldPerMinute");
+        }
+
         public HeroPositionTimeDetailTypeQueryBuilder WithDisableCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("disableCount", alias, new GraphQlDirective[] { include, skip });
@@ -712,6 +724,16 @@ namespace STRATZ
         public HeroPositionTimeDetailTypeQueryBuilder ExceptAttackDamage()
         {
             return ExceptField("attackDamage");
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder WithAttackCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("attackCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroPositionTimeDetailTypeQueryBuilder ExceptAttackCount()
+        {
+            return ExceptField("attackCount");
         }
 
         public HeroPositionTimeDetailTypeQueryBuilder WithCastDamage(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
