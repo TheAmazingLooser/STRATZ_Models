@@ -39,5 +39,6 @@ namespace STRATZ
         public long? LastMatchDateTime { get; set; }
         public byte? LastMatchRegionId { get; set; }
         public IList<SteamAccountBattlePassType> Battlepass { get; set; }
+        public GuildMemberType Guild { get; set; }
     }
 }

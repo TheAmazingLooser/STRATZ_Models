@@ -41,7 +41,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "smurfFlag", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchRegionId", IsComplex = true },
-                new FieldMetadata { Name = "battlepass", IsComplex = true, QueryBuilderType = typeof(SteamAccountBattlePassTypeQueryBuilder) }
+                new FieldMetadata { Name = "battlepass", IsComplex = true, QueryBuilderType = typeof(SteamAccountBattlePassTypeQueryBuilder) },
+                new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildMemberTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "SteamAccountType"; } } 
@@ -306,6 +307,16 @@ namespace STRATZ
         public SteamAccountTypeQueryBuilder ExceptBattlepass()
         {
             return ExceptField("battlepass");
+        }
+
+        public SteamAccountTypeQueryBuilder WithGuild(GuildMemberTypeQueryBuilder guildMemberTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("guild", alias, guildMemberTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public SteamAccountTypeQueryBuilder ExceptGuild()
+        {
+            return ExceptField("guild");
         }
     }
 }

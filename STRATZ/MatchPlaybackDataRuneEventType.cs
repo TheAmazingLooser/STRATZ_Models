@@ -17,7 +17,6 @@ namespace STRATZ
         public int? Time { get; set; }
         public int? PositionX { get; set; }
         public int? PositionY { get; set; }
-        public int? FromPlayer { get; set; }
         public int? Location { get; set; }
         public int? Rune { get; set; }
         public int? Action { get; set; }

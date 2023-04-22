@@ -20,7 +20,6 @@ namespace STRATZ
                 new FieldMetadata { Name = "time" },
                 new FieldMetadata { Name = "positionX" },
                 new FieldMetadata { Name = "positionY" },
-                new FieldMetadata { Name = "fromPlayer" },
                 new FieldMetadata { Name = "location" },
                 new FieldMetadata { Name = "rune" },
                 new FieldMetadata { Name = "action" }
@@ -68,16 +67,6 @@ namespace STRATZ
         public MatchPlaybackDataRuneEventTypeQueryBuilder ExceptPositionY()
         {
             return ExceptField("positionY");
-        }
-
-        public MatchPlaybackDataRuneEventTypeQueryBuilder WithFromPlayer(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("fromPlayer", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlaybackDataRuneEventTypeQueryBuilder ExceptFromPlayer()
-        {
-            return ExceptField("fromPlayer");
         }
 
         public MatchPlaybackDataRuneEventTypeQueryBuilder WithLocation(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
