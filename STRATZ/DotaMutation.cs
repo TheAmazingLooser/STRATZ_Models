@@ -16,5 +16,6 @@ namespace STRATZ
         public YogurtMutation Yogurt { get; set; }
         public DotaUserMutation User { get; set; }
         public AdminMutation Admin { get; set; }
+        public bool? RetryMatchDownload { get; set; }
     }
 }

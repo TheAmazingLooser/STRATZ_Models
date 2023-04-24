@@ -18,7 +18,7 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "readAllFeed" },
                 new FieldMetadata { Name = "validateEmail" },
-                new FieldMetadata { Name = "unsubscribeEmail", IsComplex = true, QueryBuilderType = typeof(UserHomepageTypeQueryBuilder) },
+                new FieldMetadata { Name = "unsubscribeEmail" },
                 new FieldMetadata { Name = "updateProfile" },
                 new FieldMetadata { Name = "followPlayer" },
                 new FieldMetadata { Name = "unfollowPlayer" },
@@ -57,11 +57,11 @@ namespace STRATZ
             return ExceptField("validateEmail");
         }
 
-        public DotaUserMutationQueryBuilder WithUnsubscribeEmail(UserHomepageTypeQueryBuilder userHomepageTypeQueryBuilder, QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public DotaUserMutationQueryBuilder WithUnsubscribeEmail(QueryBuilderParameter<object> code, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "code", ArgumentValue = code} );
-            return WithObjectField("unsubscribeEmail", alias, userHomepageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+            return WithScalarField("unsubscribeEmail", alias, new GraphQlDirective[] { include, skip }, args);
         }
 
         public DotaUserMutationQueryBuilder ExceptUnsubscribeEmail()

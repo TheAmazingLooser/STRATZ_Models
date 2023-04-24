@@ -18,7 +18,8 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "yogurt", IsComplex = true, QueryBuilderType = typeof(YogurtMutationQueryBuilder) },
                 new FieldMetadata { Name = "user", IsComplex = true, QueryBuilderType = typeof(DotaUserMutationQueryBuilder) },
-                new FieldMetadata { Name = "admin", IsComplex = true, QueryBuilderType = typeof(AdminMutationQueryBuilder) }
+                new FieldMetadata { Name = "admin", IsComplex = true, QueryBuilderType = typeof(AdminMutationQueryBuilder) },
+                new FieldMetadata { Name = "retryMatchDownload" }
             };
 
         protected override string TypeName { get { return "DotaMutation"; } } 
@@ -62,6 +63,18 @@ namespace STRATZ
         public DotaMutationQueryBuilder ExceptAdmin()
         {
             return ExceptField("admin");
+        }
+
+        public DotaMutationQueryBuilder WithRetryMatchDownload(QueryBuilderParameter<object> matchId, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "matchId", ArgumentValue = matchId} );
+            return WithScalarField("retryMatchDownload", alias, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public DotaMutationQueryBuilder ExceptRetryMatchDownload()
+        {
+            return ExceptField("retryMatchDownload");
         }
     }
 }

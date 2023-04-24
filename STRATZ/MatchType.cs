@@ -68,5 +68,6 @@ namespace STRATZ
         public LaneOutcomeEnums? BottomLaneOutcome { get; set; }
         public LaneOutcomeEnums? MidLaneOutcome { get; set; }
         public LaneOutcomeEnums? TopLaneOutcome { get; set; }
+        public bool? DidRequestDownload { get; set; }
     }
 }

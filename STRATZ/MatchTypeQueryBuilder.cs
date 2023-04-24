@@ -70,7 +70,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "spectators", IsComplex = true, QueryBuilderType = typeof(MatchPlayerSpectatorTypeQueryBuilder) },
                 new FieldMetadata { Name = "bottomLaneOutcome" },
                 new FieldMetadata { Name = "midLaneOutcome" },
-                new FieldMetadata { Name = "topLaneOutcome" }
+                new FieldMetadata { Name = "topLaneOutcome" },
+                new FieldMetadata { Name = "didRequestDownload" }
             };
 
         protected override string TypeName { get { return "MatchType"; } } 
@@ -629,6 +630,16 @@ namespace STRATZ
         public MatchTypeQueryBuilder ExceptTopLaneOutcome()
         {
             return ExceptField("topLaneOutcome");
+        }
+
+        public MatchTypeQueryBuilder WithDidRequestDownload(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("didRequestDownload", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchTypeQueryBuilder ExceptDidRequestDownload()
+        {
+            return ExceptField("didRequestDownload");
         }
     }
 }
