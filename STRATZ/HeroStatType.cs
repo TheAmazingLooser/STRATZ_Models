@@ -42,5 +42,6 @@ namespace STRATZ
         public decimal? VisionDaytimeRange { get; set; }
         public decimal? VisionNighttimeRange { get; set; }
         public byte? Complexity { get; set; }
+        public HeroPrimaryAttributeType? PrimaryAttributeEnum { get; set; }
     }
 }

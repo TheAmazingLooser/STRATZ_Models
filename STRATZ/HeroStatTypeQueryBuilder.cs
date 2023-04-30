@@ -44,7 +44,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "hpBarOffset" },
                 new FieldMetadata { Name = "visionDaytimeRange" },
                 new FieldMetadata { Name = "visionNighttimeRange" },
-                new FieldMetadata { Name = "complexity", IsComplex = true }
+                new FieldMetadata { Name = "complexity", IsComplex = true },
+                new FieldMetadata { Name = "primaryAttributeEnum" }
             };
 
         protected override string TypeName { get { return "HeroStatType"; } } 
@@ -339,6 +340,16 @@ namespace STRATZ
         public HeroStatTypeQueryBuilder ExceptComplexity()
         {
             return ExceptField("complexity");
+        }
+
+        public HeroStatTypeQueryBuilder WithPrimaryAttributeEnum(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("primaryAttributeEnum", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroStatTypeQueryBuilder ExceptPrimaryAttributeEnum()
+        {
+            return ExceptField("primaryAttributeEnum");
         }
     }
 }

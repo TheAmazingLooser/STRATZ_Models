@@ -50,6 +50,7 @@ namespace STRATZ
         public const string FindMatchPlayerOrderBy = "FindMatchPlayerOrderBy";
         public const string GameModeEnumType = "GameModeEnumType";
         public const string GoldReason = "GoldReason";
+        public const string HeroPrimaryAttributeType = "HeroPrimaryAttributeType";
         public const string HeroRoleEnum = "HeroRoleEnum";
         public const string LaneOutcomeEnums = "LaneOutcomeEnums";
         public const string Language = "Language";

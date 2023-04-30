@@ -23,9 +23,13 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public PagePlayersQueryQueryBuilder WithSteamAccountByRank(SteamAccountByRankTypeQueryBuilder steamAccountByRankTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PagePlayersQueryQueryBuilder WithSteamAccountByRank(SteamAccountByRankTypeQueryBuilder steamAccountByRankTypeQueryBuilder, QueryBuilderParameter<int?> week = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("steamAccountByRank", alias, steamAccountByRankTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (week != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "week", ArgumentValue = week} );
+
+            return WithObjectField("steamAccountByRank", alias, steamAccountByRankTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public PagePlayersQueryQueryBuilder ExceptSteamAccountByRank()
