@@ -11,12 +11,9 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class DotaMutation
+    public partial class RoshMutation
     {
-        public YogurtMutation Yogurt { get; set; }
-        public DotaUserMutation User { get; set; }
-        public AdminMutation Admin { get; set; }
-        public RoshMutation Rosh { get; set; }
-        public bool? RetryMatchDownload { get; set; }
+        public long? Create { get; set; }
+        public bool? Update { get; set; }
     }
 }

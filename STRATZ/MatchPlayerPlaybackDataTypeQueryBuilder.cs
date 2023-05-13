@@ -39,6 +39,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "purchaseEvents", IsComplex = true, QueryBuilderType = typeof(ItemPurchaseTypeQueryBuilder) },
                 new FieldMetadata { Name = "buyBackEvents", IsComplex = true, QueryBuilderType = typeof(BuyBackDetailTypeQueryBuilder) },
                 new FieldMetadata { Name = "streakEvents", IsComplex = true, QueryBuilderType = typeof(StreakEventTypeQueryBuilder) },
+                new FieldMetadata { Name = "runeEvents", IsComplex = true, QueryBuilderType = typeof(PlayerRuneDetailTypeQueryBuilder) },
                 new FieldMetadata { Name = "spiritBearInventoryEvents", IsComplex = true, QueryBuilderType = typeof(SpiritBearInventoryTypeQueryBuilder) }
             };
 
@@ -274,6 +275,16 @@ namespace STRATZ
         public MatchPlayerPlaybackDataTypeQueryBuilder ExceptStreakEvents()
         {
             return ExceptField("streakEvents");
+        }
+
+        public MatchPlayerPlaybackDataTypeQueryBuilder WithRuneEvents(PlayerRuneDetailTypeQueryBuilder playerRuneDetailTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("runeEvents", alias, playerRuneDetailTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerPlaybackDataTypeQueryBuilder ExceptRuneEvents()
+        {
+            return ExceptField("runeEvents");
         }
 
         public MatchPlayerPlaybackDataTypeQueryBuilder WithSpiritBearInventoryEvents(SpiritBearInventoryTypeQueryBuilder spiritBearInventoryTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

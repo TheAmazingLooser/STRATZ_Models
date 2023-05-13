@@ -11,12 +11,13 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class DotaMutation
+    public partial class PlayerRuneDetailType
     {
-        public YogurtMutation Yogurt { get; set; }
-        public DotaUserMutation User { get; set; }
-        public AdminMutation Admin { get; set; }
-        public RoshMutation Rosh { get; set; }
-        public bool? RetryMatchDownload { get; set; }
+        public int? Time { get; set; }
+        public RuneEnums? Rune { get; set; }
+        public RuneAction? Action { get; set; }
+        public int? Gold { get; set; }
+        public int? PositionX { get; set; }
+        public int? PositionY { get; set; }
     }
 }

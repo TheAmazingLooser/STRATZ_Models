@@ -36,6 +36,7 @@ namespace STRATZ
         public IList<ItemPurchaseType> PurchaseEvents { get; set; }
         public IList<BuyBackDetailType> BuyBackEvents { get; set; }
         public IList<StreakEventType> StreakEvents { get; set; }
+        public IList<PlayerRuneDetailType> RuneEvents { get; set; }
         public IList<SpiritBearInventoryType> SpiritBearInventoryEvents { get; set; }
     }
 }

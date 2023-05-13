@@ -78,6 +78,7 @@ namespace STRATZ
         public const string PlusLetterType = "PlusLetterType";
         public const string RankBracket = "RankBracket";
         public const string RankBracketBasicEnum = "RankBracketBasicEnum";
+        public const string RoshDifficultyEnum = "ROSHDifficultyEnum";
         public const string RuneAction = "RuneAction";
         public const string RuneEnums = "RuneEnums";
         public const string Search = "Search";
@@ -408,6 +409,7 @@ namespace STRATZ
         public const string PlayerPlayedWithProPlayerType = "PlayerPlayedWithProPlayerType";
         public const string PlayerPlayedWithProTeamType = "PlayerPlayedWithProTeamType";
         public const string PlayerPlayedWithProType = "PlayerPlayedWithProType";
+        public const string PlayerRuneDetailType = "PlayerRuneDetailType";
         public const string PlayerTeammateType = "PlayerTeammateType";
         public const string PlayerType = "PlayerType";
         public const string PlayerUpdateAttributeDetailType = "PlayerUpdateAttributeDetailType";
@@ -433,6 +435,7 @@ namespace STRATZ
         public const string RabbitQueueDetailType = "RabbitQueueDetailType";
         public const string RegionType = "RegionType";
         public const string RoleType = "RoleType";
+        public const string RoshMutation = "ROSHMutation";
         public const string SearchType = "SearchType";
         public const string SeriesType = "SeriesType";
         public const string ServerStatusType = "ServerStatusType";

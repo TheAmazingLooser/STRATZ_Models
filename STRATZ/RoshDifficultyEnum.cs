@@ -11,12 +11,12 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class DotaMutation
+    public enum RoshDifficultyEnum
     {
-        public YogurtMutation Yogurt { get; set; }
-        public DotaUserMutation User { get; set; }
-        public AdminMutation Admin { get; set; }
-        public RoshMutation Rosh { get; set; }
-        public bool? RetryMatchDownload { get; set; }
+        [EnumMember(Value = "EASY")] Easy,
+        [EnumMember(Value = "MEDIUM")] Medium,
+        [EnumMember(Value = "HARD")] Hard,
+        [EnumMember(Value = "EXPERT")] Expert,
+        [EnumMember(Value = "ALPHA")] Alpha
     }
 }
