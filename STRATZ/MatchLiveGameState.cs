@@ -24,6 +24,8 @@ namespace STRATZ
         [EnumMember(Value = "TEAM_SHOWCASE")] TeamShowcase,
         [EnumMember(Value = "CUSTOM_GAME_SETUP")] CustomGameSetup,
         [EnumMember(Value = "WAIT_FOR_MAP_TO_LOAD")] WaitForMapToLoad,
+        [EnumMember(Value = "SCENARIO_SETUP")] ScenarioSetup,
+        [EnumMember(Value = "PLAYER_DRAFT")] PlayerDraft,
         [EnumMember(Value = "LAST")] Last
     }
 }

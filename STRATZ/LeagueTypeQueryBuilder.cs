@@ -308,11 +308,14 @@ namespace STRATZ
             return ExceptField("matchesGroupBy");
         }
 
-        public LeagueTypeQueryBuilder WithSeries(SeriesTypeQueryBuilder seriesTypeQueryBuilder, QueryBuilderParameter<IEnumerable<LeagueStage?>> leagueStageTypeIds = null, QueryBuilderParameter<int?> teamId = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
+        public LeagueTypeQueryBuilder WithSeries(SeriesTypeQueryBuilder seriesTypeQueryBuilder, QueryBuilderParameter<IEnumerable<LeagueStage?>> leagueStageTypeIds = null, QueryBuilderParameter<int?> seriesId = null, QueryBuilderParameter<int?> teamId = null, QueryBuilderParameter<int?> skip = null, QueryBuilderParameter<int?> take = null, string alias = null, IncludeDirective include = null, SkipDirective skipDirective = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (leagueStageTypeIds != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "leagueStageTypeIds", ArgumentValue = leagueStageTypeIds} );
+
+            if (seriesId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "seriesId", ArgumentValue = seriesId} );
 
             if (teamId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "teamId", ArgumentValue = teamId} );
