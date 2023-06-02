@@ -11,11 +11,8 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class PlayerPerformancePositionType
+    public partial class RoshQuery
     {
-        public MatchPlayerRoleType? RoleType { get; set; }
-        public int? RoleMatchCount { get; set; }
-        public int? RoleWinCount { get; set; }
-        public IList<PlayerPerformancePositionObjectType> Lanes { get; set; }
+        public IList<RoshGlobalStatType> Stats { get; set; }
     }
 }

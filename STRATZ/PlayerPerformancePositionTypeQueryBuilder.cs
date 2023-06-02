@@ -16,7 +16,7 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "roleType", IsComplex = true },
+                new FieldMetadata { Name = "roleType" },
                 new FieldMetadata { Name = "roleMatchCount" },
                 new FieldMetadata { Name = "roleWinCount" },
                 new FieldMetadata { Name = "lanes", IsComplex = true, QueryBuilderType = typeof(PlayerPerformancePositionObjectTypeQueryBuilder) }

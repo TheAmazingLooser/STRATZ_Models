@@ -21,7 +21,7 @@ namespace STRATZ
         [EnumMember(Value = "BOUNTY")] Bounty,
         [EnumMember(Value = "ARCANE")] Arcane,
         [EnumMember(Value = "WATER")] Water,
-        [EnumMember(Value = "SHIELD")] Shield,
-        [EnumMember(Value = "WISDOM")] Wisdom
+        [EnumMember(Value = "WISDOM")] Wisdom,
+        [EnumMember(Value = "SHIELD")] Shield
     }
 }

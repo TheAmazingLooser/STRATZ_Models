@@ -21,5 +21,6 @@ namespace STRATZ
         public ImpQuery Imp { get; set; }
         public PageDireTideQuery DireTide { get; set; }
         public PageBattlepassQuery BattlePass { get; set; }
+        public RoshQuery Rosh { get; set; }
     }
 }

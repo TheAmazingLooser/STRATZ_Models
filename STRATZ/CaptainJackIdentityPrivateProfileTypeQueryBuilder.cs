@@ -45,7 +45,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "lastTeamDailyEmail", IsComplex = true },
                 new FieldMetadata { Name = "lastProCircuitDailyEmail", IsComplex = true },
                 new FieldMetadata { Name = "unsubscribeCode" },
-                new FieldMetadata { Name = "lastSeen", IsComplex = true }
+                new FieldMetadata { Name = "lastSeen", IsComplex = true },
+                new FieldMetadata { Name = "rosh", IsComplex = true, QueryBuilderType = typeof(RoshCaptainJackIdentityStatDifficultyTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "CaptainJackIdentityPrivateProfileType"; } } 
@@ -350,6 +351,20 @@ namespace STRATZ
         public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptLastSeen()
         {
             return ExceptField("lastSeen");
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithRosh(RoshCaptainJackIdentityStatDifficultyTypeQueryBuilder roshCaptainJackIdentityStatDifficultyTypeQueryBuilder, QueryBuilderParameter<RoshMatchesRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (request != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "request", ArgumentValue = request} );
+
+            return WithObjectField("rosh", alias, roshCaptainJackIdentityStatDifficultyTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptRosh()
+        {
+            return ExceptField("rosh");
         }
     }
 }

@@ -42,7 +42,9 @@ namespace STRATZ
         private InputPropertyInfo _partyCounts;
         private InputPropertyInfo _hasAward;
         private InputPropertyInfo _withFriendSteamAccountIds;
+        private InputPropertyInfo _withEnemySteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
+        private InputPropertyInfo _withEnemyHeroIds;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
@@ -306,12 +308,30 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
+        #endif
+        public QueryBuilderParameter<IList<object>> WithEnemySteamAccountIds
+        {
+            get { return (QueryBuilderParameter<IList<object>>)_withEnemySteamAccountIds.Value; }
+            set { _withEnemySteamAccountIds = new InputPropertyInfo { Name = "withEnemySteamAccountIds", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
         #endif
         public QueryBuilderParameter<IList<int>> WithFriendHeroIds
         {
             get { return (QueryBuilderParameter<IList<int>>)_withFriendHeroIds.Value; }
             set { _withFriendHeroIds = new InputPropertyInfo { Name = "withFriendHeroIds", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
+        #endif
+        public QueryBuilderParameter<IList<int>> WithEnemyHeroIds
+        {
+            get { return (QueryBuilderParameter<IList<int>>)_withEnemyHeroIds.Value; }
+            set { _withEnemyHeroIds = new InputPropertyInfo { Name = "withEnemyHeroIds", Value = value }; }
         }
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
@@ -345,7 +365,9 @@ namespace STRATZ
             if (_partyCounts.Name != null) yield return _partyCounts;
             if (_hasAward.Name != null) yield return _hasAward;
             if (_withFriendSteamAccountIds.Name != null) yield return _withFriendSteamAccountIds;
+            if (_withEnemySteamAccountIds.Name != null) yield return _withEnemySteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
+            if (_withEnemyHeroIds.Name != null) yield return _withEnemyHeroIds;
         }
     }
 }

@@ -43,5 +43,6 @@ namespace STRATZ
         public long? LastProCircuitDailyEmail { get; set; }
         public string UnsubscribeCode { get; set; }
         public long? LastSeen { get; set; }
+        public IList<RoshCaptainJackIdentityStatDifficultyType> Rosh { get; set; }
     }
 }

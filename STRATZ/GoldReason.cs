@@ -26,6 +26,7 @@ namespace STRATZ
         [EnumMember(Value = "COURIERS")] Couriers,
         [EnumMember(Value = "BOUNTY")] Bounty,
         [EnumMember(Value = "DOOM_DEVOURER")] DoomDevourer,
-        [EnumMember(Value = "WARD_DESTRUCTION")] WardDestruction
+        [EnumMember(Value = "WARD_DESTRUCTION")] WardDestruction,
+        [EnumMember(Value = "COURIERS_2")] Couriers2
     }
 }

@@ -37,6 +37,7 @@ namespace STRATZ
         [EnumMember(Value = "SOLO_MID")] SoloMid,
         [EnumMember(Value = "ALL_PICK_RANKED")] AllPickRanked,
         [EnumMember(Value = "TURBO")] Turbo,
-        [EnumMember(Value = "MUTATION")] Mutation
+        [EnumMember(Value = "MUTATION")] Mutation,
+        [EnumMember(Value = "UNKNOWN")] Unknown
     }
 }

@@ -435,7 +435,10 @@ namespace STRATZ
         public const string RabbitQueueDetailType = "RabbitQueueDetailType";
         public const string RegionType = "RegionType";
         public const string RoleType = "RoleType";
+        public const string RoshCaptainJackIdentityStatDifficultyType = "ROSHCaptainJackIdentityStatDifficultyType";
+        public const string RoshGlobalStatType = "ROSHGlobalStatType";
         public const string RoshMutation = "ROSHMutation";
+        public const string RoshQuery = "RoshQuery";
         public const string SearchType = "SearchType";
         public const string SeriesType = "SeriesType";
         public const string ServerStatusType = "ServerStatusType";
@@ -505,6 +508,7 @@ namespace STRATZ
         public const string PlusDraftPlayerRequestType = "PlusDraftPlayerRequestType";
         public const string PlusDraftRequestType = "PlusDraftRequestType";
         public const string PlusPlayerHoverRequestType = "PlusPlayerHoverRequestType";
+        public const string RoshMatchesRequestType = "ROSHMatchesRequestType";
         public const string TeamMatchesRequestType = "TeamMatchesRequestType";
         public const string UpdateFollowerRequestType = "UpdateFollowerRequestType";
         public const string UpdateMatchReplayMatchUploadPlayerObjectType = "UpdateMatchReplayMatchUploadPlayerObjectType";
@@ -557,6 +561,7 @@ namespace STRATZ
                 { typeof(PlusDraftPlayerRequestType), "PlusDraftPlayerRequestType" },
                 { typeof(PlusDraftRequestType), "PlusDraftRequestType" },
                 { typeof(PlusPlayerHoverRequestType), "PlusPlayerHoverRequestType" },
+                { typeof(RoshMatchesRequestType), "ROSHMatchesRequestType" },
                 { typeof(TeamMatchesRequestType), "TeamMatchesRequestType" },
                 { typeof(UpdateFollowerRequestType), "UpdateFollowerRequestType" },
                 { typeof(UpdateMatchReplayMatchUploadPlayerObjectType), "UpdateMatchReplayMatchUploadPlayerObjectType" },

@@ -11,11 +11,11 @@ using Newtonsoft.Json;
 
 namespace STRATZ
 {
-    public partial class PlayerPerformancePositionType
+    public partial class RoshCaptainJackIdentityStatDifficultyType
     {
-        public MatchPlayerRoleType? RoleType { get; set; }
-        public int? RoleMatchCount { get; set; }
-        public int? RoleWinCount { get; set; }
-        public IList<PlayerPerformancePositionObjectType> Lanes { get; set; }
+        public RoshDifficultyEnum? Difficulty { get; set; }
+        public int? MatchCount { get; set; }
+        public int? WinCount { get; set; }
+        public decimal? MaxScore { get; set; }
     }
 }
