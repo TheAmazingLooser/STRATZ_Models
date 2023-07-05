@@ -42,7 +42,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
                 new FieldMetadata { Name = "lastMatchRegionId", IsComplex = true },
                 new FieldMetadata { Name = "battlepass", IsComplex = true, QueryBuilderType = typeof(SteamAccountBattlePassTypeQueryBuilder) },
-                new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildMemberTypeQueryBuilder) }
+                new FieldMetadata { Name = "guild", IsComplex = true, QueryBuilderType = typeof(GuildMemberTypeQueryBuilder) },
+                new FieldMetadata { Name = "isCaster" }
             };
 
         protected override string TypeName { get { return "SteamAccountType"; } } 
@@ -317,6 +318,16 @@ namespace STRATZ
         public SteamAccountTypeQueryBuilder ExceptGuild()
         {
             return ExceptField("guild");
+        }
+
+        public SteamAccountTypeQueryBuilder WithIsCaster(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("isCaster", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public SteamAccountTypeQueryBuilder ExceptIsCaster()
+        {
+            return ExceptField("isCaster");
         }
     }
 }

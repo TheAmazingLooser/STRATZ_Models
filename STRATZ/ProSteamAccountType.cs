@@ -24,7 +24,7 @@ namespace STRATZ
         public int? TotalEarnings { get; set; }
         public long? Birthday { get; set; }
         public string RomanizedRealName { get; set; }
-        public byte? Roles { get; set; }
+        public short? Roles { get; set; }
         public IList<string> Aliases { get; set; }
         public byte? Statuses { get; set; }
         public string TwitterLink { get; set; }

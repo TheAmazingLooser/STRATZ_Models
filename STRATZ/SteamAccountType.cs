@@ -40,5 +40,6 @@ namespace STRATZ
         public byte? LastMatchRegionId { get; set; }
         public IList<SteamAccountBattlePassType> Battlepass { get; set; }
         public GuildMemberType Guild { get; set; }
+        public bool? IsCaster { get; set; }
     }
 }
