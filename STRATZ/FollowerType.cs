@@ -14,7 +14,9 @@ namespace STRATZ
     public partial class FollowerType
     {
         public object CaptainJackIdentityId { get; set; }
+        public CaptainJackIdentityPublicProfileType CaptainJackIdentityProfile { get; set; }
         public long? SteamAccountId { get; set; }
+        public SteamAccountType SteamAccount { get; set; }
         public byte? FeedLevel { get; set; }
         public byte? EmailLevel { get; set; }
         public bool? DailyEmail { get; set; }
@@ -23,7 +25,5 @@ namespace STRATZ
         public bool? IsFavorite { get; set; }
         public long? LastEmail { get; set; }
         public bool? DidManualUpdate { get; set; }
-        public SteamAccountType SteamAccount { get; set; }
-        public CaptainJackIdentityType CaptainJackIdentity { get; set; }
     }
 }

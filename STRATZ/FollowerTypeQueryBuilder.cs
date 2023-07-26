@@ -17,7 +17,9 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "captainJackIdentityId", IsComplex = true },
+                new FieldMetadata { Name = "captainJackIdentityProfile", IsComplex = true, QueryBuilderType = typeof(CaptainJackIdentityPublicProfileTypeQueryBuilder) },
                 new FieldMetadata { Name = "steamAccountId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "feedLevel", IsComplex = true },
                 new FieldMetadata { Name = "emailLevel", IsComplex = true },
                 new FieldMetadata { Name = "dailyEmail" },
@@ -25,9 +27,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "monthlyEmail" },
                 new FieldMetadata { Name = "isFavorite" },
                 new FieldMetadata { Name = "lastEmail", IsComplex = true },
-                new FieldMetadata { Name = "didManualUpdate" },
-                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "captainJackIdentity", IsComplex = true, QueryBuilderType = typeof(CaptainJackIdentityTypeQueryBuilder) }
+                new FieldMetadata { Name = "didManualUpdate" }
             };
 
         protected override string TypeName { get { return "FollowerType"; } } 
@@ -44,6 +44,16 @@ namespace STRATZ
             return ExceptField("captainJackIdentityId");
         }
 
+        public FollowerTypeQueryBuilder WithCaptainJackIdentityProfile(CaptainJackIdentityPublicProfileTypeQueryBuilder captainJackIdentityPublicProfileTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("captainJackIdentityProfile", alias, captainJackIdentityPublicProfileTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public FollowerTypeQueryBuilder ExceptCaptainJackIdentityProfile()
+        {
+            return ExceptField("captainJackIdentityProfile");
+        }
+
         public FollowerTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
@@ -52,6 +62,16 @@ namespace STRATZ
         public FollowerTypeQueryBuilder ExceptSteamAccountId()
         {
             return ExceptField("steamAccountId");
+        }
+
+        public FollowerTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public FollowerTypeQueryBuilder ExceptSteamAccount()
+        {
+            return ExceptField("steamAccount");
         }
 
         public FollowerTypeQueryBuilder WithFeedLevel(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
@@ -132,26 +152,6 @@ namespace STRATZ
         public FollowerTypeQueryBuilder ExceptDidManualUpdate()
         {
             return ExceptField("didManualUpdate");
-        }
-
-        public FollowerTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public FollowerTypeQueryBuilder ExceptSteamAccount()
-        {
-            return ExceptField("steamAccount");
-        }
-
-        public FollowerTypeQueryBuilder WithCaptainJackIdentity(CaptainJackIdentityTypeQueryBuilder captainJackIdentityTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("captainJackIdentity", alias, captainJackIdentityTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public FollowerTypeQueryBuilder ExceptCaptainJackIdentity()
-        {
-            return ExceptField("captainJackIdentity");
         }
     }
 }

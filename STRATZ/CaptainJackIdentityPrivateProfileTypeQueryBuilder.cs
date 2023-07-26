@@ -46,6 +46,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "lastProCircuitDailyEmail", IsComplex = true },
                 new FieldMetadata { Name = "unsubscribeCode" },
                 new FieldMetadata { Name = "lastSeen", IsComplex = true },
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
                 new FieldMetadata { Name = "rosh", IsComplex = true, QueryBuilderType = typeof(RoshCaptainJackIdentityStatDifficultyTypeQueryBuilder) }
             };
 
@@ -351,6 +353,26 @@ namespace STRATZ
         public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptLastSeen()
         {
             return ExceptField("lastSeen");
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptSteamAccountId()
+        {
+            return ExceptField("steamAccountId");
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public CaptainJackIdentityPrivateProfileTypeQueryBuilder ExceptSteamAccount()
+        {
+            return ExceptField("steamAccount");
         }
 
         public CaptainJackIdentityPrivateProfileTypeQueryBuilder WithRosh(RoshCaptainJackIdentityStatDifficultyTypeQueryBuilder roshCaptainJackIdentityStatDifficultyTypeQueryBuilder, QueryBuilderParameter<RoshMatchesRequestType> request = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

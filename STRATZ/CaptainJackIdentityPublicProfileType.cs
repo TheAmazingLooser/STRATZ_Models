@@ -20,5 +20,7 @@ namespace STRATZ
         public string Twitch { get; set; }
         public string YouTube { get; set; }
         public bool? IsAdmin { get; set; }
+        public long? SteamAccountId { get; set; }
+        public SteamAccountType SteamAccount { get; set; }
     }
 }

@@ -22,7 +22,9 @@ namespace STRATZ
                 new FieldMetadata { Name = "facebook" },
                 new FieldMetadata { Name = "twitch" },
                 new FieldMetadata { Name = "youTube" },
-                new FieldMetadata { Name = "isAdmin" }
+                new FieldMetadata { Name = "isAdmin" },
+                new FieldMetadata { Name = "steamAccountId", IsComplex = true },
+                new FieldMetadata { Name = "steamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }
             };
 
         protected override string TypeName { get { return "CaptainJackIdentityPublicProfileType"; } } 
@@ -97,6 +99,26 @@ namespace STRATZ
         public CaptainJackIdentityPublicProfileTypeQueryBuilder ExceptIsAdmin()
         {
             return ExceptField("isAdmin");
+        }
+
+        public CaptainJackIdentityPublicProfileTypeQueryBuilder WithSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("steamAccountId", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public CaptainJackIdentityPublicProfileTypeQueryBuilder ExceptSteamAccountId()
+        {
+            return ExceptField("steamAccountId");
+        }
+
+        public CaptainJackIdentityPublicProfileTypeQueryBuilder WithSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("steamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public CaptainJackIdentityPublicProfileTypeQueryBuilder ExceptSteamAccount()
+        {
+            return ExceptField("steamAccount");
         }
     }
 }

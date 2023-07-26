@@ -122,7 +122,6 @@ namespace STRATZ
         public const string CaptainJackIdentityApiApplicationType = "CaptainJackIdentityApiApplicationType";
         public const string CaptainJackIdentityPrivateProfileType = "CaptainJackIdentityPrivateProfileType";
         public const string CaptainJackIdentityPublicProfileType = "CaptainJackIdentityPublicProfileType";
-        public const string CaptainJackIdentityType = "CaptainJackIdentityType";
         public const string ClusterType = "ClusterType";
         public const string ConstantQuery = "ConstantQuery";
         public const string DeathDetailType = "DeathDetailType";
