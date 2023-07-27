@@ -18,7 +18,6 @@ namespace STRATZ
             {
                 new FieldMetadata { Name = "isPick" },
                 new FieldMetadata { Name = "heroId", IsComplex = true },
-                new FieldMetadata { Name = "team" },
                 new FieldMetadata { Name = "order" },
                 new FieldMetadata { Name = "bannedHeroId", IsComplex = true },
                 new FieldMetadata { Name = "isRadiant" },
@@ -51,16 +50,6 @@ namespace STRATZ
         public MatchStatsPickBanTypeQueryBuilder ExceptHeroId()
         {
             return ExceptField("heroId");
-        }
-
-        public MatchStatsPickBanTypeQueryBuilder WithTeam(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("team", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchStatsPickBanTypeQueryBuilder ExceptTeam()
-        {
-            return ExceptField("team");
         }
 
         public MatchStatsPickBanTypeQueryBuilder WithOrder(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

@@ -15,7 +15,6 @@ namespace STRATZ
     {
         public bool? IsPick { get; set; }
         public short? HeroId { get; set; }
-        public int? Team { get; set; }
         public int? Order { get; set; }
         public short? BannedHeroId { get; set; }
         public bool? IsRadiant { get; set; }
