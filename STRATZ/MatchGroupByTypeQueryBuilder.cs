@@ -194,6 +194,11 @@ namespace STRATZ
             return WithFragment(matchGroupByDateDayTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByDateDayHeroTypeFragment(MatchGroupByDateDayHeroTypeQueryBuilder matchGroupByDateDayHeroTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByDateDayHeroTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
         public MatchGroupByTypeQueryBuilder WithMatchGroupByTotalKillsTypeFragment(MatchGroupByTotalKillsTypeQueryBuilder matchGroupByTotalKillsTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
         {
             return WithFragment(matchGroupByTotalKillsTypeQueryBuilder, new GraphQlDirective[] { include, skip });

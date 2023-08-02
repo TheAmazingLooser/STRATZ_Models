@@ -250,6 +250,7 @@ namespace STRATZ
         public const string MatchGroupByAssistsType = "MatchGroupByAssistsType";
         public const string MatchGroupByAwardType = "MatchGroupByAwardType";
         public const string MatchGroupByClusterType = "MatchGroupByClusterType";
+        public const string MatchGroupByDateDayHeroType = "MatchGroupByDateDayHeroType";
         public const string MatchGroupByDateDayType = "MatchGroupByDateDayType";
         public const string MatchGroupByDeathsType = "MatchGroupByDeathsType";
         public const string MatchGroupByDurationMinutesType = "MatchGroupByDurationMinutesType";
