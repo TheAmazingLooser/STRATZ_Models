@@ -208,5 +208,10 @@ namespace STRATZ
         {
             return WithFragment(matchGroupByGoldPerMinuteTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
+
+        public MatchGroupByTypeQueryBuilder WithMatchGroupByHourTypeFragment(MatchGroupByHourTypeQueryBuilder matchGroupByHourTypeQueryBuilder, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithFragment(matchGroupByHourTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
     }
 }

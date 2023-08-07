@@ -50,6 +50,7 @@ namespace STRATZ
         [EnumMember(Value = "DATE_DAY")] DateDay,
         [EnumMember(Value = "TOTAL_KILLS")] TotalKills,
         [EnumMember(Value = "GOLD_PER_MINUTE")] GoldPerMinute,
-        [EnumMember(Value = "DATE_DAY_HERO")] DateDayHero
+        [EnumMember(Value = "DATE_DAY_HERO")] DateDayHero,
+        [EnumMember(Value = "HOUR")] Hour
     }
 }

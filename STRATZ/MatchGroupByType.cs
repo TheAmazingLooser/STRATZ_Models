@@ -60,5 +60,6 @@ namespace STRATZ
         public long? DateDay { get; set; }
         public long? TotalKills { get; set; }
         public long? GoldPerMinute { get; set; }
+        public short? Hour { get; set; }
     }
 }

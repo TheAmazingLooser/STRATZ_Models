@@ -260,6 +260,7 @@ namespace STRATZ
         public const string MatchGroupByGoldPerMinuteType = "MatchGroupByGoldPerMinuteType";
         public const string MatchGroupByHeroPerformanceType = "MatchGroupByHeroPerformanceType";
         public const string MatchGroupByHeroType = "MatchGroupByHeroType";
+        public const string MatchGroupByHourType = "MatchGroupByHourType";
         public const string MatchGroupByIsIntentionalFeedingType = "MatchGroupByIsIntentionalFeedingType";
         public const string MatchGroupByIsLeagueType = "MatchGroupByIsLeagueType";
         public const string MatchGroupByIsLeaverType = "MatchGroupByIsLeaverType";
