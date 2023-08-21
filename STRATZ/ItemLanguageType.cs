@@ -14,7 +14,7 @@ namespace STRATZ
     public partial class ItemLanguageType
     {
         public string DisplayName { get; set; }
-        public IList<string> Description { get; set; }
+        public string Description { get; set; }
         public IList<string> Lore { get; set; }
         public IList<string> Notes { get; set; }
         public IList<string> Attributes { get; set; }

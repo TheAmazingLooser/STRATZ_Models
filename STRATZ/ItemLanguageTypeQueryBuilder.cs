@@ -17,7 +17,7 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "displayName" },
-                new FieldMetadata { Name = "description", IsComplex = true },
+                new FieldMetadata { Name = "description" },
                 new FieldMetadata { Name = "lore", IsComplex = true },
                 new FieldMetadata { Name = "notes", IsComplex = true },
                 new FieldMetadata { Name = "attributes", IsComplex = true }
