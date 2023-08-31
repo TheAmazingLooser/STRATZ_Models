@@ -16,7 +16,8 @@ namespace STRATZ
         private static readonly FieldMetadata[] AllFieldMetadata =
             new []
             {
-                new FieldMetadata { Name = "heroPeroformance", IsComplex = true },
+                new FieldMetadata { Name = "heroId", IsComplex = true },
+                new FieldMetadata { Name = "position" },
                 new FieldMetadata { Name = "matchCount" },
                 new FieldMetadata { Name = "winCount" },
                 new FieldMetadata { Name = "avgImp" },
@@ -34,14 +35,24 @@ namespace STRATZ
 
         public override IReadOnlyList<FieldMetadata> AllFields { get { return AllFieldMetadata; } } 
 
-        public MatchGroupByHeroPerformanceTypeQueryBuilder WithHeroPeroformance(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchGroupByHeroPerformanceTypeQueryBuilder WithHeroId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("heroPeroformance", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("heroId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchGroupByHeroPerformanceTypeQueryBuilder ExceptHeroPeroformance()
+        public MatchGroupByHeroPerformanceTypeQueryBuilder ExceptHeroId()
         {
-            return ExceptField("heroPeroformance");
+            return ExceptField("heroId");
+        }
+
+        public MatchGroupByHeroPerformanceTypeQueryBuilder WithPosition(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("position", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupByHeroPerformanceTypeQueryBuilder ExceptPosition()
+        {
+            return ExceptField("position");
         }
 
         public MatchGroupByHeroPerformanceTypeQueryBuilder WithMatchCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

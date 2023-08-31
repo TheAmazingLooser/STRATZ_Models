@@ -21,6 +21,7 @@ namespace STRATZ
         [EnumMember(Value = "BRACKET_DOUBLE_SEED_LOSER")] BracketDoubleSeedLoser,
         [EnumMember(Value = "BRACKET_DOUBLE_ALL_WINNER")] BracketDoubleAllWinner,
         [EnumMember(Value = "SHOWMATCH")] Showmatch,
-        [EnumMember(Value = "GSL")] Gsl
+        [EnumMember(Value = "GSL")] Gsl,
+        [EnumMember(Value = "PLACEMENT")] Placement
     }
 }

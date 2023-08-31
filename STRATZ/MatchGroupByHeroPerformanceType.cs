@@ -13,7 +13,8 @@ namespace STRATZ
 {
     public partial class MatchGroupByHeroPerformanceType
     {
-        public long? HeroPeroformance { get; set; }
+        public short? HeroId { get; set; }
+        public MatchPlayerPositionType? Position { get; set; }
         public int? MatchCount { get; set; }
         public int? WinCount { get; set; }
         public int? AvgImp { get; set; }
