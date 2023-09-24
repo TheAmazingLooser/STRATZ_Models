@@ -15,5 +15,6 @@ namespace STRATZ
     {
         public int? Time { get; set; }
         public short? ChatWheelId { get; set; }
+        public int? PauseTick { get; set; }
     }
 }

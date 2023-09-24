@@ -17,7 +17,8 @@ namespace STRATZ
             new []
             {
                 new FieldMetadata { Name = "time" },
-                new FieldMetadata { Name = "chatWheelId", IsComplex = true }
+                new FieldMetadata { Name = "chatWheelId", IsComplex = true },
+                new FieldMetadata { Name = "pauseTick" }
             };
 
         protected override string TypeName { get { return "MatchPlayerStatsChatWheelEventType"; } } 
@@ -42,6 +43,16 @@ namespace STRATZ
         public MatchPlayerStatsChatWheelEventTypeQueryBuilder ExceptChatWheelId()
         {
             return ExceptField("chatWheelId");
+        }
+
+        public MatchPlayerStatsChatWheelEventTypeQueryBuilder WithPauseTick(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("pauseTick", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerStatsChatWheelEventTypeQueryBuilder ExceptPauseTick()
+        {
+            return ExceptField("pauseTick");
         }
     }
 }

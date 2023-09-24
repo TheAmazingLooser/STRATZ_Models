@@ -34,6 +34,8 @@ namespace STRATZ
         private InputPropertyInfo _positionIds;
         private InputPropertyInfo _awardIds;
         private InputPropertyInfo _isParty;
+        private InputPropertyInfo _isVictory;
+        private InputPropertyInfo _isRadiant;
         private InputPropertyInfo _hasAward;
         private InputPropertyInfo _withFriendSteamAccountIds;
         private InputPropertyInfo _withEnemySteamAccountIds;
@@ -237,6 +239,24 @@ namespace STRATZ
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
         #endif
+        public QueryBuilderParameter<bool?> IsVictory
+        {
+            get { return (QueryBuilderParameter<bool?>)_isVictory.Value; }
+            set { _isVictory = new InputPropertyInfo { Name = "isVictory", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        #endif
+        public QueryBuilderParameter<bool?> IsRadiant
+        {
+            get { return (QueryBuilderParameter<bool?>)_isRadiant.Value; }
+            set { _isRadiant = new InputPropertyInfo { Name = "isRadiant", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        #endif
         public QueryBuilderParameter<bool?> HasAward
         {
             get { return (QueryBuilderParameter<bool?>)_hasAward.Value; }
@@ -347,6 +367,8 @@ namespace STRATZ
             if (_positionIds.Name != null) yield return _positionIds;
             if (_awardIds.Name != null) yield return _awardIds;
             if (_isParty.Name != null) yield return _isParty;
+            if (_isVictory.Name != null) yield return _isVictory;
+            if (_isRadiant.Name != null) yield return _isRadiant;
             if (_hasAward.Name != null) yield return _hasAward;
             if (_withFriendSteamAccountIds.Name != null) yield return _withFriendSteamAccountIds;
             if (_withEnemySteamAccountIds.Name != null) yield return _withEnemySteamAccountIds;

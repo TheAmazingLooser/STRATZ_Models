@@ -98,11 +98,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<long?> ByMatchId
+        public QueryBuilderParameter<string> ByMatchId
         {
-            get { return (QueryBuilderParameter<long?>)_byMatchId.Value; }
+            get { return (QueryBuilderParameter<string>)_byMatchId.Value; }
             set { _byMatchId = new InputPropertyInfo { Name = "byMatchId", Value = value }; }
         }
 
@@ -134,11 +134,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<long?> BySteamAccountId
+        public QueryBuilderParameter<string> BySteamAccountId
         {
-            get { return (QueryBuilderParameter<long?>)_bySteamAccountId.Value; }
+            get { return (QueryBuilderParameter<string>)_bySteamAccountId.Value; }
             set { _bySteamAccountId = new InputPropertyInfo { Name = "bySteamAccountId", Value = value }; }
         }
 
@@ -161,20 +161,20 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> ByLeagueId
+        public QueryBuilderParameter<string> ByLeagueId
         {
-            get { return (QueryBuilderParameter<int?>)_byLeagueId.Value; }
+            get { return (QueryBuilderParameter<string>)_byLeagueId.Value; }
             set { _byLeagueId = new InputPropertyInfo { Name = "byLeagueId", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> BySeriesId
+        public QueryBuilderParameter<string> BySeriesId
         {
-            get { return (QueryBuilderParameter<int?>)_bySeriesId.Value; }
+            get { return (QueryBuilderParameter<string>)_bySeriesId.Value; }
             set { _bySeriesId = new InputPropertyInfo { Name = "bySeriesId", Value = value }; }
         }
 
@@ -188,11 +188,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> ByTeamId
+        public QueryBuilderParameter<string> ByTeamId
         {
-            get { return (QueryBuilderParameter<int?>)_byTeamId.Value; }
+            get { return (QueryBuilderParameter<string>)_byTeamId.Value; }
             set { _byTeamId = new InputPropertyInfo { Name = "byTeamId", Value = value }; }
         }
 
@@ -314,47 +314,47 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<bool?> FirstPick
+        public QueryBuilderParameter<string> FirstPick
         {
-            get { return (QueryBuilderParameter<bool?>)_firstPick.Value; }
+            get { return (QueryBuilderParameter<string>)_firstPick.Value; }
             set { _firstPick = new InputPropertyInfo { Name = "firstPick", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> MinDuration
+        public QueryBuilderParameter<string> MinDuration
         {
-            get { return (QueryBuilderParameter<int?>)_minDuration.Value; }
+            get { return (QueryBuilderParameter<string>)_minDuration.Value; }
             set { _minDuration = new InputPropertyInfo { Name = "minDuration", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> MaxDuration
+        public QueryBuilderParameter<string> MaxDuration
         {
-            get { return (QueryBuilderParameter<int?>)_maxDuration.Value; }
+            get { return (QueryBuilderParameter<string>)_maxDuration.Value; }
             set { _maxDuration = new InputPropertyInfo { Name = "maxDuration", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> MinGameVersionId
+        public QueryBuilderParameter<string> MinGameVersionId
         {
-            get { return (QueryBuilderParameter<int?>)_minGameVersionId.Value; }
+            get { return (QueryBuilderParameter<string>)_minGameVersionId.Value; }
             set { _minGameVersionId = new InputPropertyInfo { Name = "minGameVersionId", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
         #endif
-        public QueryBuilderParameter<int?> MaxGameVersionId
+        public QueryBuilderParameter<string> MaxGameVersionId
         {
-            get { return (QueryBuilderParameter<int?>)_maxGameVersionId.Value; }
+            get { return (QueryBuilderParameter<string>)_maxGameVersionId.Value; }
             set { _maxGameVersionId = new InputPropertyInfo { Name = "maxGameVersionId", Value = value }; }
         }
 

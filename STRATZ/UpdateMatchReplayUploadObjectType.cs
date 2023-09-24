@@ -23,11 +23,11 @@ namespace STRATZ
         private InputPropertyInfo _players;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<int?> MatchReplayUploadTeamId
+        public QueryBuilderParameter<long?> MatchReplayUploadTeamId
         {
-            get { return (QueryBuilderParameter<int?>)_matchReplayUploadTeamId.Value; }
+            get { return (QueryBuilderParameter<long?>)_matchReplayUploadTeamId.Value; }
             set { _matchReplayUploadTeamId = new InputPropertyInfo { Name = "matchReplayUploadTeamId", Value = value }; }
         }
 
@@ -41,29 +41,29 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<int?> LeagueId
+        public QueryBuilderParameter<long?> LeagueId
         {
-            get { return (QueryBuilderParameter<int?>)_leagueId.Value; }
+            get { return (QueryBuilderParameter<long?>)_leagueId.Value; }
             set { _leagueId = new InputPropertyInfo { Name = "leagueId", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<int?> RadiantTeamId
+        public QueryBuilderParameter<long?> RadiantTeamId
         {
-            get { return (QueryBuilderParameter<int?>)_radiantTeamId.Value; }
+            get { return (QueryBuilderParameter<long?>)_radiantTeamId.Value; }
             set { _radiantTeamId = new InputPropertyInfo { Name = "radiantTeamId", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<int?> DireTeamId
+        public QueryBuilderParameter<long?> DireTeamId
         {
-            get { return (QueryBuilderParameter<int?>)_direTeamId.Value; }
+            get { return (QueryBuilderParameter<long?>)_direTeamId.Value; }
             set { _direTeamId = new InputPropertyInfo { Name = "direTeamId", Value = value }; }
         }
 
