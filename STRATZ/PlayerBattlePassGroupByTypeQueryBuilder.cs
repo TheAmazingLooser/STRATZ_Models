@@ -19,7 +19,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "id" },
                 new FieldMetadata { Name = "playerCount", IsComplex = true },
                 new FieldMetadata { Name = "sumLevels", IsComplex = true },
-                new FieldMetadata { Name = "playerCountAt1000", IsComplex = true }
+                new FieldMetadata { Name = "playerCountAt", IsComplex = true }
             };
 
         protected override string TypeName { get { return "PlayerBattlePassGroupByType"; } } 
@@ -56,14 +56,14 @@ namespace STRATZ
             return ExceptField("sumLevels");
         }
 
-        public PlayerBattlePassGroupByTypeQueryBuilder WithPlayerCountAt1000(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public PlayerBattlePassGroupByTypeQueryBuilder WithPlayerCountAt(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("playerCountAt1000", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("playerCountAt", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public PlayerBattlePassGroupByTypeQueryBuilder ExceptPlayerCountAt1000()
+        public PlayerBattlePassGroupByTypeQueryBuilder ExceptPlayerCountAt()
         {
-            return ExceptField("playerCountAt1000");
+            return ExceptField("playerCountAt");
         }
     }
 }

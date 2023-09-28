@@ -111,10 +111,11 @@ namespace STRATZ
             return ExceptField("battlePass");
         }
 
-        public LeaderboardQueryQueryBuilder WithBattlePassGroupBy(PlayerBattlePassGroupByTypeQueryBuilder playerBattlePassGroupByTypeQueryBuilder, QueryBuilderParameter<PlayerBattlePassGroupByEnum> groupBy, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<string> countryCode = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public LeaderboardQueryQueryBuilder WithBattlePassGroupBy(PlayerBattlePassGroupByTypeQueryBuilder playerBattlePassGroupByTypeQueryBuilder, QueryBuilderParameter<PlayerBattlePassGroupByEnum> groupBy, QueryBuilderParameter<int> playerCountAt, QueryBuilderParameter<object> eventId = null, QueryBuilderParameter<string> countryCode = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             args.Add(new QueryBuilderArgumentInfo { ArgumentName = "groupBy", ArgumentValue = groupBy} );
+            args.Add(new QueryBuilderArgumentInfo { ArgumentName = "playerCountAt", ArgumentValue = playerCountAt} );
             if (eventId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "eventId", ArgumentValue = eventId} );
 

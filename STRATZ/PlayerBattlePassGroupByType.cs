@@ -16,6 +16,6 @@ namespace STRATZ
         public string Id { get; set; }
         public long? PlayerCount { get; set; }
         public long? SumLevels { get; set; }
-        public long? PlayerCountAt1000 { get; set; }
+        public long? PlayerCountAt { get; set; }
     }
 }
