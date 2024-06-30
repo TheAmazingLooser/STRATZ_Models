@@ -19,9 +19,7 @@ namespace STRATZ
         public IList<MatchPlaybackDataBuildingEventType> BuildingEvents { get; set; }
         public IList<MatchPlaybackDataTowerDeathEventType> TowerDeathEvents { get; set; }
         public IList<MatchPlaybackDataRoshanEventType> RoshanEvents { get; set; }
-        public long? RadiantCaptainSteamAccountId { get; set; }
-        public SteamAccountType RadiantCaptainSteamAccount { get; set; }
-        public long? DireCaptainSteamAccountId { get; set; }
-        public SteamAccountType DireCaptainSteamAccount { get; set; }
+        public long? RadiantCaptainHeroId { get; set; }
+        public long? DireCaptainHeroId { get; set; }
     }
 }

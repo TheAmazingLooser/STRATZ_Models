@@ -16,7 +16,7 @@ namespace STRATZ
         public short? HeroId { get; set; }
         public LeagueTableHeroOverviewType Overview { get; set; }
         public LeagueTableHeroStatsType Stats { get; set; }
-        public IList<LeagueTableHeroStatsType> Heroes { get; set; }
+        public IList<LeagueTableHeroPlayersObjectType> Heroes { get; set; }
         public IList<LeagueTableHeroLanesObjectType> Lanes { get; set; }
     }
 }

@@ -250,11 +250,14 @@ namespace STRATZ
             return ExceptField("npcs");
         }
 
-        public ConstantQueryQueryBuilder WithPatchNotes(PatchNoteLanguageTypeQueryBuilder patchNoteLanguageTypeQueryBuilder, QueryBuilderParameter<Language?> languageId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public ConstantQueryQueryBuilder WithPatchNotes(PatchNoteLanguageTypeQueryBuilder patchNoteLanguageTypeQueryBuilder, QueryBuilderParameter<Language?> languageId = null, QueryBuilderParameter<object> gameVersionId = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
             var args = new List<QueryBuilderArgumentInfo>();
             if (languageId != null)
                 args.Add(new QueryBuilderArgumentInfo { ArgumentName = "languageId", ArgumentValue = languageId} );
+
+            if (gameVersionId != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "gameVersionId", ArgumentValue = gameVersionId} );
 
             return WithObjectField("patchNotes", alias, patchNoteLanguageTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }

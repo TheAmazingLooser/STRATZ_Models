@@ -45,6 +45,8 @@ namespace STRATZ
         private InputPropertyInfo _withEnemySteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
         private InputPropertyInfo _withEnemyHeroIds;
+        private InputPropertyInfo _take;
+        private InputPropertyInfo _skip;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<IList<object>>))]
@@ -334,6 +336,24 @@ namespace STRATZ
             set { _withEnemyHeroIds = new InputPropertyInfo { Name = "withEnemyHeroIds", Value = value }; }
         }
 
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> Take
+        {
+            get { return (QueryBuilderParameter<int?>)_take.Value; }
+            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> Skip
+        {
+            get { return (QueryBuilderParameter<int?>)_skip.Value; }
+            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
+        }
+
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
         {
             if (_matchIds.Name != null) yield return _matchIds;
@@ -368,6 +388,8 @@ namespace STRATZ
             if (_withEnemySteamAccountIds.Name != null) yield return _withEnemySteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
             if (_withEnemyHeroIds.Name != null) yield return _withEnemyHeroIds;
+            if (_take.Name != null) yield return _take;
+            if (_skip.Name != null) yield return _skip;
         }
     }
 }

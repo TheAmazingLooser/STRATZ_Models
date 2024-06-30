@@ -208,6 +208,7 @@ namespace STRATZ
         public const string LeagueStreamType = "LeagueStreamType";
         public const string LeagueTableHeroLanesObjectType = "LeagueTableHeroLanesObjectType";
         public const string LeagueTableHeroOverviewType = "LeagueTableHeroOverviewType";
+        public const string LeagueTableHeroPlayersObjectType = "LeagueTableHeroPlayersObjectType";
         public const string LeagueTableHeroStatsType = "LeagueTableHeroStatsType";
         public const string LeagueTableHeroType = "LeagueTableHeroType";
         public const string LeagueTablePlayerHeroesObjectType = "LeagueTablePlayerHeroesObjectType";

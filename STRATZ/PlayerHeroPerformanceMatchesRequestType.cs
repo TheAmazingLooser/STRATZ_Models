@@ -17,6 +17,7 @@ namespace STRATZ
         private InputPropertyInfo _orderBy;
         private InputPropertyInfo _matchIds;
         private InputPropertyInfo _leagueId;
+        private InputPropertyInfo _leagueIds;
         private InputPropertyInfo _seriesId;
         private InputPropertyInfo _teamId;
         private InputPropertyInfo _isParsed;
@@ -47,6 +48,8 @@ namespace STRATZ
         private InputPropertyInfo _withEnemySteamAccountIds;
         private InputPropertyInfo _withFriendHeroIds;
         private InputPropertyInfo _withEnemyHeroIds;
+        private InputPropertyInfo _take;
+        private InputPropertyInfo _skip;
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<FilterMatchGroupOrderByEnum?>))]
@@ -82,6 +85,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<int?>)_leagueId.Value; }
             set { _leagueId = new InputPropertyInfo { Name = "leagueId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
+        #endif
+        public QueryBuilderParameter<IList<int>> LeagueIds
+        {
+            get { return (QueryBuilderParameter<IList<int>>)_leagueIds.Value; }
+            set { _leagueIds = new InputPropertyInfo { Name = "leagueIds", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -354,12 +366,31 @@ namespace STRATZ
             set { _withEnemyHeroIds = new InputPropertyInfo { Name = "withEnemyHeroIds", Value = value }; }
         }
 
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> Take
+        {
+            get { return (QueryBuilderParameter<int?>)_take.Value; }
+            set { _take = new InputPropertyInfo { Name = "take", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> Skip
+        {
+            get { return (QueryBuilderParameter<int?>)_skip.Value; }
+            set { _skip = new InputPropertyInfo { Name = "skip", Value = value }; }
+        }
+
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
         {
             if (_matchGroupOrderBy.Name != null) yield return _matchGroupOrderBy;
             if (_orderBy.Name != null) yield return _orderBy;
             if (_matchIds.Name != null) yield return _matchIds;
             if (_leagueId.Name != null) yield return _leagueId;
+            if (_leagueIds.Name != null) yield return _leagueIds;
             if (_seriesId.Name != null) yield return _seriesId;
             if (_teamId.Name != null) yield return _teamId;
             if (_isParsed.Name != null) yield return _isParsed;
@@ -390,6 +421,8 @@ namespace STRATZ
             if (_withEnemySteamAccountIds.Name != null) yield return _withEnemySteamAccountIds;
             if (_withFriendHeroIds.Name != null) yield return _withFriendHeroIds;
             if (_withEnemyHeroIds.Name != null) yield return _withEnemyHeroIds;
+            if (_take.Name != null) yield return _take;
+            if (_skip.Name != null) yield return _skip;
         }
     }
 }

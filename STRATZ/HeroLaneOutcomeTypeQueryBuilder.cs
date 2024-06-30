@@ -26,6 +26,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "lossCount", IsComplex = true },
                 new FieldMetadata { Name = "stompWinCount", IsComplex = true },
                 new FieldMetadata { Name = "stompLossCount", IsComplex = true },
+                new FieldMetadata { Name = "matchWinCount", IsComplex = true },
+                new FieldMetadata { Name = "csCount", IsComplex = true },
                 new FieldMetadata { Name = "heroId2", IsComplex = true }
             };
 
@@ -131,6 +133,26 @@ namespace STRATZ
         public HeroLaneOutcomeTypeQueryBuilder ExceptStompLossCount()
         {
             return ExceptField("stompLossCount");
+        }
+
+        public HeroLaneOutcomeTypeQueryBuilder WithMatchWinCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("matchWinCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroLaneOutcomeTypeQueryBuilder ExceptMatchWinCount()
+        {
+            return ExceptField("matchWinCount");
+        }
+
+        public HeroLaneOutcomeTypeQueryBuilder WithCsCount(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("csCount", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroLaneOutcomeTypeQueryBuilder ExceptCsCount()
+        {
+            return ExceptField("csCount");
         }
 
         public HeroLaneOutcomeTypeQueryBuilder WithHeroId2(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

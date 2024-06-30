@@ -22,10 +22,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "buildingEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlaybackDataBuildingEventTypeQueryBuilder) },
                 new FieldMetadata { Name = "towerDeathEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlaybackDataTowerDeathEventTypeQueryBuilder) },
                 new FieldMetadata { Name = "roshanEvents", IsComplex = true, QueryBuilderType = typeof(MatchPlaybackDataRoshanEventTypeQueryBuilder) },
-                new FieldMetadata { Name = "radiantCaptainSteamAccountId", IsComplex = true },
-                new FieldMetadata { Name = "radiantCaptainSteamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) },
-                new FieldMetadata { Name = "direCaptainSteamAccountId", IsComplex = true },
-                new FieldMetadata { Name = "direCaptainSteamAccount", IsComplex = true, QueryBuilderType = typeof(SteamAccountTypeQueryBuilder) }
+                new FieldMetadata { Name = "radiantCaptainHeroId", IsComplex = true },
+                new FieldMetadata { Name = "direCaptainHeroId", IsComplex = true }
             };
 
         protected override string TypeName { get { return "MatchPlaybackDataType"; } } 
@@ -92,44 +90,24 @@ namespace STRATZ
             return ExceptField("roshanEvents");
         }
 
-        public MatchPlaybackDataTypeQueryBuilder WithRadiantCaptainSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchPlaybackDataTypeQueryBuilder WithRadiantCaptainHeroId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithScalarField("radiantCaptainSteamAccountId", alias, new GraphQlDirective[] { include, skip });
+            return WithScalarField("radiantCaptainHeroId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchPlaybackDataTypeQueryBuilder ExceptRadiantCaptainSteamAccountId()
+        public MatchPlaybackDataTypeQueryBuilder ExceptRadiantCaptainHeroId()
         {
-            return ExceptField("radiantCaptainSteamAccountId");
+            return ExceptField("radiantCaptainHeroId");
         }
 
-        public MatchPlaybackDataTypeQueryBuilder WithRadiantCaptainSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public MatchPlaybackDataTypeQueryBuilder WithDireCaptainHeroId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("radiantCaptainSteamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithScalarField("direCaptainHeroId", alias, new GraphQlDirective[] { include, skip });
         }
 
-        public MatchPlaybackDataTypeQueryBuilder ExceptRadiantCaptainSteamAccount()
+        public MatchPlaybackDataTypeQueryBuilder ExceptDireCaptainHeroId()
         {
-            return ExceptField("radiantCaptainSteamAccount");
-        }
-
-        public MatchPlaybackDataTypeQueryBuilder WithDireCaptainSteamAccountId(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithScalarField("direCaptainSteamAccountId", alias, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlaybackDataTypeQueryBuilder ExceptDireCaptainSteamAccountId()
-        {
-            return ExceptField("direCaptainSteamAccountId");
-        }
-
-        public MatchPlaybackDataTypeQueryBuilder WithDireCaptainSteamAccount(SteamAccountTypeQueryBuilder steamAccountTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
-        {
-            return WithObjectField("direCaptainSteamAccount", alias, steamAccountTypeQueryBuilder, new GraphQlDirective[] { include, skip });
-        }
-
-        public MatchPlaybackDataTypeQueryBuilder ExceptDireCaptainSteamAccount()
-        {
-            return ExceptField("direCaptainSteamAccount");
+            return ExceptField("direCaptainHeroId");
         }
     }
 }

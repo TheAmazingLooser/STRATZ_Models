@@ -134,11 +134,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<long?>))]
         #endif
-        public QueryBuilderParameter<string> BySteamAccountId
+        public QueryBuilderParameter<long?> BySteamAccountId
         {
-            get { return (QueryBuilderParameter<string>)_bySteamAccountId.Value; }
+            get { return (QueryBuilderParameter<long?>)_bySteamAccountId.Value; }
             set { _bySteamAccountId = new InputPropertyInfo { Name = "bySteamAccountId", Value = value }; }
         }
 
@@ -161,11 +161,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<string> ByLeagueId
+        public QueryBuilderParameter<int?> ByLeagueId
         {
-            get { return (QueryBuilderParameter<string>)_byLeagueId.Value; }
+            get { return (QueryBuilderParameter<int?>)_byLeagueId.Value; }
             set { _byLeagueId = new InputPropertyInfo { Name = "byLeagueId", Value = value }; }
         }
 
@@ -188,11 +188,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
-        public QueryBuilderParameter<string> ByTeamId
+        public QueryBuilderParameter<int?> ByTeamId
         {
-            get { return (QueryBuilderParameter<string>)_byTeamId.Value; }
+            get { return (QueryBuilderParameter<int?>)_byTeamId.Value; }
             set { _byTeamId = new InputPropertyInfo { Name = "byTeamId", Value = value }; }
         }
 
@@ -314,11 +314,11 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<string>))]
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
         #endif
-        public QueryBuilderParameter<string> FirstPick
+        public QueryBuilderParameter<bool?> FirstPick
         {
-            get { return (QueryBuilderParameter<string>)_firstPick.Value; }
+            get { return (QueryBuilderParameter<bool?>)_firstPick.Value; }
             set { _firstPick = new InputPropertyInfo { Name = "firstPick", Value = value }; }
         }
 

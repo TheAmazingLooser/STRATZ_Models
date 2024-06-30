@@ -13,14 +13,17 @@ namespace STRATZ
 {
     public partial class PlayerMatchesGroupByRequestType : IGraphQlInputObject
     {
+        private InputPropertyInfo _playerList;
         private InputPropertyInfo _groupBy;
         private InputPropertyInfo _matchIds;
         private InputPropertyInfo _leagueId;
+        private InputPropertyInfo _leagueIds;
         private InputPropertyInfo _seriesId;
         private InputPropertyInfo _teamId;
         private InputPropertyInfo _isParsed;
         private InputPropertyInfo _startDateTime;
         private InputPropertyInfo _endDateTime;
+        private InputPropertyInfo _isLeague;
         private InputPropertyInfo _gameModeIds;
         private InputPropertyInfo _lobbyTypeIds;
         private InputPropertyInfo _gameVersionIds;
@@ -43,9 +46,17 @@ namespace STRATZ
         private InputPropertyInfo _withEnemyHeroIds;
         private InputPropertyInfo _minGameVersionId;
         private InputPropertyInfo _maxGameVersionId;
-        private InputPropertyInfo _playerList;
         private InputPropertyInfo _take;
         private InputPropertyInfo _skip;
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<FindMatchPlayerList?>))]
+        #endif
+        public QueryBuilderParameter<FindMatchPlayerList?> PlayerList
+        {
+            get { return (QueryBuilderParameter<FindMatchPlayerList?>)_playerList.Value; }
+            set { _playerList = new InputPropertyInfo { Name = "playerList", Value = value }; }
+        }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<FindMatchPlayerGroupBy?>))]
@@ -72,6 +83,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<int?>)_leagueId.Value; }
             set { _leagueId = new InputPropertyInfo { Name = "leagueId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
+        #endif
+        public QueryBuilderParameter<IList<int>> LeagueIds
+        {
+            get { return (QueryBuilderParameter<IList<int>>)_leagueIds.Value; }
+            set { _leagueIds = new InputPropertyInfo { Name = "leagueIds", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -117,6 +137,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<long?>)_endDateTime.Value; }
             set { _endDateTime = new InputPropertyInfo { Name = "endDateTime", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        #endif
+        public QueryBuilderParameter<bool?> IsLeague
+        {
+            get { return (QueryBuilderParameter<bool?>)_isLeague.Value; }
+            set { _isLeague = new InputPropertyInfo { Name = "isLeague", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -318,15 +347,6 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
-        [JsonConverter(typeof(QueryBuilderParameterConverter<FindMatchPlayerList?>))]
-        #endif
-        public QueryBuilderParameter<FindMatchPlayerList?> PlayerList
-        {
-            get { return (QueryBuilderParameter<FindMatchPlayerList?>)_playerList.Value; }
-            set { _playerList = new InputPropertyInfo { Name = "playerList", Value = value }; }
-        }
-
-        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
         public QueryBuilderParameter<int?> Take
@@ -346,14 +366,17 @@ namespace STRATZ
 
         IEnumerable<InputPropertyInfo> IGraphQlInputObject.GetPropertyValues()
         {
+            if (_playerList.Name != null) yield return _playerList;
             if (_groupBy.Name != null) yield return _groupBy;
             if (_matchIds.Name != null) yield return _matchIds;
             if (_leagueId.Name != null) yield return _leagueId;
+            if (_leagueIds.Name != null) yield return _leagueIds;
             if (_seriesId.Name != null) yield return _seriesId;
             if (_teamId.Name != null) yield return _teamId;
             if (_isParsed.Name != null) yield return _isParsed;
             if (_startDateTime.Name != null) yield return _startDateTime;
             if (_endDateTime.Name != null) yield return _endDateTime;
+            if (_isLeague.Name != null) yield return _isLeague;
             if (_gameModeIds.Name != null) yield return _gameModeIds;
             if (_lobbyTypeIds.Name != null) yield return _lobbyTypeIds;
             if (_gameVersionIds.Name != null) yield return _gameVersionIds;
@@ -376,7 +399,6 @@ namespace STRATZ
             if (_withEnemyHeroIds.Name != null) yield return _withEnemyHeroIds;
             if (_minGameVersionId.Name != null) yield return _minGameVersionId;
             if (_maxGameVersionId.Name != null) yield return _maxGameVersionId;
-            if (_playerList.Name != null) yield return _playerList;
             if (_take.Name != null) yield return _take;
             if (_skip.Name != null) yield return _skip;
         }

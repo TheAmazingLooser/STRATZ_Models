@@ -56,9 +56,13 @@ namespace STRATZ
             return ExceptField("abilityId");
         }
 
-        public HeroAbilityTypeQueryBuilder WithAbility(AbilityTypeQueryBuilder abilityTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public HeroAbilityTypeQueryBuilder WithAbility(AbilityTypeQueryBuilder abilityTypeQueryBuilder, QueryBuilderParameter<Language?> language = null, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("ability", alias, abilityTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            var args = new List<QueryBuilderArgumentInfo>();
+            if (language != null)
+                args.Add(new QueryBuilderArgumentInfo { ArgumentName = "language", ArgumentValue = language} );
+
+            return WithObjectField("ability", alias, abilityTypeQueryBuilder, new GraphQlDirective[] { include, skip }, args);
         }
 
         public HeroAbilityTypeQueryBuilder ExceptAbility()

@@ -24,6 +24,7 @@ namespace STRATZ
         public decimal? AvgKills { get; set; }
         public decimal? AvgDeaths { get; set; }
         public decimal? AvgAssists { get; set; }
+        public decimal? AvgTowerDamage { get; set; }
         public long? LastMatchDateTime { get; set; }
         public long? FirstMatchDateTime { get; set; }
     }

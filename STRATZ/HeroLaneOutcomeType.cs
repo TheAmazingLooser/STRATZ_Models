@@ -23,6 +23,8 @@ namespace STRATZ
         public long? LossCount { get; set; }
         public long? StompWinCount { get; set; }
         public long? StompLossCount { get; set; }
+        public long? MatchWinCount { get; set; }
+        public long? CsCount { get; set; }
         public short? HeroId2 { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "heroId", IsComplex = true },
                 new FieldMetadata { Name = "overview", IsComplex = true, QueryBuilderType = typeof(LeagueTableHeroOverviewTypeQueryBuilder) },
                 new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(LeagueTableHeroStatsTypeQueryBuilder) },
-                new FieldMetadata { Name = "heroes", IsComplex = true, QueryBuilderType = typeof(LeagueTableHeroStatsTypeQueryBuilder) },
+                new FieldMetadata { Name = "heroes", IsComplex = true, QueryBuilderType = typeof(LeagueTableHeroPlayersObjectTypeQueryBuilder) },
                 new FieldMetadata { Name = "lanes", IsComplex = true, QueryBuilderType = typeof(LeagueTableHeroLanesObjectTypeQueryBuilder) }
             };
 
@@ -57,9 +57,9 @@ namespace STRATZ
             return ExceptField("stats");
         }
 
-        public LeagueTableHeroTypeQueryBuilder WithHeroes(LeagueTableHeroStatsTypeQueryBuilder leagueTableHeroStatsTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        public LeagueTableHeroTypeQueryBuilder WithHeroes(LeagueTableHeroPlayersObjectTypeQueryBuilder leagueTableHeroPlayersObjectTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
         {
-            return WithObjectField("heroes", alias, leagueTableHeroStatsTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+            return WithObjectField("heroes", alias, leagueTableHeroPlayersObjectTypeQueryBuilder, new GraphQlDirective[] { include, skip });
         }
 
         public LeagueTableHeroTypeQueryBuilder ExceptHeroes()

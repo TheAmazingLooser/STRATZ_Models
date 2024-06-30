@@ -29,6 +29,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "avgKills" },
                 new FieldMetadata { Name = "avgDeaths" },
                 new FieldMetadata { Name = "avgAssists" },
+                new FieldMetadata { Name = "avgTowerDamage" },
                 new FieldMetadata { Name = "lastMatchDateTime", IsComplex = true },
                 new FieldMetadata { Name = "firstMatchDateTime", IsComplex = true }
             };
@@ -167,6 +168,16 @@ namespace STRATZ
         public MatchGroupBySteamAccountIdHeroIdTypeQueryBuilder ExceptAvgAssists()
         {
             return ExceptField("avgAssists");
+        }
+
+        public MatchGroupBySteamAccountIdHeroIdTypeQueryBuilder WithAvgTowerDamage(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("avgTowerDamage", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchGroupBySteamAccountIdHeroIdTypeQueryBuilder ExceptAvgTowerDamage()
+        {
+            return ExceptField("avgTowerDamage");
         }
 
         public MatchGroupBySteamAccountIdHeroIdTypeQueryBuilder WithLastMatchDateTime(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

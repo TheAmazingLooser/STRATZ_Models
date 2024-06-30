@@ -18,6 +18,7 @@ namespace STRATZ
         private InputPropertyInfo _orderBy;
         private InputPropertyInfo _matchIds;
         private InputPropertyInfo _leagueId;
+        private InputPropertyInfo _leagueIds;
         private InputPropertyInfo _seriesId;
         private InputPropertyInfo _teamId;
         private InputPropertyInfo _teamIdSteamAccount;
@@ -92,6 +93,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<int?>)_leagueId.Value; }
             set { _leagueId = new InputPropertyInfo { Name = "leagueId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
+        #endif
+        public QueryBuilderParameter<IList<int>> LeagueIds
+        {
+            get { return (QueryBuilderParameter<IList<int>>)_leagueIds.Value; }
+            set { _leagueIds = new InputPropertyInfo { Name = "leagueIds", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -371,6 +381,7 @@ namespace STRATZ
             if (_orderBy.Name != null) yield return _orderBy;
             if (_matchIds.Name != null) yield return _matchIds;
             if (_leagueId.Name != null) yield return _leagueId;
+            if (_leagueIds.Name != null) yield return _leagueIds;
             if (_seriesId.Name != null) yield return _seriesId;
             if (_teamId.Name != null) yield return _teamId;
             if (_teamIdSteamAccount.Name != null) yield return _teamIdSteamAccount;

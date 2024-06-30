@@ -22,6 +22,7 @@ namespace STRATZ
         private InputPropertyInfo _tiers;
         private InputPropertyInfo _lastPlaybackEventOnly;
         private InputPropertyInfo _orderBy;
+        private InputPropertyInfo _isLeague;
         private InputPropertyInfo _take;
         private InputPropertyInfo _skip;
 
@@ -107,6 +108,15 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<bool?>))]
+        #endif
+        public QueryBuilderParameter<bool?> IsLeague
+        {
+            get { return (QueryBuilderParameter<bool?>)_isLeague.Value; }
+            set { _isLeague = new InputPropertyInfo { Name = "isLeague", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
         #endif
         public QueryBuilderParameter<int?> Take
@@ -135,6 +145,7 @@ namespace STRATZ
             if (_tiers.Name != null) yield return _tiers;
             if (_lastPlaybackEventOnly.Name != null) yield return _lastPlaybackEventOnly;
             if (_orderBy.Name != null) yield return _orderBy;
+            if (_isLeague.Name != null) yield return _isLeague;
             if (_take.Name != null) yield return _take;
             if (_skip.Name != null) yield return _skip;
         }

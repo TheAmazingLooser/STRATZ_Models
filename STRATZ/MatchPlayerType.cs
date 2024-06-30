@@ -67,5 +67,6 @@ namespace STRATZ
         public IList<PlayerAbilityType> Abilities { get; set; }
         public int? InvisibleSeconds { get; set; }
         public int? DotaPlusHeroXp { get; set; }
+        public byte? Variant { get; set; }
     }
 }

@@ -23,6 +23,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "isRadiant" },
                 new FieldMetadata { Name = "playerIndex" },
                 new FieldMetadata { Name = "wasBannedSuccessfully" },
+                new FieldMetadata { Name = "isCaptain" },
                 new FieldMetadata { Name = "baseWinRate", IsComplex = true },
                 new FieldMetadata { Name = "adjustedWinRate", IsComplex = true },
                 new FieldMetadata { Name = "letter" }
@@ -100,6 +101,16 @@ namespace STRATZ
         public MatchStatsPickBanTypeQueryBuilder ExceptWasBannedSuccessfully()
         {
             return ExceptField("wasBannedSuccessfully");
+        }
+
+        public MatchStatsPickBanTypeQueryBuilder WithIsCaptain(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("isCaptain", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchStatsPickBanTypeQueryBuilder ExceptIsCaptain()
+        {
+            return ExceptField("isCaptain");
         }
 
         public MatchStatsPickBanTypeQueryBuilder WithBaseWinRate(string alias = null, IncludeDirective include = null, SkipDirective skip = null)

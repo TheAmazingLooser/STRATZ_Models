@@ -20,6 +20,7 @@ namespace STRATZ
         public bool? IsRadiant { get; set; }
         public int? PlayerIndex { get; set; }
         public bool? WasBannedSuccessfully { get; set; }
+        public bool? IsCaptain { get; set; }
         public byte? BaseWinRate { get; set; }
         public byte? AdjustedWinRate { get; set; }
         public int? Letter { get; set; }

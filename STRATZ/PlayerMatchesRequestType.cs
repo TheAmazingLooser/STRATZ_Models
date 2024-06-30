@@ -15,6 +15,7 @@ namespace STRATZ
     {
         private InputPropertyInfo _matchIds;
         private InputPropertyInfo _leagueId;
+        private InputPropertyInfo _leagueIds;
         private InputPropertyInfo _seriesId;
         private InputPropertyInfo _teamId;
         private InputPropertyInfo _teamIdSteamAccount;
@@ -43,6 +44,8 @@ namespace STRATZ
         private InputPropertyInfo _isRadiant;
         private InputPropertyInfo _minGameVersionId;
         private InputPropertyInfo _maxGameVersionId;
+        private InputPropertyInfo _minImp;
+        private InputPropertyInfo _maxImp;
         private InputPropertyInfo _playerList;
         private InputPropertyInfo _take;
         private InputPropertyInfo _skip;
@@ -66,6 +69,15 @@ namespace STRATZ
         {
             get { return (QueryBuilderParameter<int?>)_leagueId.Value; }
             set { _leagueId = new InputPropertyInfo { Name = "leagueId", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<IList<int>>))]
+        #endif
+        public QueryBuilderParameter<IList<int>> LeagueIds
+        {
+            get { return (QueryBuilderParameter<IList<int>>)_leagueIds.Value; }
+            set { _leagueIds = new InputPropertyInfo { Name = "leagueIds", Value = value }; }
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
@@ -321,6 +333,24 @@ namespace STRATZ
         }
 
         #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> MinImp
+        {
+            get { return (QueryBuilderParameter<int?>)_minImp.Value; }
+            set { _minImp = new InputPropertyInfo { Name = "minImp", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
+        [JsonConverter(typeof(QueryBuilderParameterConverter<int?>))]
+        #endif
+        public QueryBuilderParameter<int?> MaxImp
+        {
+            get { return (QueryBuilderParameter<int?>)_maxImp.Value; }
+            set { _maxImp = new InputPropertyInfo { Name = "maxImp", Value = value }; }
+        }
+
+        #if !GRAPHQL_GENERATOR_DISABLE_NEWTONSOFT_JSON
         [JsonConverter(typeof(QueryBuilderParameterConverter<FindMatchPlayerList?>))]
         #endif
         public QueryBuilderParameter<FindMatchPlayerList?> PlayerList
@@ -378,6 +408,7 @@ namespace STRATZ
         {
             if (_matchIds.Name != null) yield return _matchIds;
             if (_leagueId.Name != null) yield return _leagueId;
+            if (_leagueIds.Name != null) yield return _leagueIds;
             if (_seriesId.Name != null) yield return _seriesId;
             if (_teamId.Name != null) yield return _teamId;
             if (_teamIdSteamAccount.Name != null) yield return _teamIdSteamAccount;
@@ -406,6 +437,8 @@ namespace STRATZ
             if (_isRadiant.Name != null) yield return _isRadiant;
             if (_minGameVersionId.Name != null) yield return _minGameVersionId;
             if (_maxGameVersionId.Name != null) yield return _maxGameVersionId;
+            if (_minImp.Name != null) yield return _minImp;
+            if (_maxImp.Name != null) yield return _maxImp;
             if (_playerList.Name != null) yield return _playerList;
             if (_take.Name != null) yield return _take;
             if (_skip.Name != null) yield return _skip;

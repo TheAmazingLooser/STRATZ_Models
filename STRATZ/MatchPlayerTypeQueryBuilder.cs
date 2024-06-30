@@ -69,7 +69,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "dotaPlus", IsComplex = true, QueryBuilderType = typeof(HeroDotaPlusLeaderboardRankTypeQueryBuilder) },
                 new FieldMetadata { Name = "abilities", IsComplex = true, QueryBuilderType = typeof(PlayerAbilityTypeQueryBuilder) },
                 new FieldMetadata { Name = "invisibleSeconds" },
-                new FieldMetadata { Name = "dotaPlusHeroXp" }
+                new FieldMetadata { Name = "dotaPlusHeroXp" },
+                new FieldMetadata { Name = "variant", IsComplex = true }
             };
 
         protected override string TypeName { get { return "MatchPlayerType"; } } 
@@ -618,6 +619,16 @@ namespace STRATZ
         public MatchPlayerTypeQueryBuilder ExceptDotaPlusHeroXp()
         {
             return ExceptField("dotaPlusHeroXp");
+        }
+
+        public MatchPlayerTypeQueryBuilder WithVariant(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("variant", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public MatchPlayerTypeQueryBuilder ExceptVariant()
+        {
+            return ExceptField("variant");
         }
     }
 }

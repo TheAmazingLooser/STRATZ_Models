@@ -47,6 +47,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "duration" },
                 new FieldMetadata { Name = "charges" },
                 new FieldMetadata { Name = "chargeRestoreTime" },
+                new FieldMetadata { Name = "hasShardUpgrade" },
                 new FieldMetadata { Name = "isGrantedByShard" },
                 new FieldMetadata { Name = "dispellable" },
                 new FieldMetadata { Name = "linkedAbilityId", IsComplex = true }
@@ -364,6 +365,16 @@ namespace STRATZ
         public AbilityStatTypeQueryBuilder ExceptChargeRestoreTime()
         {
             return ExceptField("chargeRestoreTime");
+        }
+
+        public AbilityStatTypeQueryBuilder WithHasShardUpgrade(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("hasShardUpgrade", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public AbilityStatTypeQueryBuilder ExceptHasShardUpgrade()
+        {
+            return ExceptField("hasShardUpgrade");
         }
 
         public AbilityStatTypeQueryBuilder WithIsGrantedByShard(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
