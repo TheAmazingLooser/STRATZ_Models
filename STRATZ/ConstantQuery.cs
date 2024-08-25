@@ -35,5 +35,6 @@ namespace STRATZ
         public IList<TeamType> PopularTeamIds { get; set; }
         public IList<SteamAccountType> Casters { get; set; }
         public IList<SteamAccountType> TiWinners { get; set; }
+        public IList<FacetType> Facets { get; set; }
     }
 }

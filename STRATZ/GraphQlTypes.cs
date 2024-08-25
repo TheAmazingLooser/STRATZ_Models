@@ -136,6 +136,8 @@ namespace STRATZ
         public const string DotaSubscription = "DotaSubscription";
         public const string DotaUserMutation = "DotaUserMutation";
         public const string ExperienceDetailType = "ExperienceDetailType";
+        public const string FacetLanguageType = "FacetLanguageType";
+        public const string FacetType = "FacetType";
         public const string FeatType = "FeatType";
         public const string FeedResponseType = "FeedResponseType";
         public const string FeedType = "FeedType";
@@ -155,6 +157,7 @@ namespace STRATZ
         public const string HeroDotaPlusLeaderboardRankTopType = "HeroDotaPlusLeaderboardRankTopType";
         public const string HeroDotaPlusLeaderboardRankType = "HeroDotaPlusLeaderboardRankType";
         public const string HeroDryadType = "HeroDryadType";
+        public const string HeroFacetType = "HeroFacetType";
         public const string HeroGuideListType = "HeroGuideListType";
         public const string HeroGuideType = "HeroGuideType";
         public const string HeroItemBootPurchaseType = "HeroItemBootPurchaseType";

@@ -48,5 +48,6 @@ namespace STRATZ
         public bool? IsGrantedByShard { get; set; }
         public AbilityDispellEnum? Dispellable { get; set; }
         public short? LinkedAbilityId { get; set; }
+        public bool? IsInnate { get; set; }
     }
 }

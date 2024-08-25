@@ -26,6 +26,7 @@ namespace STRATZ
                 new FieldMetadata { Name = "roles", IsComplex = true, QueryBuilderType = typeof(HeroRoleTypeQueryBuilder) },
                 new FieldMetadata { Name = "language", IsComplex = true, QueryBuilderType = typeof(HeroLanguageTypeQueryBuilder) },
                 new FieldMetadata { Name = "talents", IsComplex = true, QueryBuilderType = typeof(HeroTalentTypeQueryBuilder) },
+                new FieldMetadata { Name = "facets", IsComplex = true, QueryBuilderType = typeof(HeroFacetTypeQueryBuilder) },
                 new FieldMetadata { Name = "stats", IsComplex = true, QueryBuilderType = typeof(HeroStatTypeQueryBuilder) }
             };
 
@@ -131,6 +132,16 @@ namespace STRATZ
         public HeroTypeQueryBuilder ExceptTalents()
         {
             return ExceptField("talents");
+        }
+
+        public HeroTypeQueryBuilder WithFacets(HeroFacetTypeQueryBuilder heroFacetTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithObjectField("facets", alias, heroFacetTypeQueryBuilder, new GraphQlDirective[] { include, skip });
+        }
+
+        public HeroTypeQueryBuilder ExceptFacets()
+        {
+            return ExceptField("facets");
         }
 
         public HeroTypeQueryBuilder WithStats(HeroStatTypeQueryBuilder heroStatTypeQueryBuilder, string alias = null, IncludeDirective include = null, SkipDirective skip = null)

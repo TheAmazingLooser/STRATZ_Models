@@ -50,7 +50,8 @@ namespace STRATZ
                 new FieldMetadata { Name = "hasShardUpgrade" },
                 new FieldMetadata { Name = "isGrantedByShard" },
                 new FieldMetadata { Name = "dispellable" },
-                new FieldMetadata { Name = "linkedAbilityId", IsComplex = true }
+                new FieldMetadata { Name = "linkedAbilityId", IsComplex = true },
+                new FieldMetadata { Name = "isInnate" }
             };
 
         protected override string TypeName { get { return "AbilityStatType"; } } 
@@ -405,6 +406,16 @@ namespace STRATZ
         public AbilityStatTypeQueryBuilder ExceptLinkedAbilityId()
         {
             return ExceptField("linkedAbilityId");
+        }
+
+        public AbilityStatTypeQueryBuilder WithIsInnate(string alias = null, IncludeDirective include = null, SkipDirective skip = null)
+        {
+            return WithScalarField("isInnate", alias, new GraphQlDirective[] { include, skip });
+        }
+
+        public AbilityStatTypeQueryBuilder ExceptIsInnate()
+        {
+            return ExceptField("isInnate");
         }
     }
 }
